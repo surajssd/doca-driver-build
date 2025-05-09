@@ -1,0 +1,132 @@
+# cat /tmp/entrypoint_debug_cmds.log
+[09-May-25_18:38:46] NVIDIA driver container exec start
+[09-May-25_18:38:47] OS is Ubuntu
+[09-May-25_18:38:47] [os-release]: PRETTY_NAME="Ubuntu 22.04.5 LTS" NAME="Ubuntu" VERSION_ID="22.04" VERSION="22.04.5 LTS (Jammy Jellyfish)" VERSION_CODENAME=jammy ID=ubuntu ID_LIKE=debian HOME_URL="https://www.ubuntu.com/" SUPPORT_URL="https://help.ubuntu.com/" BUG_REPORT_URL="https://bugs.launchpad.net/ubuntu/" PRIVACY_POLICY_URL="https://www.ubuntu.com/legal/terms-and-policies/privacy-policy" UBUNTU_CODENAME=jammy
+[09-May-25_18:38:47] [uname -a]: Linux aks-ibnodepool-12699612-vmss000001 5.15.0-1087-azure #96-Ubuntu SMP Fri Mar 28 20:31:27 UTC 2025 x86_64 x86_64 x86_64 GNU/Linux
+[09-May-25_18:38:47] [free -m]: total used free shared buff/cache available Mem: 1814258 6157 1800667 3 7433 1801103 Swap: 0 0 0
+[09-May-25_18:38:47] Container full version: 25.01-0.6.0.0-0
+[09-May-25_18:38:47] Function: unload_blocking_modules
+[09-May-25_18:38:47] Verifying loaded modules will not prevent future driver restart
+[09-May-25_18:38:47] Checking if module nvidia_peermem loaded
+[09-May-25_18:38:47] Module nvidia_peermem not loaded
+[09-May-25_18:38:47] Executing driver sources container
+[09-May-25_18:38:47] Drivers sources path: /run/mellanox/src/MLNX_OFED_SRC-25.01-0.6.0.0
+[09-May-25_18:38:47] Drivers inventory path is set: /mnt/drivers-inventory
+[09-May-25_18:38:47] Function: set_driver_readiness
+[09-May-25_18:38:47] Unsetting driver ready state
+[09-May-25_18:38:47] Executing command: rm -f /run/mellanox/drivers/.driver-ready
+[09-May-25_18:38:47] Function: delete_udev_rules
+[09-May-25_18:38:47] Deleting udev rules
+[09-May-25_18:38:47] Function: store_devices_conf
+[09-May-25_18:38:47] Function: find_mlx_devs
+[09-May-25_18:38:47] Fetching device info for: /sys/class/net/enP53403s1
+[09-May-25_18:38:47] Storing device record [0] d09b:00:02.0 eth enP53403s1 up 1500 0 -
+[09-May-25_18:38:47] Sampling interface for ID_NET_NAME_PATH: /sys/class/net/enP53403s1 => enP53403p0s2
+[09-May-25_18:38:47] Function: find_mlx_vfs
+[09-May-25_18:38:47] Query VFs info from [1] devices
+[09-May-25_18:38:47] Device enP53403s1 does not have open VFs, skipping
+[09-May-25_18:38:47] Function: find_switchdev_representors
+[09-May-25_18:38:47] Query representors info from [1] devices
+[09-May-25_18:38:47] Device enP53403s1 is not in switchdev mode, skipping
+[09-May-25_18:38:47] Function: create_udev_rules
+[09-May-25_18:38:47] Short interface name exposed by old driver, injected udev rules file /host/etc/udev/rules.d/77-mlnx-net-names.rules
+[09-May-25_18:38:47] ACTION!="add", GOTO="mlnx_ofed_name_end" SUBSYSTEM!="net", GOTO="mlnx_ofed_name_end" # Rename physical interfaces (first case) of virtual functions (second case). # Example names: # enp8s0f0np0 -> enp8s0f0 # enp8s0f0np1v12 -> enp8s0f0v12 DRIVERS=="mlx5_core", ENV{ID_NET_NAME_PATH}!="", \ PROGRAM="/bin/sh -c 'echo $env{ID_NET_NAME_PATH} | sed -r -e s/np[01]$// -e s/np[01]v/v/'", \ ENV{ID_NET_NAME_PATH}="$result" DRIVERS=="mlx5_core", ENV{ID_NET_NAME_SLOT}!="", \ PROGRAM="/bin/sh -c 'echo $env{ID_NET_NAME_SLOT} | sed -r -e s/np[01]$// -e s/np[01]v/v/'", \ ENV{ID_NET_NAME_SLOT}="$result" LABEL="mlnx_ofed_name_end"
+[09-May-25_18:38:47] Function: build_driver
+[09-May-25_18:38:47] Skipping driver build, reusing previously built packages for kernel 5.15.0-1087-azure
+[09-May-25_18:38:47] Function: install_driver
+[09-May-25_18:38:47] Executing command: mkdir /lib/modules/5.15.0-1087-azure
+[09-May-25_18:38:47] Executing command: touch /lib/modules/5.15.0-1087-azure/modules.order
+[09-May-25_18:38:47] Executing command: touch /lib/modules/5.15.0-1087-azure/modules.builtin
+[09-May-25_18:38:47] Executing command: dpkg -i /mnt/drivers-inventory/5.15.0-1087-azure/25.01-0.6.0.0/iser-modules_25.01.OFED.25.01.0.6.0.1-1.kver.5.15.0-1087-azure_amd64.deb /mnt/drivers-inventory/5.15.0-1087-azure/25.01-0.6.0.0/isert-modules_25.01.OFED.25.01.0.6.0.1-1.kver.5.15.0-1087-azure_amd64.deb /mnt/drivers-inventory/5.15.0-1087-azure/25.01-0.6.0.0/kernel-mft-modules_4.31.0.149-1.kver.5.15.0-1087-azure_all.deb /mnt/drivers-inventory/5.15.0-1087-azure/25.01-0.6.0.0/knem-modules_1.1.4.90mlnx3-OFED.23.10.0.2.1.1.kver.5.15.0-1087-azure_amd64.deb /mnt/drivers-inventory/5.15.0-1087-azure/25.01-0.6.0.0/knem_1.1.4.90mlnx3-OFED.23.10.0.2.1.1.kver.5.15.0-1087-azure_amd64.deb /mnt/drivers-inventory/5.15.0-1087-azure/25.01-0.6.0.0/mlnx-nfsrdma-modules_25.01.OFED.25.01.0.6.0.1-1.kver.5.15.0-1087-azure_amd64.deb /mnt/drivers-inventory/5.15.0-1087-azure/25.01-0.6.0.0/mlnx-nvme-modules_25.01.OFED.25.01.0.6.0.1-1.kver.5.15.0-1087-azure_amd64.deb /mnt/drivers-inventory/5.15.0-1087-azure/25.01-0.6.0.0/mlnx-ofed-kernel-modules_25.01.OFED.25.01.0.6.0.1-1.kver.5.15.0-1087-azure_amd64.deb /mnt/drivers-inventory/5.15.0-1087-azure/25.01-0.6.0.0/mlnx-ofed-kernel-utils_25.01.OFED.25.01.0.6.0.1-1.kver.5.15.0-1087-azure_amd64.deb /mnt/drivers-inventory/5.15.0-1087-azure/25.01-0.6.0.0/mlnx-tools_25.01-0.2501060_amd64.deb /mnt/drivers-inventory/5.15.0-1087-azure/25.01-0.6.0.0/srp-modules_25.01.OFED.25.01.0.6.0.1-1.kver.5.15.0-1087-azure_amd64.deb /mnt/drivers-inventory/5.15.0-1087-azure/25.01-0.6.0.0/xpmem-modules_2.7.4-1.2501060.kver.5.15.0-1087-azure_amd64.deb /mnt/drivers-inventory/5.15.0-1087-azure/25.01-0.6.0.0/xpmem_2.7.4-1.2501060.kver.5.15.0-1087-azure_all.deb
+[09-May-25_18:38:48] Executing command: depmod 5.15.0-1087-azure
+[09-May-25_18:38:48] Function: ubuntu_sync_network_configuration_tools
+[09-May-25_18:38:48] Function: load_driver
+[09-May-25_18:38:48] Function: check_loaded_kmod_srcver_vs_modinfo
+[09-May-25_18:38:48] checking module mlx5_core
+[09-May-25_18:38:48] module: mlx5_core, srcver_from_modinfo: 232FDEDD901B4D732FAB0E5, srcver_from_sysfs: 232FDEDD901B4D732FAB0E5
+[09-May-25_18:38:48] checking module mlx5_ib
+[09-May-25_18:38:48] module: mlx5_ib, srcver_from_modinfo: 6E90C0B245BE640AA375EC9, srcver_from_sysfs:
+[09-May-25_18:38:48] module: mlx5_ib, srcver differs
+[09-May-25_18:38:48] Function: restart_driver
+[09-May-25_18:38:48] Executing command: modprobe -d /host tls
+[09-May-25_18:38:48] Executing command: modprobe -d /host psample
+[09-May-25_18:38:48] Executing command: modprobe -d /host pci-hyperv-intf
+[09-May-25_18:38:48] Apply blacklisted mofed modules file to host (/etc/modprobe.d/blacklist-ofed-modules.conf)
+[09-May-25_18:38:48] # blacklist ofed-related modules on host to prevent inbox or host OFED driver loading blacklist mlx5_core blacklist mlx5_ib blacklist ib_umad blacklist ib_uverbs blacklist ib_ipoib blacklist rdma_cm blacklist rdma_ucm blacklist ib_core blacklist ib_cm
+[09-May-25_18:38:48] Executing command: /etc/init.d/openibd restart
+[09-May-25_18:38:59] Command "/etc/init.d/openibd restart" failed with exit code: 1
+[09-May-25_18:38:59] Function: exit_entryp
+[09-May-25_18:38:59] Entrypoint exit request caught - exit code: 1, attempting to sleep 10000000 sec.
+root@aks-ibnodepool-12699612-vmss000001:/tmp#
+root@aks-ibnodepool-12699612-vmss000001:/tmp#
+root@aks-ibnodepool-12699612-vmss000001:/tmp#
+root@aks-ibnodepool-12699612-vmss000001:/tmp#
+root@aks-ibnodepool-12699612-vmss000001:/tmp#
+root@aks-ibnodepool-12699612-vmss000001:/tmp#
+root@aks-ibnodepool-12699612-vmss000001:/tmp#
+root@aks-ibnodepool-12699612-vmss000001:/tmp#
+root@aks-ibnodepool-12699612-vmss000001:/tmp#
+root@aks-ibnodepool-12699612-vmss000001:/tmp#
+root@aks-ibnodepool-12699612-vmss000001:/tmp#
+root@aks-ibnodepool-12699612-vmss000001:/tmp#
+root@aks-ibnodepool-12699612-vmss000001:/tmp#
+root@aks-ibnodepool-12699612-vmss000001:/tmp#
+root@aks-ibnodepool-12699612-vmss000001:/tmp# cat /tmp/entrypoint_debug_cmds.log
+[09-May-25_18:38:46] NVIDIA driver container exec start
+[09-May-25_18:38:47] OS is Ubuntu
+[09-May-25_18:38:47] [os-release]: PRETTY_NAME="Ubuntu 22.04.5 LTS" NAME="Ubuntu" VERSION_ID="22.04" VERSION="22.04.5 LTS (Jammy Jellyfish)" VERSION_CODENAME=jammy ID=ubuntu ID_LIKE=debian HOME_URL="https://www.ubuntu.com/" SUPPORT_URL="https://help.ubuntu.com/" BUG_REPORT_URL="https://bugs.launchpad.net/ubuntu/" PRIVACY_POLICY_URL="https://www.ubuntu.com/legal/terms-and-policies/privacy-policy" UBUNTU_CODENAME=jammy
+[09-May-25_18:38:47] [uname -a]: Linux aks-ibnodepool-12699612-vmss000001 5.15.0-1087-azure #96-Ubuntu SMP Fri Mar 28 20:31:27 UTC 2025 x86_64 x86_64 x86_64 GNU/Linux
+[09-May-25_18:38:47] [free -m]: total used free shared buff/cache available Mem: 1814258 6157 1800667 3 7433 1801103 Swap: 0 0 0
+[09-May-25_18:38:47] Container full version: 25.01-0.6.0.0-0
+[09-May-25_18:38:47] Function: unload_blocking_modules
+[09-May-25_18:38:47] Verifying loaded modules will not prevent future driver restart
+[09-May-25_18:38:47] Checking if module nvidia_peermem loaded
+[09-May-25_18:38:47] Module nvidia_peermem not loaded
+[09-May-25_18:38:47] Executing driver sources container
+[09-May-25_18:38:47] Drivers sources path: /run/mellanox/src/MLNX_OFED_SRC-25.01-0.6.0.0
+[09-May-25_18:38:47] Drivers inventory path is set: /mnt/drivers-inventory
+[09-May-25_18:38:47] Function: set_driver_readiness
+[09-May-25_18:38:47] Unsetting driver ready state
+[09-May-25_18:38:47] Executing command: rm -f /run/mellanox/drivers/.driver-ready
+[09-May-25_18:38:47] Function: delete_udev_rules
+[09-May-25_18:38:47] Deleting udev rules
+[09-May-25_18:38:47] Function: store_devices_conf
+[09-May-25_18:38:47] Function: find_mlx_devs
+[09-May-25_18:38:47] Fetching device info for: /sys/class/net/enP53403s1
+[09-May-25_18:38:47] Storing device record [0] d09b:00:02.0 eth enP53403s1 up 1500 0 -
+[09-May-25_18:38:47] Sampling interface for ID_NET_NAME_PATH: /sys/class/net/enP53403s1 => enP53403p0s2
+[09-May-25_18:38:47] Function: find_mlx_vfs
+[09-May-25_18:38:47] Query VFs info from [1] devices
+[09-May-25_18:38:47] Device enP53403s1 does not have open VFs, skipping
+[09-May-25_18:38:47] Function: find_switchdev_representors
+[09-May-25_18:38:47] Query representors info from [1] devices
+[09-May-25_18:38:47] Device enP53403s1 is not in switchdev mode, skipping
+[09-May-25_18:38:47] Function: create_udev_rules
+[09-May-25_18:38:47] Short interface name exposed by old driver, injected udev rules file /host/etc/udev/rules.d/77-mlnx-net-names.rules
+[09-May-25_18:38:47] ACTION!="add", GOTO="mlnx_ofed_name_end" SUBSYSTEM!="net", GOTO="mlnx_ofed_name_end" # Rename physical interfaces (first case) of virtual functions (second case). # Example names: # enp8s0f0np0 -> enp8s0f0 # enp8s0f0np1v12 -> enp8s0f0v12 DRIVERS=="mlx5_core", ENV{ID_NET_NAME_PATH}!="", \ PROGRAM="/bin/sh -c 'echo $env{ID_NET_NAME_PATH} | sed -r -e s/np[01]$// -e s/np[01]v/v/'", \ ENV{ID_NET_NAME_PATH}="$result" DRIVERS=="mlx5_core", ENV{ID_NET_NAME_SLOT}!="", \ PROGRAM="/bin/sh -c 'echo $env{ID_NET_NAME_SLOT} | sed -r -e s/np[01]$// -e s/np[01]v/v/'", \ ENV{ID_NET_NAME_SLOT}="$result" LABEL="mlnx_ofed_name_end"
+[09-May-25_18:38:47] Function: build_driver
+[09-May-25_18:38:47] Skipping driver build, reusing previously built packages for kernel 5.15.0-1087-azure
+[09-May-25_18:38:47] Function: install_driver
+[09-May-25_18:38:47] Executing command: mkdir /lib/modules/5.15.0-1087-azure
+[09-May-25_18:38:47] Executing command: touch /lib/modules/5.15.0-1087-azure/modules.order
+[09-May-25_18:38:47] Executing command: touch /lib/modules/5.15.0-1087-azure/modules.builtin
+[09-May-25_18:38:47] Executing command: dpkg -i /mnt/drivers-inventory/5.15.0-1087-azure/25.01-0.6.0.0/iser-modules_25.01.OFED.25.01.0.6.0.1-1.kver.5.15.0-1087-azure_amd64.deb /mnt/drivers-inventory/5.15.0-1087-azure/25.01-0.6.0.0/isert-modules_25.01.OFED.25.01.0.6.0.1-1.kver.5.15.0-1087-azure_amd64.deb /mnt/drivers-inventory/5.15.0-1087-azure/25.01-0.6.0.0/kernel-mft-modules_4.31.0.149-1.kver.5.15.0-1087-azure_all.deb /mnt/drivers-inventory/5.15.0-1087-azure/25.01-0.6.0.0/knem-modules_1.1.4.90mlnx3-OFED.23.10.0.2.1.1.kver.5.15.0-1087-azure_amd64.deb /mnt/drivers-inventory/5.15.0-1087-azure/25.01-0.6.0.0/knem_1.1.4.90mlnx3-OFED.23.10.0.2.1.1.kver.5.15.0-1087-azure_amd64.deb /mnt/drivers-inventory/5.15.0-1087-azure/25.01-0.6.0.0/mlnx-nfsrdma-modules_25.01.OFED.25.01.0.6.0.1-1.kver.5.15.0-1087-azure_amd64.deb /mnt/drivers-inventory/5.15.0-1087-azure/25.01-0.6.0.0/mlnx-nvme-modules_25.01.OFED.25.01.0.6.0.1-1.kver.5.15.0-1087-azure_amd64.deb /mnt/drivers-inventory/5.15.0-1087-azure/25.01-0.6.0.0/mlnx-ofed-kernel-modules_25.01.OFED.25.01.0.6.0.1-1.kver.5.15.0-1087-azure_amd64.deb /mnt/drivers-inventory/5.15.0-1087-azure/25.01-0.6.0.0/mlnx-ofed-kernel-utils_25.01.OFED.25.01.0.6.0.1-1.kver.5.15.0-1087-azure_amd64.deb /mnt/drivers-inventory/5.15.0-1087-azure/25.01-0.6.0.0/mlnx-tools_25.01-0.2501060_amd64.deb /mnt/drivers-inventory/5.15.0-1087-azure/25.01-0.6.0.0/srp-modules_25.01.OFED.25.01.0.6.0.1-1.kver.5.15.0-1087-azure_amd64.deb /mnt/drivers-inventory/5.15.0-1087-azure/25.01-0.6.0.0/xpmem-modules_2.7.4-1.2501060.kver.5.15.0-1087-azure_amd64.deb /mnt/drivers-inventory/5.15.0-1087-azure/25.01-0.6.0.0/xpmem_2.7.4-1.2501060.kver.5.15.0-1087-azure_all.deb
+[09-May-25_18:38:48] Executing command: depmod 5.15.0-1087-azure
+[09-May-25_18:38:48] Function: ubuntu_sync_network_configuration_tools
+[09-May-25_18:38:48] Function: load_driver
+[09-May-25_18:38:48] Function: check_loaded_kmod_srcver_vs_modinfo
+[09-May-25_18:38:48] checking module mlx5_core
+[09-May-25_18:38:48] module: mlx5_core, srcver_from_modinfo: 232FDEDD901B4D732FAB0E5, srcver_from_sysfs: 232FDEDD901B4D732FAB0E5
+[09-May-25_18:38:48] checking module mlx5_ib
+[09-May-25_18:38:48] module: mlx5_ib, srcver_from_modinfo: 6E90C0B245BE640AA375EC9, srcver_from_sysfs:
+[09-May-25_18:38:48] module: mlx5_ib, srcver differs
+[09-May-25_18:38:48] Function: restart_driver
+[09-May-25_18:38:48] Executing command: modprobe -d /host tls
+[09-May-25_18:38:48] Executing command: modprobe -d /host psample
+[09-May-25_18:38:48] Executing command: modprobe -d /host pci-hyperv-intf
+[09-May-25_18:38:48] Apply blacklisted mofed modules file to host (/etc/modprobe.d/blacklist-ofed-modules.conf)
+[09-May-25_18:38:48] # blacklist ofed-related modules on host to prevent inbox or host OFED driver loading blacklist mlx5_core blacklist mlx5_ib blacklist ib_umad blacklist ib_uverbs blacklist ib_ipoib blacklist rdma_cm blacklist rdma_ucm blacklist ib_core blacklist ib_cm
+[09-May-25_18:38:48] Executing command: /etc/init.d/openibd restart
+[09-May-25_18:38:59] Command "/etc/init.d/openibd restart" failed with exit code: 1
+[09-May-25_18:38:59] Function: exit_entryp
+[09-May-25_18:38:59] Entrypoint exit request caught - exit code: 1, attempting to sleep 10000000 sec.
