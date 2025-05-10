@@ -1,0 +1,286 @@
+/usr/bin/dpkg-buildpackage -us -uc -Pmodules
+dpkg-buildpackage: info: source package mlnx-nvme
+dpkg-buildpackage: info: source version 25.01.OFED.25.01.0.6.0.1-1
+dpkg-buildpackage: info: source distribution unstable
+dpkg-buildpackage: info: source changed by Alaa Hleihel <alaa@mellanox.com>
+ dpkg-source --before-build .
+dpkg-buildpackage: info: host architecture amd64
+ debian/rules clean
+dh clean
+dh: warning: Compatibility levels before 10 are deprecated (level 8 in use)
+   dh_clean
+dh_clean: warning: Compatibility levels before 10 are deprecated (level 8 in use)
+ dpkg-source -b .
+dpkg-source: info: using source format '3.0 (quilt)'
+dpkg-source: info: building mlnx-nvme using existing ./mlnx-nvme_25.01.OFED.25.01.0.6.0.1.orig.tar.gz
+dpkg-source: info: building mlnx-nvme in mlnx-nvme_25.01.OFED.25.01.0.6.0.1-1.debian.tar.xz
+dpkg-source: info: building mlnx-nvme in mlnx-nvme_25.01.OFED.25.01.0.6.0.1-1.dsc
+ debian/rules build
+dh build
+dh: warning: Compatibility levels before 10 are deprecated (level 8 in use)
+   dh_update_autotools_config
+   debian/rules override_dh_auto_build
+make[1]: Entering directory '/var/tmp/mlnx-nvme/mlnx-nvme-25.01.OFED.25.01.0.6.0.1'
+Building for 5.15.0-1087-azure
+make clean || true
+make[2]: Entering directory '/var/tmp/mlnx-nvme/mlnx-nvme-25.01.OFED.25.01.0.6.0.1'
+/bin/sh: 1: Syntax error: Unterminated quoted string
+/bin/sh: 1: [: -lt: unexpected operator
+rm -f *.o
+rm -f *.ko *.ko.gz
+rm -f *.mod.c
+rm -f Module*.symvers modules*.order
+make[2]: Leaving directory '/var/tmp/mlnx-nvme/mlnx-nvme-25.01.OFED.25.01.0.6.0.1'
+make -j16 KVER=5.15.0-1087-azure K_BUILD=/lib/modules/5.15.0-1087-azure/build CONFIG_NVME_HOST_WITHOUT_FC=
+make[2]: Entering directory '/var/tmp/mlnx-nvme/mlnx-nvme-25.01.OFED.25.01.0.6.0.1'
+/bin/sh: 1: Syntax error: Unterminated quoted string
+/bin/sh: 1: [: -lt: unexpected operator
+make -C /lib/modules/5.15.0-1087-azure/build O=/lib/modules/5.15.0-1087-azure/build M=/var/tmp/mlnx-nvme/mlnx-nvme-25.01.OFED.25.01.0.6.0.1 CONFIG_GPU_DIRECT_STORAGE=y KBUILD_EXTRA_SYMBOLS=/var/tmp/ofed_src/usr/src/ofa_kernel/x86_64/5.15.0-1087-azure/Module.symvers \
+	CONFIG_NVME_HOST_WITHOUT_FC= CONFIG_NVME_TARGET=m CONFIG_NVME_TARGET_LOOP=m CONFIG_NVME_TARGET_RDMA=m CONFIG_NVME_TARGET_FC=m CONFIG_NVME_TARGET_FCLOOP=m CONFIG_NVME_TARGET_DUMMY= CONFIG_NVME_CORE=m CONFIG_BLK_DEV_NVME=m CONFIG_NVME_FABRICS=m CONFIG_NVME_FC=m CONFIG_NVME_RDMA=m CONFIG_NVME_MULTIPATH=y CONFIG_NVME_HOST_DUMMY= \
+	CONFIG_DTRACE= \
+	CONFIG_CTF= \
+	LINUXINCLUDE=' -DCONFIG_NVME_MULTIPATH=1 -include /lib/modules/5.15.0-1087-azure/build/include/generated/autoconf.h -include /lib/modules/5.15.0-1087-azure/build/include/linux/kconfig.h -include /var/tmp/ofed_src/usr/src/ofa_kernel/x86_64/5.15.0-1087-azure/include/linux/compat-2.6.h -I/var/tmp/mlnx-nvme/mlnx-nvme-25.01.OFED.25.01.0.6.0.1 -I/var/tmp/ofed_src/usr/src/ofa_kernel/x86_64/5.15.0-1087-azure/include -I/var/tmp/ofed_src/usr/src/ofa_kernel/x86_64/5.15.0-1087-azure/include/uapi  $(if $(CONFIG_XEN),-D__XEN_INTERFACE_VERSION__=$(CONFIG_XEN_INTERFACE_VERSION)) $(if $(CONFIG_XEN),-I$(srctree)/arch/x86/include/mach-xen) -I$(srctree)/arch/$(SRCARCH)/include -I$(objtree)/arch/$(SRCARCH)/include/generated -I$(objtree)/include -I$(srctree)/arch/$(SRCARCH)/include/uapi -I$(objtree)/arch/$(SRCARCH)/include/generated/uapi -I$(srctree)/include -I$(srctree)/include/uapi -I$(objtree)/include/generated/uapi $(if $(KBUILD_SRC),-I$(objtree)/include2 -I$(srctree)/include) -I$(srctree)/arch/$(SRCARCH)/include -I$(objtree)/arch/$(SRCARCH)/include/generated ' \
+	modules
+make[3]: Entering directory '/var/tmp/mlnx-nvme/mlnx-nvme-25.01.OFED.25.01.0.6.0.1'
+make[3]: warning: jobserver unavailable: using -j1.  Add '+' to parent make rule.
+warning: the compiler differs from the one used to build the kernel
+  The kernel was built by: gcc (Ubuntu 11.4.0-1ubuntu1~22.04) 11.4.0
+  You are using:           gcc (Ubuntu 12.3.0-1ubuntu1~22.04) 12.3.0
+  CC [M]  /var/tmp/mlnx-nvme/mlnx-nvme-25.01.OFED.25.01.0.6.0.1/host/core.o
+  CC [M]  /var/tmp/mlnx-nvme/mlnx-nvme-25.01.OFED.25.01.0.6.0.1/host/ioctl.o
+  CC [M]  /var/tmp/mlnx-nvme/mlnx-nvme-25.01.OFED.25.01.0.6.0.1/host/sysfs.o
+  CC [M]  /var/tmp/mlnx-nvme/mlnx-nvme-25.01.OFED.25.01.0.6.0.1/host/pr.o
+  CC [M]  /var/tmp/mlnx-nvme/mlnx-nvme-25.01.OFED.25.01.0.6.0.1/host/trace.o
+  CC [M]  /var/tmp/mlnx-nvme/mlnx-nvme-25.01.OFED.25.01.0.6.0.1/host/multipath.o
+  CC [M]  /var/tmp/mlnx-nvme/mlnx-nvme-25.01.OFED.25.01.0.6.0.1/host/zns.o
+  CC [M]  /var/tmp/mlnx-nvme/mlnx-nvme-25.01.OFED.25.01.0.6.0.1/host/hwmon.o
+  LD [M]  /var/tmp/mlnx-nvme/mlnx-nvme-25.01.OFED.25.01.0.6.0.1/host/nvme-core.o
+  CC [M]  /var/tmp/mlnx-nvme/mlnx-nvme-25.01.OFED.25.01.0.6.0.1/host/pci.o
+  CC [M]  /var/tmp/mlnx-nvme/mlnx-nvme-25.01.OFED.25.01.0.6.0.1/host/nvfs-dma.o
+  LD [M]  /var/tmp/mlnx-nvme/mlnx-nvme-25.01.OFED.25.01.0.6.0.1/host/nvme.o
+  CC [M]  /var/tmp/mlnx-nvme/mlnx-nvme-25.01.OFED.25.01.0.6.0.1/host/fabrics.o
+  LD [M]  /var/tmp/mlnx-nvme/mlnx-nvme-25.01.OFED.25.01.0.6.0.1/host/nvme-fabrics.o
+  CC [M]  /var/tmp/mlnx-nvme/mlnx-nvme-25.01.OFED.25.01.0.6.0.1/host/rdma.o
+  CC [M]  /var/tmp/mlnx-nvme/mlnx-nvme-25.01.OFED.25.01.0.6.0.1/host/nvfs-rdma.o
+  LD [M]  /var/tmp/mlnx-nvme/mlnx-nvme-25.01.OFED.25.01.0.6.0.1/host/nvme-rdma.o
+  CC [M]  /var/tmp/mlnx-nvme/mlnx-nvme-25.01.OFED.25.01.0.6.0.1/host/fc.o
+  LD [M]  /var/tmp/mlnx-nvme/mlnx-nvme-25.01.OFED.25.01.0.6.0.1/host/nvme-fc.o
+  CC [M]  /var/tmp/mlnx-nvme/mlnx-nvme-25.01.OFED.25.01.0.6.0.1/host/tcp.o
+  LD [M]  /var/tmp/mlnx-nvme/mlnx-nvme-25.01.OFED.25.01.0.6.0.1/host/nvme-tcp.o
+  CC [M]  /var/tmp/mlnx-nvme/mlnx-nvme-25.01.OFED.25.01.0.6.0.1/host/qla2xxx_dummy.o
+  LD [M]  /var/tmp/mlnx-nvme/mlnx-nvme-25.01.OFED.25.01.0.6.0.1/host/qla2xxx.o
+  CC [M]  /var/tmp/mlnx-nvme/mlnx-nvme-25.01.OFED.25.01.0.6.0.1/target/core.o
+  CC [M]  /var/tmp/mlnx-nvme/mlnx-nvme-25.01.OFED.25.01.0.6.0.1/target/configfs.o
+  CC [M]  /var/tmp/mlnx-nvme/mlnx-nvme-25.01.OFED.25.01.0.6.0.1/target/admin-cmd.o
+  CC [M]  /var/tmp/mlnx-nvme/mlnx-nvme-25.01.OFED.25.01.0.6.0.1/target/fabrics-cmd.o
+  CC [M]  /var/tmp/mlnx-nvme/mlnx-nvme-25.01.OFED.25.01.0.6.0.1/target/discovery.o
+  CC [M]  /var/tmp/mlnx-nvme/mlnx-nvme-25.01.OFED.25.01.0.6.0.1/target/io-cmd-file.o
+  CC [M]  /var/tmp/mlnx-nvme/mlnx-nvme-25.01.OFED.25.01.0.6.0.1/target/io-cmd-bdev.o
+  CC [M]  /var/tmp/mlnx-nvme/mlnx-nvme-25.01.OFED.25.01.0.6.0.1/target/zns.o
+  CC [M]  /var/tmp/mlnx-nvme/mlnx-nvme-25.01.OFED.25.01.0.6.0.1/target/trace.o
+  LD [M]  /var/tmp/mlnx-nvme/mlnx-nvme-25.01.OFED.25.01.0.6.0.1/target/nvmet.o
+  CC [M]  /var/tmp/mlnx-nvme/mlnx-nvme-25.01.OFED.25.01.0.6.0.1/target/loop.o
+  LD [M]  /var/tmp/mlnx-nvme/mlnx-nvme-25.01.OFED.25.01.0.6.0.1/target/nvme-loop.o
+  CC [M]  /var/tmp/mlnx-nvme/mlnx-nvme-25.01.OFED.25.01.0.6.0.1/target/rdma.o
+  LD [M]  /var/tmp/mlnx-nvme/mlnx-nvme-25.01.OFED.25.01.0.6.0.1/target/nvmet-rdma.o
+  CC [M]  /var/tmp/mlnx-nvme/mlnx-nvme-25.01.OFED.25.01.0.6.0.1/target/fc.o
+  LD [M]  /var/tmp/mlnx-nvme/mlnx-nvme-25.01.OFED.25.01.0.6.0.1/target/nvmet-fc.o
+  CC [M]  /var/tmp/mlnx-nvme/mlnx-nvme-25.01.OFED.25.01.0.6.0.1/target/fcloop.o
+  LD [M]  /var/tmp/mlnx-nvme/mlnx-nvme-25.01.OFED.25.01.0.6.0.1/target/nvme-fcloop.o
+  CC [M]  /var/tmp/mlnx-nvme/mlnx-nvme-25.01.OFED.25.01.0.6.0.1/target/tcp.o
+  LD [M]  /var/tmp/mlnx-nvme/mlnx-nvme-25.01.OFED.25.01.0.6.0.1/target/nvmet-tcp.o
+  CC [M]  /var/tmp/mlnx-nvme/mlnx-nvme-25.01.OFED.25.01.0.6.0.1/lpfc/lpfc_dummy.o
+  LD [M]  /var/tmp/mlnx-nvme/mlnx-nvme-25.01.OFED.25.01.0.6.0.1/lpfc/lpfc.o
+  MODPOST /var/tmp/mlnx-nvme/mlnx-nvme-25.01.OFED.25.01.0.6.0.1/Module.symvers
+WARNING: modpost: /var/tmp/mlnx-nvme/mlnx-nvme-25.01.OFED.25.01.0.6.0.1/host/nvme-core: 'admin_timeout' exported twice. Previous export was in vmlinux
+WARNING: modpost: /var/tmp/mlnx-nvme/mlnx-nvme-25.01.OFED.25.01.0.6.0.1/host/nvme-core: 'nvme_io_timeout' exported twice. Previous export was in vmlinux
+WARNING: modpost: /var/tmp/mlnx-nvme/mlnx-nvme-25.01.OFED.25.01.0.6.0.1/host/nvme-core: 'nvme_wq' exported twice. Previous export was in vmlinux
+WARNING: modpost: /var/tmp/mlnx-nvme/mlnx-nvme-25.01.OFED.25.01.0.6.0.1/host/nvme-core: 'nvme_reset_wq' exported twice. Previous export was in vmlinux
+WARNING: modpost: /var/tmp/mlnx-nvme/mlnx-nvme-25.01.OFED.25.01.0.6.0.1/host/nvme-core: 'nvme_delete_wq' exported twice. Previous export was in vmlinux
+WARNING: modpost: /var/tmp/mlnx-nvme/mlnx-nvme-25.01.OFED.25.01.0.6.0.1/host/nvme-core: 'nvme_try_sched_reset' exported twice. Previous export was in vmlinux
+WARNING: modpost: /var/tmp/mlnx-nvme/mlnx-nvme-25.01.OFED.25.01.0.6.0.1/host/nvme-core: 'nvme_reset_ctrl' exported twice. Previous export was in vmlinux
+WARNING: modpost: /var/tmp/mlnx-nvme/mlnx-nvme-25.01.OFED.25.01.0.6.0.1/host/nvme-core: 'nvme_delete_ctrl' exported twice. Previous export was in vmlinux
+WARNING: modpost: /var/tmp/mlnx-nvme/mlnx-nvme-25.01.OFED.25.01.0.6.0.1/host/nvme-core: 'nvme_complete_rq' exported twice. Previous export was in vmlinux
+WARNING: modpost: /var/tmp/mlnx-nvme/mlnx-nvme-25.01.OFED.25.01.0.6.0.1/host/nvme-core: 'nvme_host_path_error' exported twice. Previous export was in vmlinux
+WARNING: modpost: /var/tmp/mlnx-nvme/mlnx-nvme-25.01.OFED.25.01.0.6.0.1/host/nvme-core: 'nvme_cancel_request' exported twice. Previous export was in vmlinux
+WARNING: modpost: /var/tmp/mlnx-nvme/mlnx-nvme-25.01.OFED.25.01.0.6.0.1/host/nvme-core: 'nvme_cancel_tagset' exported twice. Previous export was in vmlinux
+WARNING: modpost: /var/tmp/mlnx-nvme/mlnx-nvme-25.01.OFED.25.01.0.6.0.1/host/nvme-core: 'nvme_cancel_admin_tagset' exported twice. Previous export was in vmlinux
+WARNING: modpost: /var/tmp/mlnx-nvme/mlnx-nvme-25.01.OFED.25.01.0.6.0.1/host/nvme-core: 'nvme_change_ctrl_state' exported twice. Previous export was in vmlinux
+WARNING: modpost: /var/tmp/mlnx-nvme/mlnx-nvme-25.01.OFED.25.01.0.6.0.1/host/nvme-core: 'nvme_wait_reset' exported twice. Previous export was in vmlinux
+WARNING: modpost: /var/tmp/mlnx-nvme/mlnx-nvme-25.01.OFED.25.01.0.6.0.1/host/nvme-core: 'nvme_put_ns' exported twice. Previous export was in vmlinux
+WARNING: modpost: /var/tmp/mlnx-nvme/mlnx-nvme-25.01.OFED.25.01.0.6.0.1/host/nvme-core: 'nvme_fail_nonready_command' exported twice. Previous export was in vmlinux
+WARNING: modpost: /var/tmp/mlnx-nvme/mlnx-nvme-25.01.OFED.25.01.0.6.0.1/host/nvme-core: '__nvme_check_ready' exported twice. Previous export was in vmlinux
+WARNING: modpost: /var/tmp/mlnx-nvme/mlnx-nvme-25.01.OFED.25.01.0.6.0.1/host/nvme-core: 'nvme_cleanup_cmd' exported twice. Previous export was in vmlinux
+WARNING: modpost: /var/tmp/mlnx-nvme/mlnx-nvme-25.01.OFED.25.01.0.6.0.1/host/nvme-core: 'nvme_setup_cmd' exported twice. Previous export was in vmlinux
+WARNING: modpost: /var/tmp/mlnx-nvme/mlnx-nvme-25.01.OFED.25.01.0.6.0.1/host/nvme-core: '__nvme_submit_sync_cmd' exported twice. Previous export was in vmlinux
+WARNING: modpost: /var/tmp/mlnx-nvme/mlnx-nvme-25.01.OFED.25.01.0.6.0.1/host/nvme-core: 'nvme_submit_sync_cmd' exported twice. Previous export was in vmlinux
+WARNING: modpost: /var/tmp/mlnx-nvme/mlnx-nvme-25.01.OFED.25.01.0.6.0.1/host/nvme-core: 'nvme_command_effects' exported twice. Previous export was in vmlinux
+WARNING: modpost: /var/tmp/mlnx-nvme/mlnx-nvme-25.01.OFED.25.01.0.6.0.1/host/nvme-core: 'nvme_stop_keep_alive' exported twice. Previous export was in vmlinux
+WARNING: modpost: /var/tmp/mlnx-nvme/mlnx-nvme-25.01.OFED.25.01.0.6.0.1/host/nvme-core: 'nvme_set_features' exported twice. Previous export was in vmlinux
+WARNING: modpost: /var/tmp/mlnx-nvme/mlnx-nvme-25.01.OFED.25.01.0.6.0.1/host/nvme-core: 'nvme_get_features' exported twice. Previous export was in vmlinux
+WARNING: modpost: /var/tmp/mlnx-nvme/mlnx-nvme-25.01.OFED.25.01.0.6.0.1/host/nvme-core: 'nvme_set_queue_count' exported twice. Previous export was in vmlinux
+WARNING: modpost: /var/tmp/mlnx-nvme/mlnx-nvme-25.01.OFED.25.01.0.6.0.1/host/nvme-core: 'nvme_disable_ctrl' exported twice. Previous export was in vmlinux
+WARNING: modpost: /var/tmp/mlnx-nvme/mlnx-nvme-25.01.OFED.25.01.0.6.0.1/host/nvme-core: 'nvme_enable_ctrl' exported twice. Previous export was in vmlinux
+WARNING: modpost: /var/tmp/mlnx-nvme/mlnx-nvme-25.01.OFED.25.01.0.6.0.1/host/nvme-core: 'nvme_init_ctrl_finish' exported twice. Previous export was in vmlinux
+WARNING: modpost: /var/tmp/mlnx-nvme/mlnx-nvme-25.01.OFED.25.01.0.6.0.1/host/nvme-core: 'nvme_find_get_ns' exported twice. Previous export was in vmlinux
+WARNING: modpost: /var/tmp/mlnx-nvme/mlnx-nvme-25.01.OFED.25.01.0.6.0.1/host/nvme-core: 'nvme_remove_namespaces' exported twice. Previous export was in vmlinux
+WARNING: modpost: /var/tmp/mlnx-nvme/mlnx-nvme-25.01.OFED.25.01.0.6.0.1/host/nvme-core: 'nvme_complete_async_event' exported twice. Previous export was in vmlinux
+WARNING: modpost: /var/tmp/mlnx-nvme/mlnx-nvme-25.01.OFED.25.01.0.6.0.1/host/nvme-core: 'nvme_stop_ctrl' exported twice. Previous export was in vmlinux
+WARNING: modpost: /var/tmp/mlnx-nvme/mlnx-nvme-25.01.OFED.25.01.0.6.0.1/host/nvme-core: 'nvme_start_ctrl' exported twice. Previous export was in vmlinux
+WARNING: modpost: /var/tmp/mlnx-nvme/mlnx-nvme-25.01.OFED.25.01.0.6.0.1/host/nvme-core: 'nvme_uninit_ctrl' exported twice. Previous export was in vmlinux
+WARNING: modpost: /var/tmp/mlnx-nvme/mlnx-nvme-25.01.OFED.25.01.0.6.0.1/host/nvme-core: 'nvme_init_ctrl' exported twice. Previous export was in vmlinux
+WARNING: modpost: /var/tmp/mlnx-nvme/mlnx-nvme-25.01.OFED.25.01.0.6.0.1/host/nvme-core: 'nvme_unfreeze' exported twice. Previous export was in vmlinux
+WARNING: modpost: /var/tmp/mlnx-nvme/mlnx-nvme-25.01.OFED.25.01.0.6.0.1/host/nvme-core: 'nvme_wait_freeze_timeout' exported twice. Previous export was in vmlinux
+WARNING: modpost: /var/tmp/mlnx-nvme/mlnx-nvme-25.01.OFED.25.01.0.6.0.1/host/nvme-core: 'nvme_wait_freeze' exported twice. Previous export was in vmlinux
+WARNING: modpost: /var/tmp/mlnx-nvme/mlnx-nvme-25.01.OFED.25.01.0.6.0.1/host/nvme-core: 'nvme_start_freeze' exported twice. Previous export was in vmlinux
+WARNING: modpost: /var/tmp/mlnx-nvme/mlnx-nvme-25.01.OFED.25.01.0.6.0.1/host/nvme-core: 'nvme_sync_io_queues' exported twice. Previous export was in vmlinux
+WARNING: modpost: /var/tmp/mlnx-nvme/mlnx-nvme-25.01.OFED.25.01.0.6.0.1/host/nvme-core: 'nvme_sync_queues' exported twice. Previous export was in vmlinux
+WARNING: modpost: /var/tmp/mlnx-nvme/mlnx-nvme-25.01.OFED.25.01.0.6.0.1/host/nvme-core: 'nvme_ctrl_from_file' exported twice. Previous export was in vmlinux
+WARNING: modpost: /var/tmp/mlnx-nvme/mlnx-nvme-25.01.OFED.25.01.0.6.0.1/host/nvme-core: '__tracepoint_nvme_sq' exported twice. Previous export was in vmlinux
+WARNING: modpost: /var/tmp/mlnx-nvme/mlnx-nvme-25.01.OFED.25.01.0.6.0.1/host/nvme-core: '__traceiter_nvme_sq' exported twice. Previous export was in vmlinux
+WARNING: modpost: /var/tmp/mlnx-nvme/mlnx-nvme-25.01.OFED.25.01.0.6.0.1/host/nvme-core: '__SCK__tp_func_nvme_sq' exported twice. Previous export was in vmlinux
+WARNING: modpost: /var/tmp/mlnx-nvme/mlnx-nvme-25.01.OFED.25.01.0.6.0.1/host/nvme-core: '__SCT__tp_func_nvme_sq' exported twice. Previous export was in vmlinux
+  CC [M]  /var/tmp/mlnx-nvme/mlnx-nvme-25.01.OFED.25.01.0.6.0.1/host/nvme-core.mod.o
+  LD [M]  /var/tmp/mlnx-nvme/mlnx-nvme-25.01.OFED.25.01.0.6.0.1/host/nvme-core.ko
+  BTF [M] /var/tmp/mlnx-nvme/mlnx-nvme-25.01.OFED.25.01.0.6.0.1/host/nvme-core.ko
+Skipping BTF generation for /var/tmp/mlnx-nvme/mlnx-nvme-25.01.OFED.25.01.0.6.0.1/host/nvme-core.ko due to unavailability of vmlinux
+  CC [M]  /var/tmp/mlnx-nvme/mlnx-nvme-25.01.OFED.25.01.0.6.0.1/host/nvme-fabrics.mod.o
+  LD [M]  /var/tmp/mlnx-nvme/mlnx-nvme-25.01.OFED.25.01.0.6.0.1/host/nvme-fabrics.ko
+  BTF [M] /var/tmp/mlnx-nvme/mlnx-nvme-25.01.OFED.25.01.0.6.0.1/host/nvme-fabrics.ko
+Skipping BTF generation for /var/tmp/mlnx-nvme/mlnx-nvme-25.01.OFED.25.01.0.6.0.1/host/nvme-fabrics.ko due to unavailability of vmlinux
+  CC [M]  /var/tmp/mlnx-nvme/mlnx-nvme-25.01.OFED.25.01.0.6.0.1/host/nvme-fc.mod.o
+  LD [M]  /var/tmp/mlnx-nvme/mlnx-nvme-25.01.OFED.25.01.0.6.0.1/host/nvme-fc.ko
+  BTF [M] /var/tmp/mlnx-nvme/mlnx-nvme-25.01.OFED.25.01.0.6.0.1/host/nvme-fc.ko
+Skipping BTF generation for /var/tmp/mlnx-nvme/mlnx-nvme-25.01.OFED.25.01.0.6.0.1/host/nvme-fc.ko due to unavailability of vmlinux
+  CC [M]  /var/tmp/mlnx-nvme/mlnx-nvme-25.01.OFED.25.01.0.6.0.1/host/nvme-rdma.mod.o
+  LD [M]  /var/tmp/mlnx-nvme/mlnx-nvme-25.01.OFED.25.01.0.6.0.1/host/nvme-rdma.ko
+  BTF [M] /var/tmp/mlnx-nvme/mlnx-nvme-25.01.OFED.25.01.0.6.0.1/host/nvme-rdma.ko
+Skipping BTF generation for /var/tmp/mlnx-nvme/mlnx-nvme-25.01.OFED.25.01.0.6.0.1/host/nvme-rdma.ko due to unavailability of vmlinux
+  CC [M]  /var/tmp/mlnx-nvme/mlnx-nvme-25.01.OFED.25.01.0.6.0.1/host/nvme-tcp.mod.o
+  LD [M]  /var/tmp/mlnx-nvme/mlnx-nvme-25.01.OFED.25.01.0.6.0.1/host/nvme-tcp.ko
+  BTF [M] /var/tmp/mlnx-nvme/mlnx-nvme-25.01.OFED.25.01.0.6.0.1/host/nvme-tcp.ko
+Skipping BTF generation for /var/tmp/mlnx-nvme/mlnx-nvme-25.01.OFED.25.01.0.6.0.1/host/nvme-tcp.ko due to unavailability of vmlinux
+  CC [M]  /var/tmp/mlnx-nvme/mlnx-nvme-25.01.OFED.25.01.0.6.0.1/host/nvme.mod.o
+  LD [M]  /var/tmp/mlnx-nvme/mlnx-nvme-25.01.OFED.25.01.0.6.0.1/host/nvme.ko
+  BTF [M] /var/tmp/mlnx-nvme/mlnx-nvme-25.01.OFED.25.01.0.6.0.1/host/nvme.ko
+Skipping BTF generation for /var/tmp/mlnx-nvme/mlnx-nvme-25.01.OFED.25.01.0.6.0.1/host/nvme.ko due to unavailability of vmlinux
+  CC [M]  /var/tmp/mlnx-nvme/mlnx-nvme-25.01.OFED.25.01.0.6.0.1/host/qla2xxx.mod.o
+  LD [M]  /var/tmp/mlnx-nvme/mlnx-nvme-25.01.OFED.25.01.0.6.0.1/host/qla2xxx.ko
+  BTF [M] /var/tmp/mlnx-nvme/mlnx-nvme-25.01.OFED.25.01.0.6.0.1/host/qla2xxx.ko
+Skipping BTF generation for /var/tmp/mlnx-nvme/mlnx-nvme-25.01.OFED.25.01.0.6.0.1/host/qla2xxx.ko due to unavailability of vmlinux
+  CC [M]  /var/tmp/mlnx-nvme/mlnx-nvme-25.01.OFED.25.01.0.6.0.1/lpfc/lpfc.mod.o
+  LD [M]  /var/tmp/mlnx-nvme/mlnx-nvme-25.01.OFED.25.01.0.6.0.1/lpfc/lpfc.ko
+  BTF [M] /var/tmp/mlnx-nvme/mlnx-nvme-25.01.OFED.25.01.0.6.0.1/lpfc/lpfc.ko
+Skipping BTF generation for /var/tmp/mlnx-nvme/mlnx-nvme-25.01.OFED.25.01.0.6.0.1/lpfc/lpfc.ko due to unavailability of vmlinux
+  CC [M]  /var/tmp/mlnx-nvme/mlnx-nvme-25.01.OFED.25.01.0.6.0.1/target/nvme-fcloop.mod.o
+  LD [M]  /var/tmp/mlnx-nvme/mlnx-nvme-25.01.OFED.25.01.0.6.0.1/target/nvme-fcloop.ko
+  BTF [M] /var/tmp/mlnx-nvme/mlnx-nvme-25.01.OFED.25.01.0.6.0.1/target/nvme-fcloop.ko
+Skipping BTF generation for /var/tmp/mlnx-nvme/mlnx-nvme-25.01.OFED.25.01.0.6.0.1/target/nvme-fcloop.ko due to unavailability of vmlinux
+  CC [M]  /var/tmp/mlnx-nvme/mlnx-nvme-25.01.OFED.25.01.0.6.0.1/target/nvme-loop.mod.o
+  LD [M]  /var/tmp/mlnx-nvme/mlnx-nvme-25.01.OFED.25.01.0.6.0.1/target/nvme-loop.ko
+  BTF [M] /var/tmp/mlnx-nvme/mlnx-nvme-25.01.OFED.25.01.0.6.0.1/target/nvme-loop.ko
+Skipping BTF generation for /var/tmp/mlnx-nvme/mlnx-nvme-25.01.OFED.25.01.0.6.0.1/target/nvme-loop.ko due to unavailability of vmlinux
+  CC [M]  /var/tmp/mlnx-nvme/mlnx-nvme-25.01.OFED.25.01.0.6.0.1/target/nvmet-fc.mod.o
+  LD [M]  /var/tmp/mlnx-nvme/mlnx-nvme-25.01.OFED.25.01.0.6.0.1/target/nvmet-fc.ko
+  BTF [M] /var/tmp/mlnx-nvme/mlnx-nvme-25.01.OFED.25.01.0.6.0.1/target/nvmet-fc.ko
+Skipping BTF generation for /var/tmp/mlnx-nvme/mlnx-nvme-25.01.OFED.25.01.0.6.0.1/target/nvmet-fc.ko due to unavailability of vmlinux
+  CC [M]  /var/tmp/mlnx-nvme/mlnx-nvme-25.01.OFED.25.01.0.6.0.1/target/nvmet-rdma.mod.o
+  LD [M]  /var/tmp/mlnx-nvme/mlnx-nvme-25.01.OFED.25.01.0.6.0.1/target/nvmet-rdma.ko
+  BTF [M] /var/tmp/mlnx-nvme/mlnx-nvme-25.01.OFED.25.01.0.6.0.1/target/nvmet-rdma.ko
+Skipping BTF generation for /var/tmp/mlnx-nvme/mlnx-nvme-25.01.OFED.25.01.0.6.0.1/target/nvmet-rdma.ko due to unavailability of vmlinux
+  CC [M]  /var/tmp/mlnx-nvme/mlnx-nvme-25.01.OFED.25.01.0.6.0.1/target/nvmet-tcp.mod.o
+  LD [M]  /var/tmp/mlnx-nvme/mlnx-nvme-25.01.OFED.25.01.0.6.0.1/target/nvmet-tcp.ko
+  BTF [M] /var/tmp/mlnx-nvme/mlnx-nvme-25.01.OFED.25.01.0.6.0.1/target/nvmet-tcp.ko
+Skipping BTF generation for /var/tmp/mlnx-nvme/mlnx-nvme-25.01.OFED.25.01.0.6.0.1/target/nvmet-tcp.ko due to unavailability of vmlinux
+  CC [M]  /var/tmp/mlnx-nvme/mlnx-nvme-25.01.OFED.25.01.0.6.0.1/target/nvmet.mod.o
+  LD [M]  /var/tmp/mlnx-nvme/mlnx-nvme-25.01.OFED.25.01.0.6.0.1/target/nvmet.ko
+  BTF [M] /var/tmp/mlnx-nvme/mlnx-nvme-25.01.OFED.25.01.0.6.0.1/target/nvmet.ko
+Skipping BTF generation for /var/tmp/mlnx-nvme/mlnx-nvme-25.01.OFED.25.01.0.6.0.1/target/nvmet.ko due to unavailability of vmlinux
+make[3]: Leaving directory '/usr/src/linux-headers-5.15.0-1087-azure'
+make[2]: Leaving directory '/var/tmp/mlnx-nvme/mlnx-nvme-25.01.OFED.25.01.0.6.0.1'
+make[1]: Leaving directory '/var/tmp/mlnx-nvme/mlnx-nvme-25.01.OFED.25.01.0.6.0.1'
+ debian/rules binary
+dh binary
+dh: warning: Compatibility levels before 10 are deprecated (level 8 in use)
+   dh_testroot
+   dh_prep
+   debian/rules override_dh_auto_install
+make[1]: Entering directory '/var/tmp/mlnx-nvme/mlnx-nvme-25.01.OFED.25.01.0.6.0.1'
+make install INSTALL_MOD_DIR=updates INSTALL_MOD_PATH=/var/tmp/mlnx-nvme/mlnx-nvme-25.01.OFED.25.01.0.6.0.1/debian/mlnx-nvme-modules KERNELRELEASE=5.15.0-1087-azure KVER=5.15.0-1087-azure K_BUILD=/lib/modules/5.15.0-1087-azure/build CONFIG_NVME_HOST_WITHOUT_FC=
+make[2]: Entering directory '/var/tmp/mlnx-nvme/mlnx-nvme-25.01.OFED.25.01.0.6.0.1'
+/bin/sh: 1: Syntax error: Unterminated quoted string
+/bin/sh: 1: [: -lt: unexpected operator
+make -C /lib/modules/5.15.0-1087-azure/build O=/lib/modules/5.15.0-1087-azure/build M=/var/tmp/mlnx-nvme/mlnx-nvme-25.01.OFED.25.01.0.6.0.1 INSTALL_MOD_PATH=/var/tmp/mlnx-nvme/mlnx-nvme-25.01.OFED.25.01.0.6.0.1/debian/mlnx-nvme-modules INSTALL_MOD_DIR=updates CONFIG_GPU_DIRECT_STORAGE=y KBUILD_EXTRA_SYMBOLS=/var/tmp/ofed_src/usr/src/ofa_kernel/x86_64/5.15.0-1087-azure/Module.symvers modules_install
+make[3]: Entering directory '/usr/src/linux-headers-5.15.0-1087-azure'
+arch/x86/Makefile:142: CONFIG_X86_X32 enabled but no binutils support
+  INSTALL /var/tmp/mlnx-nvme/mlnx-nvme-25.01.OFED.25.01.0.6.0.1/debian/mlnx-nvme-modules/lib/modules/5.15.0-1087-azure/updates/host/nvme-core.ko
+  SIGN    /var/tmp/mlnx-nvme/mlnx-nvme-25.01.OFED.25.01.0.6.0.1/debian/mlnx-nvme-modules/lib/modules/5.15.0-1087-azure/updates/host/nvme-core.ko
+  INSTALL /var/tmp/mlnx-nvme/mlnx-nvme-25.01.OFED.25.01.0.6.0.1/debian/mlnx-nvme-modules/lib/modules/5.15.0-1087-azure/updates/host/nvme-fabrics.ko
+  SIGN    /var/tmp/mlnx-nvme/mlnx-nvme-25.01.OFED.25.01.0.6.0.1/debian/mlnx-nvme-modules/lib/modules/5.15.0-1087-azure/updates/host/nvme-fabrics.ko
+  INSTALL /var/tmp/mlnx-nvme/mlnx-nvme-25.01.OFED.25.01.0.6.0.1/debian/mlnx-nvme-modules/lib/modules/5.15.0-1087-azure/updates/host/nvme-fc.ko
+  SIGN    /var/tmp/mlnx-nvme/mlnx-nvme-25.01.OFED.25.01.0.6.0.1/debian/mlnx-nvme-modules/lib/modules/5.15.0-1087-azure/updates/host/nvme-fc.ko
+  INSTALL /var/tmp/mlnx-nvme/mlnx-nvme-25.01.OFED.25.01.0.6.0.1/debian/mlnx-nvme-modules/lib/modules/5.15.0-1087-azure/updates/host/nvme-rdma.ko
+  SIGN    /var/tmp/mlnx-nvme/mlnx-nvme-25.01.OFED.25.01.0.6.0.1/debian/mlnx-nvme-modules/lib/modules/5.15.0-1087-azure/updates/host/nvme-rdma.ko
+  INSTALL /var/tmp/mlnx-nvme/mlnx-nvme-25.01.OFED.25.01.0.6.0.1/debian/mlnx-nvme-modules/lib/modules/5.15.0-1087-azure/updates/host/nvme-tcp.ko
+  SIGN    /var/tmp/mlnx-nvme/mlnx-nvme-25.01.OFED.25.01.0.6.0.1/debian/mlnx-nvme-modules/lib/modules/5.15.0-1087-azure/updates/host/nvme-tcp.ko
+  INSTALL /var/tmp/mlnx-nvme/mlnx-nvme-25.01.OFED.25.01.0.6.0.1/debian/mlnx-nvme-modules/lib/modules/5.15.0-1087-azure/updates/host/nvme.ko
+  SIGN    /var/tmp/mlnx-nvme/mlnx-nvme-25.01.OFED.25.01.0.6.0.1/debian/mlnx-nvme-modules/lib/modules/5.15.0-1087-azure/updates/host/nvme.ko
+  INSTALL /var/tmp/mlnx-nvme/mlnx-nvme-25.01.OFED.25.01.0.6.0.1/debian/mlnx-nvme-modules/lib/modules/5.15.0-1087-azure/updates/host/qla2xxx.ko
+  SIGN    /var/tmp/mlnx-nvme/mlnx-nvme-25.01.OFED.25.01.0.6.0.1/debian/mlnx-nvme-modules/lib/modules/5.15.0-1087-azure/updates/host/qla2xxx.ko
+  INSTALL /var/tmp/mlnx-nvme/mlnx-nvme-25.01.OFED.25.01.0.6.0.1/debian/mlnx-nvme-modules/lib/modules/5.15.0-1087-azure/updates/lpfc/lpfc.ko
+  SIGN    /var/tmp/mlnx-nvme/mlnx-nvme-25.01.OFED.25.01.0.6.0.1/debian/mlnx-nvme-modules/lib/modules/5.15.0-1087-azure/updates/lpfc/lpfc.ko
+  INSTALL /var/tmp/mlnx-nvme/mlnx-nvme-25.01.OFED.25.01.0.6.0.1/debian/mlnx-nvme-modules/lib/modules/5.15.0-1087-azure/updates/target/nvme-fcloop.ko
+  SIGN    /var/tmp/mlnx-nvme/mlnx-nvme-25.01.OFED.25.01.0.6.0.1/debian/mlnx-nvme-modules/lib/modules/5.15.0-1087-azure/updates/target/nvme-fcloop.ko
+  INSTALL /var/tmp/mlnx-nvme/mlnx-nvme-25.01.OFED.25.01.0.6.0.1/debian/mlnx-nvme-modules/lib/modules/5.15.0-1087-azure/updates/target/nvme-loop.ko
+  SIGN    /var/tmp/mlnx-nvme/mlnx-nvme-25.01.OFED.25.01.0.6.0.1/debian/mlnx-nvme-modules/lib/modules/5.15.0-1087-azure/updates/target/nvme-loop.ko
+  INSTALL /var/tmp/mlnx-nvme/mlnx-nvme-25.01.OFED.25.01.0.6.0.1/debian/mlnx-nvme-modules/lib/modules/5.15.0-1087-azure/updates/target/nvmet-fc.ko
+  SIGN    /var/tmp/mlnx-nvme/mlnx-nvme-25.01.OFED.25.01.0.6.0.1/debian/mlnx-nvme-modules/lib/modules/5.15.0-1087-azure/updates/target/nvmet-fc.ko
+  INSTALL /var/tmp/mlnx-nvme/mlnx-nvme-25.01.OFED.25.01.0.6.0.1/debian/mlnx-nvme-modules/lib/modules/5.15.0-1087-azure/updates/target/nvmet-rdma.ko
+  SIGN    /var/tmp/mlnx-nvme/mlnx-nvme-25.01.OFED.25.01.0.6.0.1/debian/mlnx-nvme-modules/lib/modules/5.15.0-1087-azure/updates/target/nvmet-rdma.ko
+  INSTALL /var/tmp/mlnx-nvme/mlnx-nvme-25.01.OFED.25.01.0.6.0.1/debian/mlnx-nvme-modules/lib/modules/5.15.0-1087-azure/updates/target/nvmet-tcp.ko
+  SIGN    /var/tmp/mlnx-nvme/mlnx-nvme-25.01.OFED.25.01.0.6.0.1/debian/mlnx-nvme-modules/lib/modules/5.15.0-1087-azure/updates/target/nvmet-tcp.ko
+  INSTALL /var/tmp/mlnx-nvme/mlnx-nvme-25.01.OFED.25.01.0.6.0.1/debian/mlnx-nvme-modules/lib/modules/5.15.0-1087-azure/updates/target/nvmet.ko
+  SIGN    /var/tmp/mlnx-nvme/mlnx-nvme-25.01.OFED.25.01.0.6.0.1/debian/mlnx-nvme-modules/lib/modules/5.15.0-1087-azure/updates/target/nvmet.ko
+  DEPMOD  /var/tmp/mlnx-nvme/mlnx-nvme-25.01.OFED.25.01.0.6.0.1/debian/mlnx-nvme-modules/lib/modules/5.15.0-1087-azure
+Warning: modules_install: missing 'System.map' file. Skipping depmod.
+make[3]: Leaving directory '/usr/src/linux-headers-5.15.0-1087-azure'
+if [ ! -n "/var/tmp/mlnx-nvme/mlnx-nvme-25.01.OFED.25.01.0.6.0.1/debian/mlnx-nvme-modules" ]; then /sbin/depmod 5.15.0-1087-azure;fi;
+make[2]: Leaving directory '/var/tmp/mlnx-nvme/mlnx-nvme-25.01.OFED.25.01.0.6.0.1'
+find /var/tmp/mlnx-nvme/mlnx-nvme-25.01.OFED.25.01.0.6.0.1/debian/mlnx-nvme-modules \( -type f -a -name "modules.*" \) -delete
+# For dkms
+make[1]: Leaving directory '/var/tmp/mlnx-nvme/mlnx-nvme-25.01.OFED.25.01.0.6.0.1'
+   dh_installdocs
+dh_installdocs: warning: Compatibility levels before 10 are deprecated (level 8 in use)
+   dh_installchangelogs
+   dh_installmodules
+   dh_perl
+   dh_link
+   dh_strip_nondeterminism
+   dh_compress
+dh_compress: warning: Compatibility levels before 10 are deprecated (level 8 in use)
+   dh_fixperms
+   dh_missing
+dh_missing: warning: Compatibility levels before 10 are deprecated (level 8 in use)
+   debian/rules override_dh_strip
+make[1]: Entering directory '/var/tmp/mlnx-nvme/mlnx-nvme-25.01.OFED.25.01.0.6.0.1'
+dh_strip
+dh_strip: warning: Compatibility levels before 10 are deprecated (level 8 in use)
+find debian -name '*.ko' | xargs strip -g
+make[1]: Leaving directory '/var/tmp/mlnx-nvme/mlnx-nvme-25.01.OFED.25.01.0.6.0.1'
+   dh_makeshlibs
+   dh_shlibdeps
+dh_shlibdeps: warning: Compatibility levels before 10 are deprecated (level 8 in use)
+   dh_installdeb
+dh_installdeb: warning: Compatibility levels before 10 are deprecated (level 8 in use)
+   debian/rules override_dh_gencontrol
+make[1]: Entering directory '/var/tmp/mlnx-nvme/mlnx-nvme-25.01.OFED.25.01.0.6.0.1'
+dh_gencontrol -- -v25.01.OFED.25.01.0.6.0.1-1.kver.5.15.0-1087-azure
+make[1]: Leaving directory '/var/tmp/mlnx-nvme/mlnx-nvme-25.01.OFED.25.01.0.6.0.1'
+   dh_md5sums
+   dh_builddeb
+dpkg-deb: building package 'mlnx-nvme-modules' in '../mlnx-nvme-modules_25.01.OFED.25.01.0.6.0.1-1.kver.5.15.0-1087-azure_amd64.deb'.
+ dpkg-genbuildinfo -O../mlnx-nvme_25.01.OFED.25.01.0.6.0.1-1_amd64.buildinfo
+ dpkg-genchanges -O../mlnx-nvme_25.01.OFED.25.01.0.6.0.1-1_amd64.changes
+dpkg-genchanges: info: including full source code in upload
+ dpkg-source --after-build .
+dpkg-buildpackage: info: full upload (original source is included)

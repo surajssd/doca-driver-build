@@ -1,0 +1,162 @@
+# cat /tmp/OFED.465.logs/general.log
+Install command: /run/mellanox/src/MLNX_OFED_SRC-25.01-0.6.0.0/install.pl --without-depcheck --kernel 5.15.0-1087-azure --kernel-only --build-only --with-mlnx-tools --without-knem-dkms --without-iser-dkms --without-isert-dkms --without-srp-dkms --without-kernel-mft-dkms --without-mlnx-rdma-rxe-dkms --without-mlnx-nfsrdma-dkms --without-mlnx-nvme-dkms --disable-kmp --without-dkms
+Distro was not provided, trying to auto-detect the current distro...
+Auto-detected ubuntu22.04 distro.
+Unsupported package: kmp
+set_cfg: name: fwctl, version: 25.01.OFED.25.01.0.6.0.1, tarballpath: /run/mellanox/src/MLNX_OFED_SRC-25.01-0.6.0.0/SOURCES/fwctl_25.01.OFED.25.01.0.6.0.1.orig.tar.gz
+set_cfg: name: ibarr, version: 0.1.3, tarballpath: /run/mellanox/src/MLNX_OFED_SRC-25.01-0.6.0.0/SOURCES/ibarr_0.1.3.orig.tar.gz
+set_cfg: name: ibdump, version: 6.0.0, tarballpath: /run/mellanox/src/MLNX_OFED_SRC-25.01-0.6.0.0/SOURCES/ibdump_6.0.0.orig.tar.gz
+set_cfg: name: ibsim, version: 0.12, tarballpath: /run/mellanox/src/MLNX_OFED_SRC-25.01-0.6.0.0/SOURCES/ibsim_0.12.orig.tar.gz
+set_cfg: name: iser, version: 25.01.OFED.25.01.0.6.0.1, tarballpath: /run/mellanox/src/MLNX_OFED_SRC-25.01-0.6.0.0/SOURCES/iser_25.01.OFED.25.01.0.6.0.1.orig.tar.gz
+set_cfg: name: isert, version: 25.01.OFED.25.01.0.6.0.1, tarballpath: /run/mellanox/src/MLNX_OFED_SRC-25.01-0.6.0.0/SOURCES/isert_25.01.OFED.25.01.0.6.0.1.orig.tar.gz
+set_cfg: name: kernel-mft, version: 4.31.0.149, tarballpath: /run/mellanox/src/MLNX_OFED_SRC-25.01-0.6.0.0/SOURCES/kernel-mft_4.31.0.149.orig.tar.gz
+set_cfg: name: knem, version: 1.1.4.90mlnx3, tarballpath: /run/mellanox/src/MLNX_OFED_SRC-25.01-0.6.0.0/SOURCES/knem_1.1.4.90mlnx3.orig.tar.gz
+set_cfg: name: libvma, version: 9.8.60, tarballpath: /run/mellanox/src/MLNX_OFED_SRC-25.01-0.6.0.0/SOURCES/libvma_9.8.60.orig.tar.gz
+set_cfg: name: libxlio, version: 3.40.2, tarballpath: /run/mellanox/src/MLNX_OFED_SRC-25.01-0.6.0.0/SOURCES/libxlio_3.40.2.orig.tar.gz
+set_cfg: name: mlnx-ethtool, version: 6.11, tarballpath: /run/mellanox/src/MLNX_OFED_SRC-25.01-0.6.0.0/SOURCES/mlnx-ethtool_6.11.orig.tar.gz
+set_cfg: name: mlnx-iproute2, version: 6.12.0, tarballpath: /run/mellanox/src/MLNX_OFED_SRC-25.01-0.6.0.0/SOURCES/mlnx-iproute2_6.12.0.orig.tar.gz
+set_cfg: name: mlnx-nfsrdma, version: 25.01.OFED.25.01.0.6.0.1, tarballpath: /run/mellanox/src/MLNX_OFED_SRC-25.01-0.6.0.0/SOURCES/mlnx-nfsrdma_25.01.OFED.25.01.0.6.0.1.orig.tar.gz
+set_cfg: name: mlnx-nvme, version: 25.01.OFED.25.01.0.6.0.1, tarballpath: /run/mellanox/src/MLNX_OFED_SRC-25.01-0.6.0.0/SOURCES/mlnx-nvme_25.01.OFED.25.01.0.6.0.1.orig.tar.gz
+set_cfg: name: mlnx-ofed-kernel, version: 25.01.OFED.25.01.0.6.0.1, tarballpath: /run/mellanox/src/MLNX_OFED_SRC-25.01-0.6.0.0/SOURCES/mlnx-ofed-kernel_25.01.OFED.25.01.0.6.0.1.orig.tar.gz
+set_cfg: name: mlnx-tools, version: 25.01, tarballpath: /run/mellanox/src/MLNX_OFED_SRC-25.01-0.6.0.0/SOURCES/mlnx-tools_25.01.orig.tar.gz
+set_cfg: name: mlx-steering-dump, version: 1.0.0, tarballpath: /run/mellanox/src/MLNX_OFED_SRC-25.01-0.6.0.0/SOURCES/mlx-steering-dump_1.0.0.orig.tar.gz
+set_cfg: name: mpitests, version: 3.2.24, tarballpath: /run/mellanox/src/MLNX_OFED_SRC-25.01-0.6.0.0/SOURCES/mpitests_3.2.24.orig.tar.gz
+set_cfg: name: ofed-scripts, version: 25.01.OFED.25.01.0.6.0, tarballpath: /run/mellanox/src/MLNX_OFED_SRC-25.01-0.6.0.0/SOURCES/ofed-scripts_25.01.OFED.25.01.0.6.0.orig.tar.gz
+set_cfg: name: openmpi, version: 4.1.7rc1, tarballpath: /run/mellanox/src/MLNX_OFED_SRC-25.01-0.6.0.0/SOURCES/openmpi_4.1.7rc1.orig.tar.gz
+set_cfg: name: openvswitch, version: 2.17.8, tarballpath: /run/mellanox/src/MLNX_OFED_SRC-25.01-0.6.0.0/SOURCES/openvswitch_2.17.8.orig.tar.gz
+set_cfg: name: perftest, version: 25.01.0, tarballpath: /run/mellanox/src/MLNX_OFED_SRC-25.01-0.6.0.0/SOURCES/perftest_25.01.0.orig.tar.gz
+set_cfg: name: rdma-core, version: 2501mlnx56, tarballpath: /run/mellanox/src/MLNX_OFED_SRC-25.01-0.6.0.0/SOURCES/rdma-core_2501mlnx56.orig.tar.gz
+set_cfg: name: rshim, version: 2.2.4, tarballpath: /run/mellanox/src/MLNX_OFED_SRC-25.01-0.6.0.0/SOURCES/rshim_2.2.4.orig.tar.gz
+set_cfg: name: sockperf, version: 3.10, tarballpath: /run/mellanox/src/MLNX_OFED_SRC-25.01-0.6.0.0/SOURCES/sockperf_3.10.orig.tar.gz
+set_cfg: name: srp, version: 25.01.OFED.25.01.0.6.0.1, tarballpath: /run/mellanox/src/MLNX_OFED_SRC-25.01-0.6.0.0/SOURCES/srp_25.01.OFED.25.01.0.6.0.1.orig.tar.gz
+set_cfg: name: ucx, version: 1.18.0, tarballpath: /run/mellanox/src/MLNX_OFED_SRC-25.01-0.6.0.0/SOURCES/ucx_1.18.0.orig.tar.gz
+set_cfg: name: xpmem-lib, version: 2.7, tarballpath: /run/mellanox/src/MLNX_OFED_SRC-25.01-0.6.0.0/SOURCES/xpmem-lib_2.7.orig.tar.gz
+set_cfg: name: xpmem, version: 2.7.4, tarballpath: /run/mellanox/src/MLNX_OFED_SRC-25.01-0.6.0.0/SOURCES/xpmem_2.7.4.orig.tar.gz
+select_dependent: Selected package mlnx-tools
+select_dependent: Selected package mlnx-ofed-kernel-utils
+select_dependent: Selected package mlnx-ofed-kernel-modules
+resolve_dependencies: iser-modules requires mlnx-ofed-kernel-modules for deb build
+select_dependent: Selected package iser-modules
+resolve_dependencies: isert-modules requires mlnx-ofed-kernel-modules for deb build
+select_dependent: Selected package isert-modules
+resolve_dependencies: srp-modules requires mlnx-ofed-kernel-modules for deb build
+select_dependent: Selected package srp-modules
+resolve_dependencies: mlnx-nfsrdma-modules requires mlnx-ofed-kernel-modules for deb build
+select_dependent: Selected package mlnx-nfsrdma-modules
+resolve_dependencies: mlnx-nvme-modules requires mlnx-ofed-kernel-modules for deb build
+select_dependent: Selected package mlnx-nvme-modules
+select_dependent: Selected package kernel-mft-modules
+select_dependent: Selected package knem-modules
+select_dependent: Selected package xpmem
+select_dependent: Selected package xpmem-modules
+select_dependent_module: Selected module core
+select_dependent_module: Selected module mlxfw
+select_dependent_module: mlx5 requires core for deb build
+select_dependent_module: Selected module mlx5
+select_dependent_module: ipoib requires core for deb build
+select_dependent_module: Selected module ipoib
+select_dependent_module: mlxdevm requires mlx5 for deb build
+select_dependent_module: Selected module mlxdevm
+select_dependent_module: srp requires core for deb build
+select_dependent_module: srp requires ipoib for deb build
+select_dependent_module: Selected module srp
+select_dependent_module: iser requires core for deb build
+select_dependent_module: iser requires ipoib for deb build
+select_dependent_module: Selected module iser
+select_dependent_module: nfsrdma requires core for deb build
+select_dependent_module: nfsrdma requires ipoib for deb build
+select_dependent_module: Selected module nfsrdma
+select_dependent_module: isert requires core for deb build
+select_dependent_module: isert requires ipoib for deb build
+select_dependent_module: Selected module isert
+
+Below is the list of OFED packages that you have chosen
+(some may have been added by the installer due to package dependencies):
+
+mlnx-tools
+mlnx-ofed-kernel-utils
+mlnx-ofed-kernel-modules
+iser-modules
+isert-modules
+srp-modules
+mlnx-nfsrdma-modules
+mlnx-nvme-modules
+kernel-mft-modules
+knem-modules
+xpmem
+xpmem-modules
+
+Installing new packages
+Building DEB for mlnx-tools-25.01 (mlnx-tools)...
+Running: cp '/run/mellanox/src/MLNX_OFED_SRC-25.01-0.6.0.0/SOURCES/mlnx-tools_25.01.orig.tar.gz' .
+Running: tar xzf '/run/mellanox/src/MLNX_OFED_SRC-25.01-0.6.0.0/SOURCES/mlnx-tools_25.01.orig.tar.gz'
+Running  /usr/bin/dpkg-buildpackage -us -uc
+Running: cp ../*.deb '/run/mellanox/src/MLNX_OFED_SRC-25.01-0.6.0.0/DEBS/ubuntu22.04/x86_64/'
+Building DEB for mlnx-ofed-kernel-utils-25.01.OFED.25.01.0.6.0.1 (mlnx-ofed-kernel)...
+
+-W- --with-mlx5-ipsec is enabled
+Running: cp '/run/mellanox/src/MLNX_OFED_SRC-25.01-0.6.0.0/SOURCES/mlnx-ofed-kernel_25.01.OFED.25.01.0.6.0.1.orig.tar.gz' .
+Running: tar xzf '/run/mellanox/src/MLNX_OFED_SRC-25.01-0.6.0.0/SOURCES/mlnx-ofed-kernel_25.01.OFED.25.01.0.6.0.1.orig.tar.gz'
+Running: /bin/mv -f debian/control.no_dkms debian/control
+Running  /usr/bin/dpkg-buildpackage -us -uc  -Pmodules
+Running: cp ../*.deb '/run/mellanox/src/MLNX_OFED_SRC-25.01-0.6.0.0/DEBS/ubuntu22.04/x86_64/'
+Running: /usr/bin/dpkg-deb -x '/run/mellanox/src/MLNX_OFED_SRC-25.01-0.6.0.0/DEBS/ubuntu22.04/x86_64/mlnx-ofed-kernel-modules_25.01.OFED.25.01.0.6.0.1-1.kver.5.15.0-1087-azure_amd64.deb' /var/tmp/mlnx-ofed-kernel-modules_module-check 2>/dev/null
+is_module_in_deb: core is in /run/mellanox/src/MLNX_OFED_SRC-25.01-0.6.0.0/DEBS/ubuntu22.04/x86_64/mlnx-ofed-kernel-modules_25.01.OFED.25.01.0.6.0.1-1.kver.5.15.0-1087-azure_amd64.deb
+Running: /usr/bin/dpkg-deb -x '/run/mellanox/src/MLNX_OFED_SRC-25.01-0.6.0.0/DEBS/ubuntu22.04/x86_64/mlnx-ofed-kernel-modules_25.01.OFED.25.01.0.6.0.1-1.kver.5.15.0-1087-azure_amd64.deb' /var/tmp/mlnx-ofed-kernel-modules_module-check 2>/dev/null
+is_module_in_deb: mlxfw is in /run/mellanox/src/MLNX_OFED_SRC-25.01-0.6.0.0/DEBS/ubuntu22.04/x86_64/mlnx-ofed-kernel-modules_25.01.OFED.25.01.0.6.0.1-1.kver.5.15.0-1087-azure_amd64.deb
+Running: /usr/bin/dpkg-deb -x '/run/mellanox/src/MLNX_OFED_SRC-25.01-0.6.0.0/DEBS/ubuntu22.04/x86_64/mlnx-ofed-kernel-modules_25.01.OFED.25.01.0.6.0.1-1.kver.5.15.0-1087-azure_amd64.deb' /var/tmp/mlnx-ofed-kernel-modules_module-check 2>/dev/null
+is_module_in_deb: mlx5 is in /run/mellanox/src/MLNX_OFED_SRC-25.01-0.6.0.0/DEBS/ubuntu22.04/x86_64/mlnx-ofed-kernel-modules_25.01.OFED.25.01.0.6.0.1-1.kver.5.15.0-1087-azure_amd64.deb
+Running: /usr/bin/dpkg-deb -x '/run/mellanox/src/MLNX_OFED_SRC-25.01-0.6.0.0/DEBS/ubuntu22.04/x86_64/mlnx-ofed-kernel-modules_25.01.OFED.25.01.0.6.0.1-1.kver.5.15.0-1087-azure_amd64.deb' /var/tmp/mlnx-ofed-kernel-modules_module-check 2>/dev/null
+is_module_in_deb: ipoib is in /run/mellanox/src/MLNX_OFED_SRC-25.01-0.6.0.0/DEBS/ubuntu22.04/x86_64/mlnx-ofed-kernel-modules_25.01.OFED.25.01.0.6.0.1-1.kver.5.15.0-1087-azure_amd64.deb
+Running: /usr/bin/dpkg-deb -x '/run/mellanox/src/MLNX_OFED_SRC-25.01-0.6.0.0/DEBS/ubuntu22.04/x86_64/mlnx-ofed-kernel-modules_25.01.OFED.25.01.0.6.0.1-1.kver.5.15.0-1087-azure_amd64.deb' /var/tmp/mlnx-ofed-kernel-modules_module-check 2>/dev/null
+is_module_in_deb: mlxdevm is in /run/mellanox/src/MLNX_OFED_SRC-25.01-0.6.0.0/DEBS/ubuntu22.04/x86_64/mlnx-ofed-kernel-modules_25.01.OFED.25.01.0.6.0.1-1.kver.5.15.0-1087-azure_amd64.deb
+Extracting mlnx-ofed-kernel sources to /var/tmp/ofed_src ...
+dpkg -x '/run/mellanox/src/MLNX_OFED_SRC-25.01-0.6.0.0/DEBS/ubuntu22.04/x86_64/mlnx-ofed-kernel-modules_25.01.OFED.25.01.0.6.0.1-1.kver.5.15.0-1087-azure_amd64.deb' /var/tmp/ofed_src >/dev/null
+Building DEB for iser-modules-25.01.OFED.25.01.0.6.0.1 (iser)...
+Running: cp '/run/mellanox/src/MLNX_OFED_SRC-25.01-0.6.0.0/SOURCES/iser_25.01.OFED.25.01.0.6.0.1.orig.tar.gz' .
+Running: tar xzf '/run/mellanox/src/MLNX_OFED_SRC-25.01-0.6.0.0/SOURCES/iser_25.01.OFED.25.01.0.6.0.1.orig.tar.gz'
+Running: /bin/mv -f debian/control.no_dkms debian/control
+Running  /usr/bin/dpkg-buildpackage -us -uc  -Pmodules
+Running: cp ../*.deb '/run/mellanox/src/MLNX_OFED_SRC-25.01-0.6.0.0/DEBS/ubuntu22.04/x86_64/'
+Building DEB for isert-modules-25.01.OFED.25.01.0.6.0.1 (isert)...
+Running: cp '/run/mellanox/src/MLNX_OFED_SRC-25.01-0.6.0.0/SOURCES/isert_25.01.OFED.25.01.0.6.0.1.orig.tar.gz' .
+Running: tar xzf '/run/mellanox/src/MLNX_OFED_SRC-25.01-0.6.0.0/SOURCES/isert_25.01.OFED.25.01.0.6.0.1.orig.tar.gz'
+Running: /bin/mv -f debian/control.no_dkms debian/control
+Running  /usr/bin/dpkg-buildpackage -us -uc  -Pmodules
+Running: cp ../*.deb '/run/mellanox/src/MLNX_OFED_SRC-25.01-0.6.0.0/DEBS/ubuntu22.04/x86_64/'
+Building DEB for srp-modules-25.01.OFED.25.01.0.6.0.1 (srp)...
+Running: cp '/run/mellanox/src/MLNX_OFED_SRC-25.01-0.6.0.0/SOURCES/srp_25.01.OFED.25.01.0.6.0.1.orig.tar.gz' .
+Running: tar xzf '/run/mellanox/src/MLNX_OFED_SRC-25.01-0.6.0.0/SOURCES/srp_25.01.OFED.25.01.0.6.0.1.orig.tar.gz'
+Running: /bin/mv -f debian/control.no_dkms debian/control
+Running  /usr/bin/dpkg-buildpackage -us -uc  -Pmodules
+Running: cp ../*.deb '/run/mellanox/src/MLNX_OFED_SRC-25.01-0.6.0.0/DEBS/ubuntu22.04/x86_64/'
+Building DEB for mlnx-nfsrdma-modules-25.01.OFED.25.01.0.6.0.1 (mlnx-nfsrdma)...
+Running: cp '/run/mellanox/src/MLNX_OFED_SRC-25.01-0.6.0.0/SOURCES/mlnx-nfsrdma_25.01.OFED.25.01.0.6.0.1.orig.tar.gz' .
+Running: tar xzf '/run/mellanox/src/MLNX_OFED_SRC-25.01-0.6.0.0/SOURCES/mlnx-nfsrdma_25.01.OFED.25.01.0.6.0.1.orig.tar.gz'
+Running: /bin/mv -f debian/control.no_dkms debian/control
+Running  /usr/bin/dpkg-buildpackage -us -uc  -Pmodules
+Running: cp ../*.deb '/run/mellanox/src/MLNX_OFED_SRC-25.01-0.6.0.0/DEBS/ubuntu22.04/x86_64/'
+Building DEB for mlnx-nvme-modules-25.01.OFED.25.01.0.6.0.1 (mlnx-nvme)...
+Running: cp '/run/mellanox/src/MLNX_OFED_SRC-25.01-0.6.0.0/SOURCES/mlnx-nvme_25.01.OFED.25.01.0.6.0.1.orig.tar.gz' .
+Running: tar xzf '/run/mellanox/src/MLNX_OFED_SRC-25.01-0.6.0.0/SOURCES/mlnx-nvme_25.01.OFED.25.01.0.6.0.1.orig.tar.gz'
+Running: /bin/mv -f debian/control.no_dkms debian/control
+Running  /usr/bin/dpkg-buildpackage -us -uc  -Pmodules
+Running: cp ../*.deb '/run/mellanox/src/MLNX_OFED_SRC-25.01-0.6.0.0/DEBS/ubuntu22.04/x86_64/'
+Building DEB for kernel-mft-modules-4.31.0.149 (kernel-mft)...
+Running: cp '/run/mellanox/src/MLNX_OFED_SRC-25.01-0.6.0.0/SOURCES/kernel-mft_4.31.0.149.orig.tar.gz' .
+Running: tar xzf '/run/mellanox/src/MLNX_OFED_SRC-25.01-0.6.0.0/SOURCES/kernel-mft_4.31.0.149.orig.tar.gz'
+Running: /bin/mv -f debian/control.no_dkms debian/control
+Running  /usr/bin/dpkg-buildpackage -us -uc  -Pmodules
+Running: cp ../*.deb '/run/mellanox/src/MLNX_OFED_SRC-25.01-0.6.0.0/DEBS/ubuntu22.04/x86_64/'
+Building DEB for knem-modules-1.1.4.90mlnx3 (knem)...
+Running: cp '/run/mellanox/src/MLNX_OFED_SRC-25.01-0.6.0.0/SOURCES/knem_1.1.4.90mlnx3.orig.tar.gz' .
+Running: tar xzf '/run/mellanox/src/MLNX_OFED_SRC-25.01-0.6.0.0/SOURCES/knem_1.1.4.90mlnx3.orig.tar.gz'
+Running: /bin/mv -f debian/control.no_dkms debian/control
+Running  /usr/bin/dpkg-buildpackage -us -uc  -Pmodules
+Running: cp ../*.deb '/run/mellanox/src/MLNX_OFED_SRC-25.01-0.6.0.0/DEBS/ubuntu22.04/x86_64/'
+Building DEB for xpmem-2.7.4 (xpmem)...
+Running: cp '/run/mellanox/src/MLNX_OFED_SRC-25.01-0.6.0.0/SOURCES/xpmem_2.7.4.orig.tar.gz' .
+Running: tar xzf '/run/mellanox/src/MLNX_OFED_SRC-25.01-0.6.0.0/SOURCES/xpmem_2.7.4.orig.tar.gz'
+Running  /usr/bin/dpkg-buildpackage -us -uc  -Pmodules
+Running: cp ../*.deb '/run/mellanox/src/MLNX_OFED_SRC-25.01-0.6.0.0/DEBS/ubuntu22.04/x86_64/'
+Build passed successfully

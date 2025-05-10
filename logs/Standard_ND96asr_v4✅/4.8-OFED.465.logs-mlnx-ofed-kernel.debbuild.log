@@ -1,0 +1,2242 @@
+/usr/bin/dpkg-buildpackage -us -uc -Pmodules
+dpkg-buildpackage: info: source package mlnx-ofed-kernel
+dpkg-buildpackage: info: source version 25.01.OFED.25.01.0.6.0.1-1
+dpkg-buildpackage: info: source distribution unstable
+dpkg-buildpackage: info: source changed by Vladimir Sokolovsky <vlad@mellanox.com>
+ dpkg-source --before-build .
+dpkg-buildpackage: info: host architecture amd64
+ debian/rules clean
+dh clean
+dh: warning: Compatibility levels before 10 are deprecated (level 8 in use)
+   dh_clean
+dh_clean: warning: Compatibility levels before 10 are deprecated (level 8 in use)
+ dpkg-source -b .
+dpkg-source: info: using source format '3.0 (quilt)'
+dpkg-source: info: building mlnx-ofed-kernel using existing ./mlnx-ofed-kernel_25.01.OFED.25.01.0.6.0.1.orig.tar.gz
+dpkg-source: warning: ignoring deletion of directory compat/autom4te.cache
+dpkg-source: warning: ignoring deletion of file compat/autom4te.cache/traces.0, use --include-removal to override
+dpkg-source: warning: ignoring deletion of file compat/autom4te.cache/output.0, use --include-removal to override
+dpkg-source: warning: ignoring deletion of file compat/autom4te.cache/requests, use --include-removal to override
+dpkg-source: warning: ignoring deletion of file compat/autom4te.cache/output.1, use --include-removal to override
+dpkg-source: warning: ignoring deletion of file compat/autom4te.cache/traces.1, use --include-removal to override
+dpkg-source: info: building mlnx-ofed-kernel in mlnx-ofed-kernel_25.01.OFED.25.01.0.6.0.1-1.debian.tar.xz
+dpkg-source: info: building mlnx-ofed-kernel in mlnx-ofed-kernel_25.01.OFED.25.01.0.6.0.1-1.dsc
+ debian/rules build
+dh build
+dh: warning: Compatibility levels before 10 are deprecated (level 8 in use)
+   dh_update_autotools_config
+   debian/rules override_dh_auto_configure
+make[1]: Entering directory '/var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1'
+# backup clean sources
+/bin/rm -rf source || true
+mkdir -p source
+ls -1 | grep -v source | xargs -iELEM cp ELEM -r source
+Building for 5.15.0-1087-azure
+find compat -type f -exec touch -t 200012201010 '{}' \; || true
+/var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/configure --kernel-version=5.15.0-1087-azure --kernel-sources=/lib/modules/5.15.0-1087-azure/build --with-core-mod --with-user_mad-mod --with-user_access-mod --with-addr_trans-mod --with-mlxfw-mod --with-mlx5-mod --with-mlx5-ipsec --with-ipoib-mod --with-mlxdevm-mod --with-srp-mod --with-iser-mod --with-nfsrdma-mod --with-isert-mod --with-gds --with-njobs=16
+backports_applied does not exist. running ofed_patch.sh
+/var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/ofed_scripts/ofed_patch.sh --kernel-version=5.15.0-1087-azure
+mkdir -p /var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/patches
+touch /var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/patches/quiltrc
+/var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/kernel_patches/fixes directory does not exist
+getting backport dir for kernel version 5.15.0-1087-azure
+found backport dir backports
+
+Applying patches for backports kernel:
+	/var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/backports/0001-BACKPORT-drivers-base-auxiliary_sysfs.c.patch
+patching file drivers/base/auxiliary_sysfs.c
+	/var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/backports/0004-BACKPORT-drivers-infiniband-core-cache.c.patch
+patching file drivers/infiniband/core/cache.c
+	/var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/backports/0006-BACKPORT-drivers-infiniband-core-cm.c.patch
+patching file drivers/infiniband/core/cm.c
+	/var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/backports/0007-BACKPORT-drivers-infiniband-core-cm_trace.c.patch
+patching file drivers/infiniband/core/cm_trace.c
+	/var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/backports/0009-BACKPORT-drivers-infiniband-core-cma.c.patch
+patching file drivers/infiniband/core/cma.c
+	/var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/backports/0010-BACKPORT-drivers-infiniband-core-cma_configfs.c.patch
+patching file drivers/infiniband/core/cma_configfs.c
+	/var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/backports/0011-BACKPORT-drivers-infiniband-core-core_priv.h.patch
+patching file drivers/infiniband/core/core_priv.h
+	/var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/backports/0013-BACKPORT-drivers-infiniband-core-cq.c.patch
+patching file drivers/infiniband/core/cq.c
+	/var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/backports/0014-BACKPORT-drivers-infiniband-core-device.c.patch
+patching file drivers/infiniband/core/device.c
+	/var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/backports/0015-BACKPORT-drivers-infiniband-core-iwcm.c.patch
+patching file drivers/infiniband/core/iwcm.c
+	/var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/backports/0016-BACKPORT-drivers-infiniband-core-iwpm_util.c.patch
+patching file drivers/infiniband/core/iwpm_util.c
+	/var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/backports/0017-BACKPORT-drivers-infiniband-core-mad.c.patch
+patching file drivers/infiniband/core/mad.c
+	/var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/backports/0019-BACKPORT-drivers-infiniband-core-peer_mem.c.patch
+patching file drivers/infiniband/core/peer_mem.c
+	/var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/backports/0020-BACKPORT-drivers-infiniband-core-rdma_core.c.patch
+patching file drivers/infiniband/core/rdma_core.c
+	/var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/backports/0021-BACKPORT-drivers-infiniband-core-roce_gid_mgmt.c.patch
+patching file drivers/infiniband/core/roce_gid_mgmt.c
+	/var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/backports/0022-BACKPORT-drivers-infiniband-core-rw.c.patch
+patching file drivers/infiniband/core/rw.c
+	/var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/backports/0023-BACKPORT-drivers-infiniband-core-sa_query.c.patch
+patching file drivers/infiniband/core/sa_query.c
+	/var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/backports/0024-BACKPORT-drivers-infiniband-core-sysfs.c.patch
+patching file drivers/infiniband/core/sysfs.c
+	/var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/backports/0027-BACKPORT-drivers-infiniband-core-umem.c.patch
+patching file drivers/infiniband/core/umem.c
+	/var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/backports/0028-BACKPORT-drivers-infiniband-core-umem_dmabuf.c.patch
+patching file drivers/infiniband/core/umem_dmabuf.c
+	/var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/backports/0029-BACKPORT-drivers-infiniband-core-umem_odp.c.patch
+patching file drivers/infiniband/core/umem_odp.c
+	/var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/backports/0031-BACKPORT-drivers-infiniband-core-uverbs_ioctl.c.patch
+patching file drivers/infiniband/core/uverbs_ioctl.c
+	/var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/backports/0032-BACKPORT-drivers-infiniband-core-uverbs_uapi.c.patch
+patching file drivers/infiniband/core/uverbs_uapi.c
+	/var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/backports/0033-BACKPORT-drivers-infiniband-core-verbs.c.patch
+patching file drivers/infiniband/core/verbs.c
+	/var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/backports/0034-BACKPORT-drivers-infiniband-debug-memtrack.c.patch
+patching file drivers/infiniband/debug/memtrack.c
+	/var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/backports/0035-BACKPORT-drivers-infiniband-hw-mlx5-Makefile.patch
+patching file drivers/infiniband/hw/mlx5/Makefile
+	/var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/backports/0036-BACKPORT-drivers-infiniband-hw-mlx5-cq.c.patch
+patching file drivers/infiniband/hw/mlx5/cq.c
+	/var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/backports/0037-BACKPORT-drivers-infiniband-hw-mlx5-data_direct.c.patch
+patching file drivers/infiniband/hw/mlx5/data_direct.c
+	/var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/backports/0038-BACKPORT-drivers-infiniband-hw-mlx5-doorbell.c.patch
+patching file drivers/infiniband/hw/mlx5/doorbell.c
+	/var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/backports/0039-BACKPORT-drivers-infiniband-hw-mlx5-fs.c.patch
+patching file drivers/infiniband/hw/mlx5/fs.c
+	/var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/backports/0041-BACKPORT-drivers-infiniband-hw-mlx5-main.c.patch
+patching file drivers/infiniband/hw/mlx5/main.c
+	/var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/backports/0042-BACKPORT-drivers-infiniband-hw-mlx5-main_ext.c.patch
+patching file drivers/infiniband/hw/mlx5/main_ext.c
+	/var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/backports/0043-BACKPORT-drivers-infiniband-hw-mlx5-mr.c.patch
+patching file drivers/infiniband/hw/mlx5/mr.c
+	/var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/backports/0044-BACKPORT-drivers-infiniband-hw-mlx5-odp.c.patch
+patching file drivers/infiniband/hw/mlx5/odp.c
+	/var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/backports/0045-BACKPORT-drivers-infiniband-hw-mlx5-qp.c.patch
+patching file drivers/infiniband/hw/mlx5/qp.c
+	/var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/backports/0046-BACKPORT-drivers-infiniband-hw-mlx5-srq.c.patch
+patching file drivers/infiniband/hw/mlx5/srq.c
+	/var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/backports/0047-BACKPORT-drivers-infiniband-hw-mlx5-srq_cmd.c.patch
+patching file drivers/infiniband/hw/mlx5/srq_cmd.c
+	/var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/backports/0048-BACKPORT-drivers-infiniband-hw-mlx5-umr.c.patch
+patching file drivers/infiniband/hw/mlx5/umr.c
+	/var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/backports/0050-BACKPORT-drivers-infiniband-ulp-ipoib-ipoib.h.patch
+patching file drivers/infiniband/ulp/ipoib/ipoib.h
+	/var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/backports/0051-BACKPORT-drivers-infiniband-ulp-ipoib-ipoib_cm.c.patch
+patching file drivers/infiniband/ulp/ipoib/ipoib_cm.c
+	/var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/backports/0052-BACKPORT-drivers-infiniband-ulp-ipoib-ipoib_ethtool..patch
+patching file drivers/infiniband/ulp/ipoib/ipoib_ethtool.c
+	/var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/backports/0053-BACKPORT-drivers-infiniband-ulp-ipoib-ipoib_fs.c.patch
+patching file drivers/infiniband/ulp/ipoib/ipoib_fs.c
+	/var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/backports/0054-BACKPORT-drivers-infiniband-ulp-ipoib-ipoib_ib.c.patch
+patching file drivers/infiniband/ulp/ipoib/ipoib_ib.c
+	/var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/backports/0055-BACKPORT-drivers-infiniband-ulp-ipoib-ipoib_main.c.patch
+patching file drivers/infiniband/ulp/ipoib/ipoib_main.c
+	/var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/backports/0057-BACKPORT-drivers-infiniband-ulp-ipoib-ipoib_netlink..patch
+patching file drivers/infiniband/ulp/ipoib/ipoib_netlink.c
+	/var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/backports/0058-BACKPORT-drivers-infiniband-ulp-ipoib-ipoib_vlan.c.patch
+patching file drivers/infiniband/ulp/ipoib/ipoib_vlan.c
+	/var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/backports/0059-BACKPORT-drivers-infiniband-ulp-iser-iscsi_iser.c.patch
+patching file drivers/infiniband/ulp/iser/iscsi_iser.c
+	/var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/backports/0060-BACKPORT-drivers-infiniband-ulp-iser-iscsi_iser.h.patch
+patching file drivers/infiniband/ulp/iser/iscsi_iser.h
+	/var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/backports/0061-BACKPORT-drivers-infiniband-ulp-iser-iser_memory.c.patch
+patching file drivers/infiniband/ulp/iser/iser_memory.c
+	/var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/backports/0062-BACKPORT-drivers-infiniband-ulp-iser-iser_verbs.c.patch
+patching file drivers/infiniband/ulp/iser/iser_verbs.c
+	/var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/backports/0063-BACKPORT-drivers-infiniband-ulp-isert-ib_isert.c.patch
+patching file drivers/infiniband/ulp/isert/ib_isert.c
+	/var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/backports/0064-BACKPORT-drivers-infiniband-ulp-isert-ib_isert.h.patch
+patching file drivers/infiniband/ulp/isert/ib_isert.h
+	/var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/backports/0065-BACKPORT-drivers-infiniband-ulp-srp-ib_srp.c.patch
+patching file drivers/infiniband/ulp/srp/ib_srp.c
+	/var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/backports/0066-BACKPORT-drivers-infiniband-ulp-srp-ib_srp.h.patch
+patching file drivers/infiniband/ulp/srp/ib_srp.h
+	/var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/backports/0067-BACKPORT-drivers-net-ethernet-mellanox-mlx5-core-all.patch
+patching file drivers/net/ethernet/mellanox/mlx5/core/alloc.c
+	/var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/backports/0068-BACKPORT-drivers-net-ethernet-mellanox-mlx5-core-cmd.patch
+patching file drivers/net/ethernet/mellanox/mlx5/core/cmd.c
+	/var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/backports/0069-BACKPORT-drivers-net-ethernet-mellanox-mlx5-core-cq..patch
+patching file drivers/net/ethernet/mellanox/mlx5/core/cq.c
+	/var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/backports/0070-BACKPORT-drivers-net-ethernet-mellanox-mlx5-core-crd.patch
+patching file drivers/net/ethernet/mellanox/mlx5/core/crdump.c
+	/var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/backports/0071-BACKPORT-drivers-net-ethernet-mellanox-mlx5-core-dia.patch
+patching file drivers/net/ethernet/mellanox/mlx5/core/diag/en_tc_tracepoint.c
+	/var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/backports/0072-BACKPORT-drivers-net-ethernet-mellanox-mlx5-core-dia.patch
+patching file drivers/net/ethernet/mellanox/mlx5/core/diag/fs_tracepoint.c
+	/var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/backports/0073-BACKPORT-drivers-net-ethernet-mellanox-mlx5-core-dia.patch
+patching file drivers/net/ethernet/mellanox/mlx5/core/diag/fs_tracepoint.h
+	/var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/backports/0074-BACKPORT-drivers-net-ethernet-mellanox-mlx5-core-dia.patch
+patching file drivers/net/ethernet/mellanox/mlx5/core/diag/fw_tracer.c
+	/var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/backports/0075-BACKPORT-drivers-net-ethernet-mellanox-mlx5-core-dia.patch
+patching file drivers/net/ethernet/mellanox/mlx5/core/diag/fw_tracer.h
+	/var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/backports/0076-BACKPORT-drivers-net-ethernet-mellanox-mlx5-core-dia.patch
+patching file drivers/net/ethernet/mellanox/mlx5/core/diag/reporter_vnic.c
+	/var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/backports/0077-BACKPORT-drivers-net-ethernet-mellanox-mlx5-core-dia.patch
+patching file drivers/net/ethernet/mellanox/mlx5/core/diag/reporter_vnic.h
+	/var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/backports/0078-BACKPORT-drivers-net-ethernet-mellanox-mlx5-core-dpl.patch
+patching file drivers/net/ethernet/mellanox/mlx5/core/dpll.c
+	/var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/backports/0079-BACKPORT-drivers-net-ethernet-mellanox-mlx5-core-ecp.patch
+patching file drivers/net/ethernet/mellanox/mlx5/core/ecpf.c
+	/var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/backports/0080-BACKPORT-drivers-net-ethernet-mellanox-mlx5-core-en-.patch
+patching file drivers/net/ethernet/mellanox/mlx5/core/en/channels.c
+	/var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/backports/0081-BACKPORT-drivers-net-ethernet-mellanox-mlx5-core-en-.patch
+patching file drivers/net/ethernet/mellanox/mlx5/core/en/devlink.c
+	/var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/backports/0082-BACKPORT-drivers-net-ethernet-mellanox-mlx5-core-en-.patch
+patching file drivers/net/ethernet/mellanox/mlx5/core/en/devlink.h
+	/var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/backports/0083-BACKPORT-drivers-net-ethernet-mellanox-mlx5-core-en-.patch
+patching file drivers/net/ethernet/mellanox/mlx5/core/en/fs.h
+	/var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/backports/0084-BACKPORT-drivers-net-ethernet-mellanox-mlx5-core-en-.patch
+patching file drivers/net/ethernet/mellanox/mlx5/core/en/health.c
+	/var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/backports/0085-BACKPORT-drivers-net-ethernet-mellanox-mlx5-core-en-.patch
+patching file drivers/net/ethernet/mellanox/mlx5/core/en/health.h
+	/var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/backports/0086-BACKPORT-drivers-net-ethernet-mellanox-mlx5-core-en-.patch
+patching file drivers/net/ethernet/mellanox/mlx5/core/en/htb.c
+	/var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/backports/0087-BACKPORT-drivers-net-ethernet-mellanox-mlx5-core-en-.patch
+patching file drivers/net/ethernet/mellanox/mlx5/core/en/htb.h
+	/var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/backports/0088-BACKPORT-drivers-net-ethernet-mellanox-mlx5-core-en-.patch
+patching file drivers/net/ethernet/mellanox/mlx5/core/en/params.h
+	/var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/backports/0089-BACKPORT-drivers-net-ethernet-mellanox-mlx5-core-en-.patch
+patching file drivers/net/ethernet/mellanox/mlx5/core/en/port_buffer.c
+	/var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/backports/0090-BACKPORT-drivers-net-ethernet-mellanox-mlx5-core-en-.patch
+patching file drivers/net/ethernet/mellanox/mlx5/core/en/port_buffer.h
+	/var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/backports/0091-BACKPORT-drivers-net-ethernet-mellanox-mlx5-core-en-.patch
+patching file drivers/net/ethernet/mellanox/mlx5/core/en/ptp.c
+	/var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/backports/0092-BACKPORT-drivers-net-ethernet-mellanox-mlx5-core-en-.patch
+patching file drivers/net/ethernet/mellanox/mlx5/core/en/ptp.h
+	/var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/backports/0093-BACKPORT-drivers-net-ethernet-mellanox-mlx5-core-en-.patch
+patching file drivers/net/ethernet/mellanox/mlx5/core/en/qos.c
+	/var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/backports/0094-BACKPORT-drivers-net-ethernet-mellanox-mlx5-core-en-.patch
+patching file drivers/net/ethernet/mellanox/mlx5/core/en/rep/bond.c
+	/var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/backports/0095-BACKPORT-drivers-net-ethernet-mellanox-mlx5-core-en-.patch
+patching file drivers/net/ethernet/mellanox/mlx5/core/en/rep/bridge.c
+	/var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/backports/0096-BACKPORT-drivers-net-ethernet-mellanox-mlx5-core-en-.patch
+patching file drivers/net/ethernet/mellanox/mlx5/core/en/rep/meter.c
+	/var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/backports/0097-BACKPORT-drivers-net-ethernet-mellanox-mlx5-core-en-.patch
+patching file drivers/net/ethernet/mellanox/mlx5/core/en/rep/neigh.c
+	/var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/backports/0098-BACKPORT-drivers-net-ethernet-mellanox-mlx5-core-en-.patch
+patching file drivers/net/ethernet/mellanox/mlx5/core/en/rep/sysfs.c
+	/var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/backports/0099-BACKPORT-drivers-net-ethernet-mellanox-mlx5-core-en-.patch
+patching file drivers/net/ethernet/mellanox/mlx5/core/en/rep/tc.c
+	/var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/backports/0100-BACKPORT-drivers-net-ethernet-mellanox-mlx5-core-en-.patch
+patching file drivers/net/ethernet/mellanox/mlx5/core/en/rep/tc.h
+	/var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/backports/0101-BACKPORT-drivers-net-ethernet-mellanox-mlx5-core-en-.patch
+patching file drivers/net/ethernet/mellanox/mlx5/core/en/reporter_rx.c
+	/var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/backports/0102-BACKPORT-drivers-net-ethernet-mellanox-mlx5-core-en-.patch
+patching file drivers/net/ethernet/mellanox/mlx5/core/en/reporter_tx.c
+	/var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/backports/0103-BACKPORT-drivers-net-ethernet-mellanox-mlx5-core-en-.patch
+patching file drivers/net/ethernet/mellanox/mlx5/core/en/rx_res.c
+	/var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/backports/0104-BACKPORT-drivers-net-ethernet-mellanox-mlx5-core-en-.patch
+patching file drivers/net/ethernet/mellanox/mlx5/core/en/selq.c
+	/var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/backports/0105-BACKPORT-drivers-net-ethernet-mellanox-mlx5-core-en-.patch
+patching file drivers/net/ethernet/mellanox/mlx5/core/en/selq.h
+	/var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/backports/0106-BACKPORT-drivers-net-ethernet-mellanox-mlx5-core-en-.patch
+patching file drivers/net/ethernet/mellanox/mlx5/core/en/tc/act/ct.c
+	/var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/backports/0107-BACKPORT-drivers-net-ethernet-mellanox-mlx5-core-en-.patch
+patching file drivers/net/ethernet/mellanox/mlx5/core/en/tc/act/mirred.c
+	/var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/backports/0108-BACKPORT-drivers-net-ethernet-mellanox-mlx5-core-en-.patch
+patching file drivers/net/ethernet/mellanox/mlx5/core/en/tc/act/mpls.c
+	/var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/backports/0109-BACKPORT-drivers-net-ethernet-mellanox-mlx5-core-en-.patch
+patching file drivers/net/ethernet/mellanox/mlx5/core/en/tc/act/police.c
+	/var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/backports/0110-BACKPORT-drivers-net-ethernet-mellanox-mlx5-core-en-.patch
+patching file drivers/net/ethernet/mellanox/mlx5/core/en/tc/act/prio.c
+	/var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/backports/0111-BACKPORT-drivers-net-ethernet-mellanox-mlx5-core-en-.patch
+patching file drivers/net/ethernet/mellanox/mlx5/core/en/tc/act/ptype.c
+	/var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/backports/0112-BACKPORT-drivers-net-ethernet-mellanox-mlx5-core-en-.patch
+patching file drivers/net/ethernet/mellanox/mlx5/core/en/tc/act/sample.c
+	/var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/backports/0113-BACKPORT-drivers-net-ethernet-mellanox-mlx5-core-en-.patch
+patching file drivers/net/ethernet/mellanox/mlx5/core/en/tc/act/vlan.c
+	/var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/backports/0114-BACKPORT-drivers-net-ethernet-mellanox-mlx5-core-en-.patch
+patching file drivers/net/ethernet/mellanox/mlx5/core/en/tc/act_stats.c
+	/var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/backports/0116-BACKPORT-drivers-net-ethernet-mellanox-mlx5-core-en-.patch
+patching file drivers/net/ethernet/mellanox/mlx5/core/en/tc/ct_fs_smfs.c
+	/var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/backports/0117-BACKPORT-drivers-net-ethernet-mellanox-mlx5-core-en-.patch
+patching file drivers/net/ethernet/mellanox/mlx5/core/en/tc/int_port.c
+	/var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/backports/0118-BACKPORT-drivers-net-ethernet-mellanox-mlx5-core-en-.patch
+patching file drivers/net/ethernet/mellanox/mlx5/core/en/tc/meter.c
+	/var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/backports/0119-BACKPORT-drivers-net-ethernet-mellanox-mlx5-core-en-.patch
+patching file drivers/net/ethernet/mellanox/mlx5/core/en/tc/post_meter.c
+	/var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/backports/0120-BACKPORT-drivers-net-ethernet-mellanox-mlx5-core-en-.patch
+patching file drivers/net/ethernet/mellanox/mlx5/core/en/tc/post_meter.h
+	/var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/backports/0121-BACKPORT-drivers-net-ethernet-mellanox-mlx5-core-en-.patch
+patching file drivers/net/ethernet/mellanox/mlx5/core/en/tc/sample.c
+	/var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/backports/0122-BACKPORT-drivers-net-ethernet-mellanox-mlx5-core-en-.patch
+patching file drivers/net/ethernet/mellanox/mlx5/core/en/tc/sample.h
+	/var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/backports/0123-BACKPORT-drivers-net-ethernet-mellanox-mlx5-core-en-.patch
+patching file drivers/net/ethernet/mellanox/mlx5/core/en/tc_ct.c
+	/var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/backports/0124-BACKPORT-drivers-net-ethernet-mellanox-mlx5-core-en-.patch
+patching file drivers/net/ethernet/mellanox/mlx5/core/en/tc_ct.h
+	/var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/backports/0125-BACKPORT-drivers-net-ethernet-mellanox-mlx5-core-en-.patch
+patching file drivers/net/ethernet/mellanox/mlx5/core/en/tc_priv.h
+	/var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/backports/0126-BACKPORT-drivers-net-ethernet-mellanox-mlx5-core-en-.patch
+patching file drivers/net/ethernet/mellanox/mlx5/core/en/tc_tun.c
+	/var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/backports/0127-BACKPORT-drivers-net-ethernet-mellanox-mlx5-core-en-.patch
+patching file drivers/net/ethernet/mellanox/mlx5/core/en/tc_tun_mplsoudp.c
+	/var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/backports/0128-BACKPORT-drivers-net-ethernet-mellanox-mlx5-core-en-.patch
+patching file drivers/net/ethernet/mellanox/mlx5/core/en/trap.c
+	/var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/backports/0129-BACKPORT-drivers-net-ethernet-mellanox-mlx5-core-en-.patch
+patching file drivers/net/ethernet/mellanox/mlx5/core/en/trap.h
+	/var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/backports/0130-BACKPORT-drivers-net-ethernet-mellanox-mlx5-core-en-.patch
+patching file drivers/net/ethernet/mellanox/mlx5/core/en/xdp.c
+	/var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/backports/0131-BACKPORT-drivers-net-ethernet-mellanox-mlx5-core-en-.patch
+patching file drivers/net/ethernet/mellanox/mlx5/core/en/xdp.h
+	/var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/backports/0132-BACKPORT-drivers-net-ethernet-mellanox-mlx5-core-en-.patch
+patching file drivers/net/ethernet/mellanox/mlx5/core/en/xsk/pool.c
+	/var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/backports/0133-BACKPORT-drivers-net-ethernet-mellanox-mlx5-core-en-.patch
+patching file drivers/net/ethernet/mellanox/mlx5/core/en/xsk/pool.h
+	/var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/backports/0134-BACKPORT-drivers-net-ethernet-mellanox-mlx5-core-en-.patch
+patching file drivers/net/ethernet/mellanox/mlx5/core/en/xsk/rx.h
+	/var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/backports/0135-BACKPORT-drivers-net-ethernet-mellanox-mlx5-core-en-.patch
+patching file drivers/net/ethernet/mellanox/mlx5/core/en/xsk/setup.c
+	/var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/backports/0136-BACKPORT-drivers-net-ethernet-mellanox-mlx5-core-en-.patch
+patching file drivers/net/ethernet/mellanox/mlx5/core/en/xsk/setup.h
+	/var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/backports/0137-BACKPORT-drivers-net-ethernet-mellanox-mlx5-core-en-.patch
+patching file drivers/net/ethernet/mellanox/mlx5/core/en/xsk/tx.c
+	/var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/backports/0138-BACKPORT-drivers-net-ethernet-mellanox-mlx5-core-en-.patch
+patching file drivers/net/ethernet/mellanox/mlx5/core/en/xsk/tx.h
+	/var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/backports/0139-BACKPORT-drivers-net-ethernet-mellanox-mlx5-core-en_.patch
+patching file drivers/net/ethernet/mellanox/mlx5/core/en_accel/en_accel.h
+	/var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/backports/0140-BACKPORT-drivers-net-ethernet-mellanox-mlx5-core-en_.patch
+patching file drivers/net/ethernet/mellanox/mlx5/core/en_accel/ipsec.c
+	/var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/backports/0141-BACKPORT-drivers-net-ethernet-mellanox-mlx5-core-en_.patch
+patching file drivers/net/ethernet/mellanox/mlx5/core/en_accel/ipsec.h
+	/var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/backports/0142-BACKPORT-drivers-net-ethernet-mellanox-mlx5-core-en_.patch
+patching file drivers/net/ethernet/mellanox/mlx5/core/en_accel/ipsec_fs.c
+	/var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/backports/0143-BACKPORT-drivers-net-ethernet-mellanox-mlx5-core-en_.patch
+patching file drivers/net/ethernet/mellanox/mlx5/core/en_accel/ipsec_rxtx.c
+	/var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/backports/0144-BACKPORT-drivers-net-ethernet-mellanox-mlx5-core-en_.patch
+patching file drivers/net/ethernet/mellanox/mlx5/core/en_accel/ktls.c
+	/var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/backports/0145-BACKPORT-drivers-net-ethernet-mellanox-mlx5-core-en_.patch
+patching file drivers/net/ethernet/mellanox/mlx5/core/en_accel/ktls.h
+	/var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/backports/0146-BACKPORT-drivers-net-ethernet-mellanox-mlx5-core-en_.patch
+patching file drivers/net/ethernet/mellanox/mlx5/core/en_accel/ktls_rx.c
+	/var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/backports/0147-BACKPORT-drivers-net-ethernet-mellanox-mlx5-core-en_.patch
+patching file drivers/net/ethernet/mellanox/mlx5/core/en_accel/ktls_tx.c
+	/var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/backports/0148-BACKPORT-drivers-net-ethernet-mellanox-mlx5-core-en_.patch
+patching file drivers/net/ethernet/mellanox/mlx5/core/en_accel/ktls_txrx.c
+	/var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/backports/0149-BACKPORT-drivers-net-ethernet-mellanox-mlx5-core-en_.patch
+patching file drivers/net/ethernet/mellanox/mlx5/core/en_accel/ktls_txrx.h
+	/var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/backports/0150-BACKPORT-drivers-net-ethernet-mellanox-mlx5-core-en_.patch
+patching file drivers/net/ethernet/mellanox/mlx5/core/en_accel/ktls_utils.h
+	/var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/backports/0151-BACKPORT-drivers-net-ethernet-mellanox-mlx5-core-en_.patch
+patching file drivers/net/ethernet/mellanox/mlx5/core/en_arfs.c
+	/var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/backports/0152-BACKPORT-drivers-net-ethernet-mellanox-mlx5-core-en_.patch
+patching file drivers/net/ethernet/mellanox/mlx5/core/en_dcbnl.c
+	/var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/backports/0153-BACKPORT-drivers-net-ethernet-mellanox-mlx5-core-en_.patch
+patching file drivers/net/ethernet/mellanox/mlx5/core/en_debugfs.c
+	/var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/backports/0154-BACKPORT-drivers-net-ethernet-mellanox-mlx5-core-en_.patch
+patching file drivers/net/ethernet/mellanox/mlx5/core/en_fs.c
+	/var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/backports/0155-BACKPORT-drivers-net-ethernet-mellanox-mlx5-core-en_.patch
+patching file drivers/net/ethernet/mellanox/mlx5/core/en_fs_ethtool.c
+	/var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/backports/0156-BACKPORT-drivers-net-ethernet-mellanox-mlx5-core-en_.patch
+patching file drivers/net/ethernet/mellanox/mlx5/core/en_rep.h
+	/var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/backports/0157-BACKPORT-drivers-net-ethernet-mellanox-mlx5-core-en_.patch
+patching file drivers/net/ethernet/mellanox/mlx5/core/en_selftest.c
+	/var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/backports/0158-BACKPORT-drivers-net-ethernet-mellanox-mlx5-core-en_.patch
+patching file drivers/net/ethernet/mellanox/mlx5/core/en_sysfs.c
+	/var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/backports/0159-BACKPORT-drivers-net-ethernet-mellanox-mlx5-core-en_.patch
+patching file drivers/net/ethernet/mellanox/mlx5/core/en_tc.h
+	/var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/backports/0160-BACKPORT-drivers-net-ethernet-mellanox-mlx5-core-en_.patch
+patching file drivers/net/ethernet/mellanox/mlx5/core/en_txrx.c
+	/var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/backports/0161-BACKPORT-drivers-net-ethernet-mellanox-mlx5-core-esw.patch
+patching file drivers/net/ethernet/mellanox/mlx5/core/esw/bridge.c
+	/var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/backports/0162-BACKPORT-drivers-net-ethernet-mellanox-mlx5-core-esw.patch
+patching file drivers/net/ethernet/mellanox/mlx5/core/esw/bridge_priv.h
+	/var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/backports/0163-BACKPORT-drivers-net-ethernet-mellanox-mlx5-core-esw.patch
+patching file drivers/net/ethernet/mellanox/mlx5/core/esw/ipsec.c
+	/var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/backports/0164-BACKPORT-drivers-net-ethernet-mellanox-mlx5-core-esw.patch
+patching file drivers/net/ethernet/mellanox/mlx5/core/esw/qos.c
+	/var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/backports/0165-BACKPORT-drivers-net-ethernet-mellanox-mlx5-core-esw.patch
+patching file drivers/net/ethernet/mellanox/mlx5/core/esw/qos.h
+	/var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/backports/0166-BACKPORT-drivers-net-ethernet-mellanox-mlx5-core-esw.patch
+patching file drivers/net/ethernet/mellanox/mlx5/core/esw/vf_meter.c
+	/var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/backports/0167-BACKPORT-drivers-net-ethernet-mellanox-mlx5-core-esw.patch
+patching file drivers/net/ethernet/mellanox/mlx5/core/eswitch.h
+	/var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/backports/0168-BACKPORT-drivers-net-ethernet-mellanox-mlx5-core-esw.patch
+patching file drivers/net/ethernet/mellanox/mlx5/core/eswitch_devlink_compat.c
+	/var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/backports/0169-BACKPORT-drivers-net-ethernet-mellanox-mlx5-core-fs_.patch
+patching file drivers/net/ethernet/mellanox/mlx5/core/fs_core.h
+	/var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/backports/0170-BACKPORT-drivers-net-ethernet-mellanox-mlx5-core-fs_.patch
+patching file drivers/net/ethernet/mellanox/mlx5/core/fs_counters.c
+	/var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/backports/0171-BACKPORT-drivers-net-ethernet-mellanox-mlx5-core-fw..patch
+patching file drivers/net/ethernet/mellanox/mlx5/core/fw.c
+	/var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/backports/0172-BACKPORT-drivers-net-ethernet-mellanox-mlx5-core-fw_.patch
+patching file drivers/net/ethernet/mellanox/mlx5/core/fw_reset.h
+	/var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/backports/0173-BACKPORT-drivers-net-ethernet-mellanox-mlx5-core-hea.patch
+patching file drivers/net/ethernet/mellanox/mlx5/core/health.c
+	/var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/backports/0174-BACKPORT-drivers-net-ethernet-mellanox-mlx5-core-hwm.patch
+patching file drivers/net/ethernet/mellanox/mlx5/core/hwmon.c
+	/var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/backports/0175-BACKPORT-drivers-net-ethernet-mellanox-mlx5-core-ipo.patch
+patching file drivers/net/ethernet/mellanox/mlx5/core/ipoib/ipoib.c
+	/var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/backports/0176-BACKPORT-drivers-net-ethernet-mellanox-mlx5-core-ipo.patch
+patching file drivers/net/ethernet/mellanox/mlx5/core/ipoib/ipoib.h
+	/var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/backports/0177-BACKPORT-drivers-net-ethernet-mellanox-mlx5-core-ipo.patch
+patching file drivers/net/ethernet/mellanox/mlx5/core/ipoib/ipoib_vlan.c
+	/var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/backports/0178-BACKPORT-drivers-net-ethernet-mellanox-mlx5-core-lag.patch
+patching file drivers/net/ethernet/mellanox/mlx5/core/lag/lag.c
+	/var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/backports/0179-BACKPORT-drivers-net-ethernet-mellanox-mlx5-core-lag.patch
+patching file drivers/net/ethernet/mellanox/mlx5/core/lag/lag.h
+	/var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/backports/0180-BACKPORT-drivers-net-ethernet-mellanox-mlx5-core-lag.patch
+patching file drivers/net/ethernet/mellanox/mlx5/core/lag/mp.c
+	/var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/backports/0181-BACKPORT-drivers-net-ethernet-mellanox-mlx5-core-lag.patch
+patching file drivers/net/ethernet/mellanox/mlx5/core/lag/mp.h
+	/var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/backports/0182-BACKPORT-drivers-net-ethernet-mellanox-mlx5-core-lag.patch
+patching file drivers/net/ethernet/mellanox/mlx5/core/lag/mpesw.c
+	/var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/backports/0183-BACKPORT-drivers-net-ethernet-mellanox-mlx5-core-lag.patch
+patching file drivers/net/ethernet/mellanox/mlx5/core/lag/port_sel.c
+	/var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/backports/0184-BACKPORT-drivers-net-ethernet-mellanox-mlx5-core-lag.patch
+patching file drivers/net/ethernet/mellanox/mlx5/core/lag/port_sel.h
+	/var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/backports/0185-BACKPORT-drivers-net-ethernet-mellanox-mlx5-core-lib.patch
+patching file drivers/net/ethernet/mellanox/mlx5/core/lib/clock.h
+	/var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/backports/0186-BACKPORT-drivers-net-ethernet-mellanox-mlx5-core-lib.patch
+patching file drivers/net/ethernet/mellanox/mlx5/core/lib/devcom.c
+	/var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/backports/0187-BACKPORT-drivers-net-ethernet-mellanox-mlx5-core-lib.patch
+patching file drivers/net/ethernet/mellanox/mlx5/core/lib/eq.h
+	/var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/backports/0188-BACKPORT-drivers-net-ethernet-mellanox-mlx5-core-lib.patch
+patching file drivers/net/ethernet/mellanox/mlx5/core/lib/geneve.h
+	/var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/backports/0189-BACKPORT-drivers-net-ethernet-mellanox-mlx5-core-lib.patch
+patching file drivers/net/ethernet/mellanox/mlx5/core/lib/gid.c
+	/var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/backports/0190-BACKPORT-drivers-net-ethernet-mellanox-mlx5-core-lib.patch
+patching file drivers/net/ethernet/mellanox/mlx5/core/lib/mpfs.c
+	/var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/backports/0191-BACKPORT-drivers-net-ethernet-mellanox-mlx5-core-lib.patch
+patching file drivers/net/ethernet/mellanox/mlx5/core/lib/mpfs.h
+	/var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/backports/0192-BACKPORT-drivers-net-ethernet-mellanox-mlx5-core-lib.patch
+patching file drivers/net/ethernet/mellanox/mlx5/core/lib/sd.c
+	/var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/backports/0193-BACKPORT-drivers-net-ethernet-mellanox-mlx5-core-lib.patch
+patching file drivers/net/ethernet/mellanox/mlx5/core/lib/tout.c
+	/var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/backports/0194-BACKPORT-drivers-net-ethernet-mellanox-mlx5-core-lib.patch
+patching file drivers/net/ethernet/mellanox/mlx5/core/lib/vxlan.c
+	/var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/backports/0195-BACKPORT-drivers-net-ethernet-mellanox-mlx5-core-mai.patch
+patching file drivers/net/ethernet/mellanox/mlx5/core/main.c
+	/var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/backports/0196-BACKPORT-drivers-net-ethernet-mellanox-mlx5-core-mlx.patch
+patching file drivers/net/ethernet/mellanox/mlx5/core/mlx5_core.h
+	/var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/backports/0197-BACKPORT-drivers-net-ethernet-mellanox-mlx5-core-mlx.patch
+patching file drivers/net/ethernet/mellanox/mlx5/core/mlx5_devm.c
+	/var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/backports/0198-BACKPORT-drivers-net-ethernet-mellanox-mlx5-core-por.patch
+patching file drivers/net/ethernet/mellanox/mlx5/core/port.c
+	/var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/backports/0199-BACKPORT-drivers-net-ethernet-mellanox-mlx5-core-sf-.patch
+patching file drivers/net/ethernet/mellanox/mlx5/core/sf/devlink.c
+	/var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/backports/0200-BACKPORT-drivers-net-ethernet-mellanox-mlx5-core-sf-.patch
+patching file drivers/net/ethernet/mellanox/mlx5/core/sf/hw_table.c
+	/var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/backports/0201-BACKPORT-drivers-net-ethernet-mellanox-mlx5-core-sf-.patch
+patching file drivers/net/ethernet/mellanox/mlx5/core/sf/sf.h
+	/var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/backports/0202-BACKPORT-drivers-net-ethernet-mellanox-mlx5-core-sf-.patch
+patching file drivers/net/ethernet/mellanox/mlx5/core/sf/vhca_event.c
+	/var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/backports/0203-BACKPORT-drivers-net-ethernet-mellanox-mlx5-core-sri.patch
+patching file drivers/net/ethernet/mellanox/mlx5/core/sriov.c
+	/var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/backports/0204-BACKPORT-drivers-net-ethernet-mellanox-mlx5-core-sri.patch
+patching file drivers/net/ethernet/mellanox/mlx5/core/sriov_sysfs.c
+	/var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/backports/0205-BACKPORT-drivers-net-ethernet-mellanox-mlx5-core-ste.patch
+patching file drivers/net/ethernet/mellanox/mlx5/core/steering/dr_action.c
+	/var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/backports/0206-BACKPORT-drivers-net-ethernet-mellanox-mlx5-core-ste.patch
+patching file drivers/net/ethernet/mellanox/mlx5/core/steering/dr_dbg.c
+	/var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/backports/0207-BACKPORT-drivers-net-ethernet-mellanox-mlx5-core-ste.patch
+patching file drivers/net/ethernet/mellanox/mlx5/core/steering/dr_icm_pool.c
+	/var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/backports/0208-BACKPORT-drivers-net-ethernet-mellanox-mlx5-core-ste.patch
+patching file drivers/net/ethernet/mellanox/mlx5/core/steering/dr_send.c
+	/var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/backports/0209-BACKPORT-drivers-net-ethernet-mellanox-mlx5-core-uar.patch
+patching file drivers/net/ethernet/mellanox/mlx5/core/uar.c
+	/var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/backports/0210-BACKPORT-drivers-net-ethernet-mellanox-mlx5-core-vpo.patch
+patching file drivers/net/ethernet/mellanox/mlx5/core/vport.c
+	/var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/backports/0211-BACKPORT-drivers-net-ethernet-mellanox-mlx5-core-wq..patch
+patching file drivers/net/ethernet/mellanox/mlx5/core/wq.h
+	/var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/backports/0212-BACKPORT-drivers-net-ethernet-mellanox-mlxfw-mlxfw.h.patch
+patching file drivers/net/ethernet/mellanox/mlxfw/mlxfw.h
+	/var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/backports/0213-BACKPORT-drivers-net-ethernet-mellanox-mlxfw-mlxfw_f.patch
+patching file drivers/net/ethernet/mellanox/mlxfw/mlxfw_fsm.c
+	/var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/backports/0214-BACKPORT-drivers-net-ethernet-mellanox-mlxfw-mlxfw_m.patch
+patching file drivers/net/ethernet/mellanox/mlxfw/mlxfw_mfa2.c
+	/var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/backports/0215-BACKPORT-drivers-nvme-common-auth.c.patch
+patching file drivers/nvme/common/auth.c
+	/var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/backports/0216-BACKPORT-drivers-nvme-host-auth.c.patch
+patching file drivers/nvme/host/auth.c
+	/var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/backports/0217-BACKPORT-drivers-nvme-host-fabrics.c.patch
+patching file drivers/nvme/host/fabrics.c
+	/var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/backports/0218-BACKPORT-drivers-nvme-host-fault_inject.c.patch
+patching file drivers/nvme/host/fault_inject.c
+	/var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/backports/0219-BACKPORT-drivers-nvme-host-fc.c.patch
+patching file drivers/nvme/host/fc.c
+	/var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/backports/0220-BACKPORT-drivers-nvme-host-hwmon.c.patch
+patching file drivers/nvme/host/hwmon.c
+	/var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/backports/0221-BACKPORT-drivers-nvme-host-nvfs-dma.h.patch
+patching file drivers/nvme/host/nvfs-dma.h
+	/var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/backports/0222-BACKPORT-drivers-nvme-host-nvfs-rdma.h.patch
+patching file drivers/nvme/host/nvfs-rdma.h
+	/var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/backports/0223-BACKPORT-drivers-nvme-host-trace.h.patch
+patching file drivers/nvme/host/trace.h
+	/var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/backports/0224-BACKPORT-drivers-nvme-target-admin-cmd.c.patch
+patching file drivers/nvme/target/admin-cmd.c
+	/var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/backports/0225-BACKPORT-drivers-nvme-target-auth.c.patch
+patching file drivers/nvme/target/auth.c
+	/var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/backports/0226-BACKPORT-drivers-nvme-target-discovery.c.patch
+patching file drivers/nvme/target/discovery.c
+	/var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/backports/0227-BACKPORT-drivers-nvme-target-fabrics-cmd-auth.c.patch
+patching file drivers/nvme/target/fabrics-cmd-auth.c
+	/var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/backports/0228-BACKPORT-drivers-nvme-target-fc.c.patch
+patching file drivers/nvme/target/fc.c
+	/var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/backports/0229-BACKPORT-drivers-nvme-target-fcloop.c.patch
+patching file drivers/nvme/target/fcloop.c
+	/var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/backports/0230-BACKPORT-drivers-nvme-target-io-cmd-file.c.patch
+patching file drivers/nvme/target/io-cmd-file.c
+	/var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/backports/0231-BACKPORT-drivers-nvme-target-loop.c.patch
+patching file drivers/nvme/target/loop.c
+	/var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/backports/0232-BACKPORT-drivers-nvme-target-nvmet.h.patch
+patching file drivers/nvme/target/nvmet.h
+	/var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/backports/0233-BACKPORT-drivers-nvme-target-rdma_offload.c.patch
+patching file drivers/nvme/target/rdma_offload.c
+	/var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/backports/0234-BACKPORT-drivers-nvme-target-tcp.c.patch
+patching file drivers/nvme/target/tcp.c
+	/var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/backports/0235-BACKPORT-drivers-nvme-target-trace.h.patch
+patching file drivers/nvme/target/trace.h
+	/var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/backports/0236-BACKPORT-drivers-scsi-scsi_priv.h.patch
+patching file drivers/scsi/scsi_priv.h
+	/var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/backports/0237-BACKPORT-drivers-scsi-scsi_transport_srp.c.patch
+patching file drivers/scsi/scsi_transport_srp.c
+	/var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/backports/0238-BACKPORT-drivers-vfio-pci-mlx5-cmd.c.patch
+patching file drivers/vfio/pci/mlx5/cmd.c
+	/var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/backports/0239-BACKPORT-drivers-vfio-pci-mlx5-cmd.h.patch
+patching file drivers/vfio/pci/mlx5/cmd.h
+	/var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/backports/0240-BACKPORT-include-linux-mlx5-device.h.patch
+patching file include/linux/mlx5/device.h
+	/var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/backports/0241-BACKPORT-include-linux-mlx5-driver.h.patch
+patching file include/linux/mlx5/driver.h
+	/var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/backports/0242-BACKPORT-include-linux-mlx5-fs.h.patch
+patching file include/linux/mlx5/fs.h
+	/var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/backports/0243-BACKPORT-include-linux-mlx5-port.h.patch
+patching file include/linux/mlx5/port.h
+	/var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/backports/0244-BACKPORT-include-linux-mod_devicetable.h.patch
+patching file include/linux/mod_devicetable.h
+	/var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/backports/0245-BACKPORT-include-linux-nvme-fc-driver.h.patch
+patching file include/linux/nvme-fc-driver.h
+	/var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/backports/0246-BACKPORT-include-linux-nvme-rdma.h.patch
+patching file include/linux/nvme-rdma.h
+	/var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/backports/0247-BACKPORT-include-linux-nvme.h.patch
+patching file include/linux/nvme.h
+	/var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/backports/0248-BACKPORT-include-net-xdp_sock_drv.h.patch
+patching file include/net/xdp_sock_drv.h
+	/var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/backports/0249-BACKPORT-include-net-xfrm.h.patch
+patching file include/net/xfrm.h
+	/var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/backports/0250-BACKPORT-include-rdma-ib_addr.h.patch
+patching file include/rdma/ib_addr.h
+	/var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/backports/0251-BACKPORT-include-rdma-ib_umem.h.patch
+patching file include/rdma/ib_umem.h
+	/var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/backports/0252-BACKPORT-include-rdma-ib_umem_odp.h.patch
+patching file include/rdma/ib_umem_odp.h
+	/var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/backports/0253-BACKPORT-include-rdma-ib_verbs.h.patch
+patching file include/rdma/ib_verbs.h
+	/var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/backports/0254-BACKPORT-include-rdma-lag.h.patch
+patching file include/rdma/lag.h
+	/var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/backports/0255-BACKPORT-include-rdma-rdma_counter.h.patch
+patching file include/rdma/rdma_counter.h
+	/var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/backports/0256-BACKPORT-include-rdma-rdma_netlink.h.patch
+patching file include/rdma/rdma_netlink.h
+	/var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/backports/0257-BACKPORT-include-rdma-uverbs_ioctl.h.patch
+patching file include/rdma/uverbs_ioctl.h
+	/var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/backports/0258-BACKPORT-include-scsi-scsi_transport_srp.h.patch
+patching file include/scsi/scsi_transport_srp.h
+	/var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/backports/0259-BACKPORT-include-trace-events-ib_mad.h.patch
+patching file include/trace/events/ib_mad.h
+	/var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/backports/0260-BACKPORT-include-trace-events-ib_umad.h.patch
+patching file include/trace/events/ib_umad.h
+	/var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/backports/0261-BACKPORT-net-mlxdevm-mlxdevm.c.patch
+patching file net/mlxdevm/mlxdevm.c
+	/var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/backports/0262-BACKPORT-net-sunrpc-xprtrdma-backchannel.c.patch
+patching file net/sunrpc/xprtrdma/backchannel.c
+	/var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/backports/0263-BACKPORT-net-sunrpc-xprtrdma-module.c.patch
+patching file net/sunrpc/xprtrdma/module.c
+	/var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/backports/0264-BACKPORT-net-sunrpc-xprtrdma-rpc_rdma.c.patch
+patching file net/sunrpc/xprtrdma/rpc_rdma.c
+	/var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/backports/0265-BACKPORT-net-sunrpc-xprtrdma-svc_rdma_backchannel.c.patch
+patching file net/sunrpc/xprtrdma/svc_rdma_backchannel.c
+	/var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/backports/0266-BACKPORT-net-sunrpc-xprtrdma-svc_rdma_pcl.c.patch
+patching file net/sunrpc/xprtrdma/svc_rdma_pcl.c
+	/var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/backports/0267-BACKPORT-net-sunrpc-xprtrdma-svc_rdma_recvfrom.c.patch
+patching file net/sunrpc/xprtrdma/svc_rdma_recvfrom.c
+	/var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/backports/0268-BACKPORT-net-sunrpc-xprtrdma-xprt_rdma.h.patch
+patching file net/sunrpc/xprtrdma/xprt_rdma.h
+	/var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/backports/0269-BACKPORT-drivers-base-auxiliary_main.c.patch
+patching file drivers/base/auxiliary_main.c
+	/var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/backports/0270-BACKPORT-drivers-infiniband-core-addr.c.patch
+patching file drivers/infiniband/core/addr.c
+	/var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/backports/0271-BACKPORT-drivers-infiniband-core-cma_trace.h.patch
+patching file drivers/infiniband/core/cma_trace.h
+	/var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/backports/0272-BACKPORT-drivers-infiniband-core-lag.c.patch
+patching file drivers/infiniband/core/lag.c
+	/var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/backports/0273-BACKPORT-drivers-infiniband-core-user_mad.c.patch
+patching file drivers/infiniband/core/user_mad.c
+	/var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/backports/0274-BACKPORT-drivers-infiniband-core-uverbs_cmd.c.patch
+patching file drivers/infiniband/core/uverbs_cmd.c
+	/var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/backports/0275-BACKPORT-drivers-infiniband-core-uverbs_main.c.patch
+patching file drivers/infiniband/core/uverbs_main.c
+	/var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/backports/0276-BACKPORT-drivers-infiniband-hw-mlx5-mlx5_ib.h.patch
+patching file drivers/infiniband/hw/mlx5/mlx5_ib.h
+	/var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/backports/0277-BACKPORT-drivers-net-ethernet-mellanox-mlx5-core-dev.patch
+patching file drivers/net/ethernet/mellanox/mlx5/core/devlink.h
+	/var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/backports/0278-BACKPORT-drivers-net-ethernet-mellanox-mlx5-core-dia.patch
+patching file drivers/net/ethernet/mellanox/mlx5/core/diag/en_tc_tracepoint.h
+	/var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/backports/0279-BACKPORT-drivers-net-ethernet-mellanox-mlx5-core-en-.patch
+patching file drivers/net/ethernet/mellanox/mlx5/core/en/params.c
+	/var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/backports/0280-BACKPORT-drivers-net-ethernet-mellanox-mlx5-core-en-.patch
+patching file drivers/net/ethernet/mellanox/mlx5/core/en/tc_tun.h
+	/var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/backports/0281-BACKPORT-drivers-net-ethernet-mellanox-mlx5-core-en-.patch
+patching file drivers/net/ethernet/mellanox/mlx5/core/en/tc_tun_encap.c
+	/var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/backports/0282-BACKPORT-drivers-net-ethernet-mellanox-mlx5-core-en-.patch
+patching file drivers/net/ethernet/mellanox/mlx5/core/en/tc_tun_geneve.c
+	/var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/backports/0283-BACKPORT-drivers-net-ethernet-mellanox-mlx5-core-en-.patch
+patching file drivers/net/ethernet/mellanox/mlx5/core/en/tc_tun_vxlan.c
+	/var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/backports/0284-BACKPORT-drivers-net-ethernet-mellanox-mlx5-core-en-.patch
+patching file drivers/net/ethernet/mellanox/mlx5/core/en/txrx.h
+	/var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/backports/0285-BACKPORT-drivers-net-ethernet-mellanox-mlx5-core-en_.patch
+patching file drivers/net/ethernet/mellanox/mlx5/core/en_accel/ipsec_rxtx.h
+	/var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/backports/0286-BACKPORT-drivers-net-ethernet-mellanox-mlx5-core-en_.patch
+patching file drivers/net/ethernet/mellanox/mlx5/core/en_accel/macsec.c
+	/var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/backports/0287-BACKPORT-drivers-net-ethernet-mellanox-mlx5-core-en_.patch
+patching file drivers/net/ethernet/mellanox/mlx5/core/en_stats.c
+	/var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/backports/0288-BACKPORT-drivers-net-ethernet-mellanox-mlx5-core-en_.patch
+patching file drivers/net/ethernet/mellanox/mlx5/core/en_stats.h
+	/var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/backports/0289-BACKPORT-drivers-net-ethernet-mellanox-mlx5-core-en_.patch
+patching file drivers/net/ethernet/mellanox/mlx5/core/en_tx.c
+	/var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/backports/0290-BACKPORT-drivers-net-ethernet-mellanox-mlx5-core-esw.patch
+patching file drivers/net/ethernet/mellanox/mlx5/core/eswitch_offloads.c
+	/var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/backports/0291-BACKPORT-drivers-net-ethernet-mellanox-mlx5-core-fw_.patch
+patching file drivers/net/ethernet/mellanox/mlx5/core/fw_reset.c
+	/var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/backports/0292-BACKPORT-drivers-net-ethernet-mellanox-mlx5-core-ipo.patch
+patching file drivers/net/ethernet/mellanox/mlx5/core/ipoib/ethtool.c
+	/var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/backports/0293-BACKPORT-drivers-net-ethernet-mellanox-mlx5-core-pci.patch
+patching file drivers/net/ethernet/mellanox/mlx5/core/pci_irq.c
+	/var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/backports/0294-BACKPORT-drivers-net-ethernet-mellanox-mlx5-core-sf-.patch
+patching file drivers/net/ethernet/mellanox/mlx5/core/sf/diag/vhca_tracepoint.h
+	/var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/backports/0295-BACKPORT-drivers-net-ethernet-mellanox-mlx5-core-en..patch
+patching file drivers/net/ethernet/mellanox/mlx5/core/en.h
+	/var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/backports/0296-BACKPORT-drivers-net-ethernet-mellanox-mlx5-core-en_.patch
+patching file drivers/net/ethernet/mellanox/mlx5/core/en_rep.c
+	/var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/backports/0297-BACKPORT-include-linux-auxiliary_bus.h.patch
+patching file include/linux/auxiliary_bus.h
+	/var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/backports/0298-BACKPORT-drivers-net-ethernet-mellanox-mlx5-core-dev.patch
+patching file drivers/net/ethernet/mellanox/mlx5/core/dev.c
+	/var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/backports/0299-BACKPORT-drivers-net-ethernet-mellanox-mlx5-core-en_.patch
+patching file drivers/net/ethernet/mellanox/mlx5/core/en_tc.c
+	/var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/backports/0300-BACKPORT-drivers-net-ethernet-mellanox-mlx5-core-esw.patch
+patching file drivers/net/ethernet/mellanox/mlx5/core/eswitch.c
+	/var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/backports/0301-BACKPORT-drivers-net-ethernet-mellanox-mlx5-core-fs_.patch
+patching file drivers/net/ethernet/mellanox/mlx5/core/fs_core.c
+	/var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/backports/0302-BACKPORT-drivers-vfio-pci-mlx5-main.c.patch
+patching file drivers/vfio/pci/mlx5/main.c
+	/var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/backports/0303-BACKPORT-drivers-infiniband-core-ucma.c.patch
+patching file drivers/infiniband/core/ucma.c
+	/var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/backports/0304-BACKPORT-drivers-infiniband-hw-mlx5-devx.c.patch
+patching file drivers/infiniband/hw/mlx5/devx.c
+	/var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/backports/0305-BACKPORT-drivers-net-ethernet-mellanox-mlx5-core-dev.patch
+patching file drivers/net/ethernet/mellanox/mlx5/core/devlink.c
+	/var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/backports/0306-BACKPORT-drivers-net-ethernet-mellanox-mlx5-core-dia.patch
+patching file drivers/net/ethernet/mellanox/mlx5/core/diag/cmd_tracepoint.h
+	/var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/backports/0307-BACKPORT-drivers-net-ethernet-mellanox-mlx5-core-dia.patch
+patching file drivers/net/ethernet/mellanox/mlx5/core/diag/en_rep_tracepoint.h
+	/var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/backports/0308-BACKPORT-drivers-net-ethernet-mellanox-mlx5-core-dia.patch
+patching file drivers/net/ethernet/mellanox/mlx5/core/diag/fw_tracer_tracepoint.h
+	/var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/backports/0309-BACKPORT-drivers-net-ethernet-mellanox-mlx5-core-en-.patch
+patching file drivers/net/ethernet/mellanox/mlx5/core/en/xsk/rx.c
+	/var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/backports/0310-BACKPORT-drivers-net-ethernet-mellanox-mlx5-core-en_.patch
+patching file drivers/net/ethernet/mellanox/mlx5/core/en_ethtool.c
+	/var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/backports/0311-BACKPORT-drivers-net-ethernet-mellanox-mlx5-core-lib.patch
+patching file drivers/net/ethernet/mellanox/mlx5/core/lib/clock.c
+	/var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/backports/0312-BACKPORT-drivers-net-ethernet-mellanox-mlx5-core-sf-.patch
+patching file drivers/net/ethernet/mellanox/mlx5/core/sf/dev/dev.h
+	/var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/backports/0313-BACKPORT-drivers-net-ethernet-mellanox-mlx5-core-sf-.patch
+patching file drivers/net/ethernet/mellanox/mlx5/core/sf/dev/driver.c
+	/var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/backports/0314-BACKPORT-drivers-net-ethernet-mellanox-mlx5-core-esw.patch
+patching file drivers/net/ethernet/mellanox/mlx5/core/esw/diag/qos_tracepoint.h
+	/var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/backports/0315-BACKPORT-drivers-net-ethernet-mellanox-mlx5-core-sf-.patch
+patching file drivers/net/ethernet/mellanox/mlx5/core/sf/dev/diag/dev_tracepoint.h
+	/var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/backports/0316-BACKPORT-drivers-nvme-host-fabrics.h.patch
+patching file drivers/nvme/host/fabrics.h
+	/var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/backports/0317-BACKPORT-drivers-nvme-host-pr.c.patch
+patching file drivers/nvme/host/pr.c
+	/var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/backports/0318-BACKPORT-drivers-nvme-target-passthru.c.patch
+patching file drivers/nvme/target/passthru.c
+	/var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/backports/0319-BACKPORT-drivers-nvme-target-zns.c.patch
+patching file drivers/nvme/target/zns.c
+	/var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/backports/0320-BACKPORT-drivers-net-ethernet-mellanox-mlx5-core-en-.patch
+patching file drivers/net/ethernet/mellanox/mlx5/core/en/tc_tun_gre.c
+	/var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/backports/0321-BACKPORT-drivers-net-ethernet-mellanox-mlx5-core-irq.patch
+patching file drivers/net/ethernet/mellanox/mlx5/core/irq_affinity.c
+	/var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/backports/0322-BACKPORT-drivers-net-ethernet-mellanox-mlx5-core-sf-.patch
+patching file drivers/net/ethernet/mellanox/mlx5/core/sf/dev/dev.c
+	/var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/backports/0323-BACKPORT-drivers-net-ethernet-mellanox-mlx5-core-sf-.patch
+patching file drivers/net/ethernet/mellanox/mlx5/core/sf/diag/sf_tracepoint.h
+	/var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/backports/0324-BACKPORT-drivers-infiniband-core-nldev.c.patch
+patching file drivers/infiniband/core/nldev.c
+	/var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/backports/0325-BACKPORT-drivers-net-ethernet-mellanox-mlx5-core-en_.patch
+patching file drivers/net/ethernet/mellanox/mlx5/core/en_main.c
+	/var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/backports/0326-BACKPORT-drivers-net-ethernet-mellanox-mlx5-core-eq..patch
+patching file drivers/net/ethernet/mellanox/mlx5/core/eq.c
+	/var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/backports/0327-BACKPORT-drivers-net-ethernet-mellanox-mlx5-core-esw.patch
+patching file drivers/net/ethernet/mellanox/mlx5/core/esw/devlink_port.c
+	/var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/backports/0328-BACKPORT-drivers-nvme-host-apple.c.patch
+patching file drivers/nvme/host/apple.c
+	/var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/backports/0328-BACKPORT-include-trace-events-rpcrdma.h.patch
+patching file include/trace/events/rpcrdma.h
+	/var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/backports/0329-BACKPORT-drivers-nvme-host-sysfs.c.patch
+patching file drivers/nvme/host/sysfs.c
+	/var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/backports/0330-BACKPORT-drivers-nvme-host-tcp.c.patch
+patching file drivers/nvme/host/tcp.c
+	/var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/backports/0331-BACKPORT-drivers-nvme-target-configfs.c.patch
+patching file drivers/nvme/target/configfs.c
+	/var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/backports/0332-BACKPORT-drivers-nvme-target-core.c.patch
+patching file drivers/nvme/target/core.c
+	/var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/backports/0333-BACKPORT-drivers-nvme-target-io-cmd-bdev.c.patch
+patching file drivers/nvme/target/io-cmd-bdev.c
+	/var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/backports/0334-BACKPORT-drivers-nvme-target-rdma.c.patch
+patching file drivers/nvme/target/rdma.c
+	/var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/backports/0336-BACKPORT-net-sunrpc-xprtrdma-frwr_ops.c.patch
+patching file net/sunrpc/xprtrdma/frwr_ops.c
+	/var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/backports/0337-BACKPORT-net-sunrpc-xprtrdma-svc_rdma.c.patch
+patching file net/sunrpc/xprtrdma/svc_rdma.c
+	/var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/backports/0338-BACKPORT-net-sunrpc-xprtrdma-transport.c.patch
+patching file net/sunrpc/xprtrdma/transport.c
+	/var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/backports/0339-BACKPORT-net-sunrpc-xprtrdma-verbs.c.patch
+patching file net/sunrpc/xprtrdma/verbs.c
+	/var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/backports/0340-BACKPORT-include-linux-sunrpc-svc_rdma.h.patch
+patching file include/linux/sunrpc/svc_rdma.h
+	/var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/backports/0341-BACKPORT-drivers-nvme-host-pci.c.patch
+patching file drivers/nvme/host/pci.c
+	/var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/backports/0342-BACKPORT-drivers-nvme-host-rdma.c.patch
+patching file drivers/nvme/host/rdma.c
+	/var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/backports/0343-BACKPORT-net-sunrpc-xprtrdma-svc_rdma_sendto.c.patch
+patching file net/sunrpc/xprtrdma/svc_rdma_sendto.c
+	/var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/backports/0344-BACKPORT-drivers-net-ethernet-mellanox-mlx5-core-en_.patch
+patching file drivers/net/ethernet/mellanox/mlx5/core/en_rx.c
+	/var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/backports/0344-BACKPORT-drivers-net-ethernet-mellanox-mlx5-core-lag.patch
+patching file drivers/net/ethernet/mellanox/mlx5/core/lag/debugfs.c
+	/var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/backports/0345-BACKPORT-net-sunrpc-xprtrdma-svc_rdma_rw.c.patch
+patching file net/sunrpc/xprtrdma/svc_rdma_rw.c
+	/var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/backports/0346-BACKPORT-drivers-nvme-host-nvme.h.patch
+patching file drivers/nvme/host/nvme.h
+	/var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/backports/0347-BACKPORT-drivers-nvme-host-core.c.patch
+patching file drivers/nvme/host/core.c
+	/var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/backports/0347-BACKPORT-drivers-nvme-host-zns.c.patch
+patching file drivers/nvme/host/zns.c
+	/var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/backports/0348-BACKPORT-drivers-nvme-host-ioctl.c.patch
+patching file drivers/nvme/host/ioctl.c
+	/var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/backports/0349-BACKPORT-drivers-nvme-host-multipath.c.patch
+patching file drivers/nvme/host/multipath.c
+	/var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/backports/0350-BACKPORT-net-sunrpc-xprtrdma-ib_client.c.patch
+patching file net/sunrpc/xprtrdma/ib_client.c
+	/var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/backports/0351-BACKPORT-net-sunrpc-xprtrdma-svc_rdma_transport.c.patch
+patching file net/sunrpc/xprtrdma/svc_rdma_transport.c
+	/var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/backports/0353-BACKPORT-drivers-fwctl-main.c.patch
+patching file drivers/fwctl/main.c
+	/var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/backports/0353-BACKPORT-include-linux-fwctl.h.patch
+patching file include/linux/fwctl.h
+	/var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/backports/0354-BACKPORT-drivers-fwctl-mlx5-main.c.patch
+patching file drivers/fwctl/mlx5/main.c
+Created configure.mk.kernel:
+# Current working directory
+CWD=/var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1
+BACKPORT_INCLUDES=
+
+# Kernel level
+KVERSION=5.15.0-1087-azure
+ARCH=x86_64
+MODULES_DIR=/lib/modules/5.15.0-1087-azure/updates
+KSRC=/lib/modules/5.15.0-1087-azure/build
+KSRC_OBJ=/lib/modules/5.15.0-1087-azure/build
+KLIB_BUILD=/lib/modules/5.15.0-1087-azure/build
+prefix=/usr
+
+AUTOCONF_H=/var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/include/generated/autoconf.h
+
+WITH_MAKE_PARAMS=
+
+CONFIG_AUXILIARY_BUS=
+CONFIG_AUXILIARY_BUS=
+CONFIG_BACKPORT_LRO=m
+CONFIG_BACKPORT_LRO=m
+CONFIG_BF_DEVICE_EMULATION=
+CONFIG_BF_DEVICE_EMULATION=
+CONFIG_BF_POWER_FAILURE_EVENT=
+CONFIG_BF_POWER_FAILURE_EVENT=
+CONFIG_BLK_DEV_NVME=
+CONFIG_BLK_DEV_NVME=
+CONFIG_COMPAT_KOBJECT_BACKPORT=
+CONFIG_COMPAT_KOBJECT_BACKPORT=
+CONFIG_COMPAT_VERSION=
+CONFIG_COMPAT_VERSION=
+CONFIG_DEBUG_INFO=y
+CONFIG_DEBUG_INFO=y
+CONFIG_ENABLE_BASECODE_EXTRAS=y
+CONFIG_ENABLE_BASECODE_EXTRAS=y
+CONFIG_ENABLE_MLX5_FS_DEBUGFS=
+CONFIG_ENABLE_MLX5_FS_DEBUGFS=
+CONFIG_ENABLE_VFIO=y
+CONFIG_ENABLE_VFIO=y
+CONFIG_ENABLE_XDP=y
+CONFIG_ENABLE_XDP=y
+CONFIG_FWCTL=
+CONFIG_FWCTL=
+CONFIG_FWCTL_MLX5=
+CONFIG_FWCTL_MLX5=
+CONFIG_GPU_DIRECT_STORAGE=y
+CONFIG_GPU_DIRECT_STORAGE=y
+CONFIG_INFINIBAND=m
+CONFIG_INFINIBAND=m
+CONFIG_INFINIBAND_ADDR_TRANS=y
+CONFIG_INFINIBAND_ADDR_TRANS=y
+CONFIG_INFINIBAND_ADDR_TRANS_CONFIGFS=y
+CONFIG_INFINIBAND_ADDR_TRANS_CONFIGFS=y
+CONFIG_INFINIBAND_CORE_DUMMY=
+CONFIG_INFINIBAND_CORE_DUMMY=
+CONFIG_INFINIBAND_IPOIB=m
+CONFIG_INFINIBAND_IPOIB=m
+CONFIG_INFINIBAND_IPOIB_CM=y
+CONFIG_INFINIBAND_IPOIB_CM=y
+CONFIG_INFINIBAND_IPOIB_DEBUG=y
+CONFIG_INFINIBAND_IPOIB_DEBUG=y
+CONFIG_INFINIBAND_IPOIB_DEBUG_DATA=
+CONFIG_INFINIBAND_IPOIB_DEBUG_DATA=
+CONFIG_INFINIBAND_ISER=m
+CONFIG_INFINIBAND_ISER=m
+CONFIG_INFINIBAND_ISERT=m
+CONFIG_INFINIBAND_ISERT=m
+CONFIG_INFINIBAND_ISERT_DUMMY=
+CONFIG_INFINIBAND_ISERT_DUMMY=
+CONFIG_INFINIBAND_ISER_DUMMY=
+CONFIG_INFINIBAND_ISER_DUMMY=
+CONFIG_INFINIBAND_MADEYE=
+CONFIG_INFINIBAND_MADEYE=
+CONFIG_INFINIBAND_ON_DEMAND_PAGING=y
+CONFIG_INFINIBAND_ON_DEMAND_PAGING=y
+CONFIG_INFINIBAND_PA_MR=
+CONFIG_INFINIBAND_PA_MR=
+CONFIG_INFINIBAND_SDP_DEBUG=
+CONFIG_INFINIBAND_SDP_DEBUG=
+CONFIG_INFINIBAND_SDP_DEBUG_DATA=
+CONFIG_INFINIBAND_SDP_DEBUG_DATA=
+CONFIG_INFINIBAND_SDP_RECV_ZCOPY=
+CONFIG_INFINIBAND_SDP_RECV_ZCOPY=
+CONFIG_INFINIBAND_SDP_SEND_ZCOPY=
+CONFIG_INFINIBAND_SDP_SEND_ZCOPY=
+CONFIG_INFINIBAND_SRP=m
+CONFIG_INFINIBAND_SRP=m
+CONFIG_INFINIBAND_SRP_DUMMY=
+CONFIG_INFINIBAND_SRP_DUMMY=
+CONFIG_INFINIBAND_USER_ACCESS=m
+CONFIG_INFINIBAND_USER_ACCESS=m
+CONFIG_INFINIBAND_USER_ACCESS_UCM=m
+CONFIG_INFINIBAND_USER_ACCESS_UCM=m
+CONFIG_INFINIBAND_USER_MAD=m
+CONFIG_INFINIBAND_USER_MAD=m
+CONFIG_INFINIBAND_USER_MEM=y
+CONFIG_INFINIBAND_USER_MEM=y
+CONFIG_INFINIBAND_WQE_FORMAT=
+CONFIG_INFINIBAND_WQE_FORMAT=
+CONFIG_IPOIB_ALL_MULTI=
+CONFIG_IPOIB_ALL_MULTI=
+CONFIG_IPOIB_VERSION=
+CONFIG_IPOIB_VERSION=
+CONFIG_IS_AZURELINUX=
+CONFIG_IS_AZURELINUX=
+CONFIG_IS_MARINER=
+CONFIG_IS_MARINER=
+CONFIG_MEMTRACK=
+CONFIG_MEMTRACK=
+CONFIG_MLNX_BLOCK_REQUEST_MODULE=
+CONFIG_MLNX_BLOCK_REQUEST_MODULE=
+CONFIG_MLX5_ACCEL=y
+CONFIG_MLX5_ACCEL=y
+CONFIG_MLX5_BRIDGE=y
+CONFIG_MLX5_BRIDGE=y
+CONFIG_MLX5_CLS_ACT=y
+CONFIG_MLX5_CLS_ACT=y
+CONFIG_MLX5_CORE=m
+CONFIG_MLX5_CORE=m
+CONFIG_MLX5_CORE_EN=y
+CONFIG_MLX5_CORE_EN=y
+CONFIG_MLX5_CORE_EN_DCB=y
+CONFIG_MLX5_CORE_EN_DCB=y
+CONFIG_MLX5_CORE_IPOIB=y
+CONFIG_MLX5_CORE_IPOIB=y
+CONFIG_MLX5_DEBUG=y
+CONFIG_MLX5_DEBUG=y
+CONFIG_MLX5_EN_ARFS=y
+CONFIG_MLX5_EN_ARFS=y
+CONFIG_MLX5_EN_IPSEC=y
+CONFIG_MLX5_EN_IPSEC=y
+CONFIG_MLX5_EN_RXNFC=y
+CONFIG_MLX5_EN_RXNFC=y
+CONFIG_MLX5_EN_SPECIAL_SQ=y
+CONFIG_MLX5_EN_SPECIAL_SQ=y
+CONFIG_MLX5_EN_TLS=y
+CONFIG_MLX5_EN_TLS=y
+CONFIG_MLX5_ESWITCH=y
+CONFIG_MLX5_ESWITCH=y
+CONFIG_MLX5_FPGA=
+CONFIG_MLX5_FPGA=
+CONFIG_MLX5_FPGA_IPSEC=
+CONFIG_MLX5_FPGA_IPSEC=
+CONFIG_MLX5_FPGA_TLS=
+CONFIG_MLX5_FPGA_TLS=
+CONFIG_MLX5_HW_STEERING=
+CONFIG_MLX5_HW_STEERING=
+CONFIG_MLX5_INFINIBAND=m
+CONFIG_MLX5_INFINIBAND=m
+CONFIG_MLX5_IPSEC=y
+CONFIG_MLX5_IPSEC=y
+CONFIG_MLX5_MACSEC=
+CONFIG_MLX5_MACSEC=
+CONFIG_MLX5_MPFS=y
+CONFIG_MLX5_MPFS=y
+CONFIG_MLX5_SF=y
+CONFIG_MLX5_SF=y
+CONFIG_MLX5_SF_CFG=
+CONFIG_MLX5_SF_CFG=
+CONFIG_MLX5_SF_MANAGER=y
+CONFIG_MLX5_SF_MANAGER=y
+CONFIG_MLX5_SF_SFC=
+CONFIG_MLX5_SF_SFC=
+CONFIG_MLX5_SW_STEERING=y
+CONFIG_MLX5_SW_STEERING=y
+CONFIG_MLX5_TC_CT=y
+CONFIG_MLX5_TC_CT=y
+CONFIG_MLX5_TC_SAMPLE=y
+CONFIG_MLX5_TC_SAMPLE=y
+CONFIG_MLX5_TLS=y
+CONFIG_MLX5_TLS=y
+CONFIG_MLXDEVM=m
+CONFIG_MLXDEVM=m
+CONFIG_MLXFW=m
+CONFIG_MLXFW=m
+CONFIG_NVME_APPLE=
+CONFIG_NVME_APPLE=
+CONFIG_NVME_AUTH=
+CONFIG_NVME_AUTH=
+CONFIG_NVME_CORE=
+CONFIG_NVME_CORE=
+CONFIG_NVME_FABRICS=
+CONFIG_NVME_FABRICS=
+CONFIG_NVME_FC=
+CONFIG_NVME_FC=
+CONFIG_NVME_HOST_AUTH=
+CONFIG_NVME_HOST_AUTH=
+CONFIG_NVME_HOST_DUMMY=
+CONFIG_NVME_HOST_DUMMY=
+CONFIG_NVME_HOST_WITHOUT_FC=
+CONFIG_NVME_HOST_WITHOUT_FC=
+CONFIG_NVME_KEYRING=
+CONFIG_NVME_KEYRING=
+CONFIG_NVME_MULTIPATH=
+CONFIG_NVME_MULTIPATH=
+CONFIG_NVME_POLL=
+CONFIG_NVME_POLL=
+CONFIG_NVME_RDMA=
+CONFIG_NVME_RDMA=
+CONFIG_NVME_TARGET=
+CONFIG_NVME_TARGET=
+CONFIG_NVME_TARGET_DUMMY=
+CONFIG_NVME_TARGET_DUMMY=
+CONFIG_NVME_TARGET_FC=
+CONFIG_NVME_TARGET_FC=
+CONFIG_NVME_TARGET_FCLOOP=
+CONFIG_NVME_TARGET_FCLOOP=
+CONFIG_NVME_TARGET_LOOP=
+CONFIG_NVME_TARGET_LOOP=
+CONFIG_NVME_TARGET_RDMA=
+CONFIG_NVME_TARGET_RDMA=
+CONFIG_NVME_TARGET_TCP=
+CONFIG_NVME_TARGET_TCP=
+CONFIG_NVME_TCP=
+CONFIG_NVME_TCP=
+CONFIG_RDMA_RXE=
+CONFIG_RDMA_RXE=
+CONFIG_RDMA_RXE_DUMMY=
+CONFIG_RDMA_RXE_DUMMY=
+CONFIG_SCSI_ISCSI_ATTRS=m
+CONFIG_SCSI_ISCSI_ATTRS=m
+CONFIG_SCSI_SRP_ATTRS=m
+CONFIG_SCSI_SRP_ATTRS=m
+CONFIG_SUNRPC_XPRT_RDMA=m
+CONFIG_SUNRPC_XPRT_RDMA=m
+CONFIG_SUNRPC_XPRT_RDMA_DUMMY=
+CONFIG_SUNRPC_XPRT_RDMA_DUMMY=
+Created /var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/include/generated/autoconf.h:
+#ifndef __OFED_BUILD__
+#include_next <generated/autoconf.h>
+#define CONFIG_BACKPORT_LRO 1
+#define CONFIG_DEBUG_INFO 1
+#define CONFIG_ENABLE_BASECODE_EXTRAS 1
+#define CONFIG_ENABLE_VFIO 1
+#define CONFIG_ENABLE_XDP 1
+#define CONFIG_GPU_DIRECT_STORAGE 1
+#define CONFIG_INFINIBAND 1
+#define CONFIG_INFINIBAND_ADDR_TRANS 1
+#define CONFIG_INFINIBAND_ADDR_TRANS_CONFIGFS 1
+#define CONFIG_INFINIBAND_IPOIB 1
+#define CONFIG_INFINIBAND_IPOIB_CM 1
+#define CONFIG_INFINIBAND_IPOIB_DEBUG 1
+#define CONFIG_INFINIBAND_ISER 1
+#define CONFIG_SCSI_ISCSI_ATTRS 1
+#define CONFIG_ISCSI_TCP 1
+#define CONFIG_INFINIBAND_ISERT 1
+#define CONFIG_INFINIBAND_ON_DEMAND_PAGING 1
+#define CONFIG_INFINIBAND_SRP 1
+#define CONFIG_INFINIBAND_USER_ACCESS 1
+#define CONFIG_INFINIBAND_USER_ACCESS_UCM 1
+#define CONFIG_INFINIBAND_USER_MAD 1
+#define CONFIG_INFINIBAND_USER_MEM 1
+#define CONFIG_MLX5_ACCEL 1
+#define CONFIG_MLX5_BRIDGE 1
+#define CONFIG_MLX5_CLS_ACT 1
+#define CONFIG_MLX5_CORE 1
+#define CONFIG_MLX5_CORE_EN 1
+#define CONFIG_MLX5_CORE_EN_DCB 1
+#define CONFIG_MLX5_CORE_IPOIB 1
+#define CONFIG_MLX5_DEBUG 1
+#define CONFIG_MLX5_EN_ARFS 1
+#define CONFIG_MLX5_EN_IPSEC 1
+#define CONFIG_MLX5_EN_RXNFC 1
+#define CONFIG_MLX5_EN_SPECIAL_SQ 1
+#define CONFIG_MLX5_EN_TLS 1
+#define CONFIG_MLX5_ESWITCH 1
+#define CONFIG_MLX5_INFINIBAND 1
+#define CONFIG_MLX5_IPSEC 1
+#define CONFIG_MLX5_MPFS 1
+#define CONFIG_MLX5_SF 1
+#define CONFIG_MLX5_SF_MANAGER 1
+#define CONFIG_MLX5_SW_STEERING 1
+#define CONFIG_MLX5_TC_CT 1
+#define CONFIG_MLX5_TC_SAMPLE 1
+#define CONFIG_MLX5_TLS 1
+#define CONFIG_MLXDEVM 1
+#define CONFIG_MLXFW 1
+#define CONFIG_SCSI_ISCSI_ATTRS 1
+#define CONFIG_SCSI_SRP_ATTRS 1
+#define CONFIG_SUNRPC_XPRT_RDMA 1
+
+#else
+#undef CONFIG_AUXILIARY_BUS
+#undef CONFIG_BACKPORT_LRO
+#undef CONFIG_BF_DEVICE_EMULATION
+#undef CONFIG_BF_POWER_FAILURE_EVENT
+#undef CONFIG_BLK_DEV_NVME
+#undef CONFIG_COMPAT_KOBJECT_BACKPORT
+#undef CONFIG_COMPAT_VERSION
+#undef CONFIG_DEBUG_INFO
+#undef CONFIG_ENABLE_BASECODE_EXTRAS
+#undef CONFIG_ENABLE_MLX5_FS_DEBUGFS
+#undef CONFIG_ENABLE_VFIO
+#undef CONFIG_ENABLE_XDP
+#undef CONFIG_FWCTL
+#undef CONFIG_FWCTL_MLX5
+#undef CONFIG_GPU_DIRECT_STORAGE
+#undef CONFIG_INFINIBAND
+#undef CONFIG_INFINIBAND_ADDR_TRANS
+#undef CONFIG_INFINIBAND_ADDR_TRANS_CONFIGFS
+#undef CONFIG_INFINIBAND_CORE_DUMMY
+#undef CONFIG_INFINIBAND_IPOIB
+#undef CONFIG_INFINIBAND_IPOIB_CM
+#undef CONFIG_INFINIBAND_IPOIB_DEBUG
+#undef CONFIG_INFINIBAND_IPOIB_DEBUG_DATA
+#undef CONFIG_INFINIBAND_ISER
+#undef CONFIG_SCSI_ISCSI_ATTRS
+#undef CONFIG_ISCSI_TCP
+#undef CONFIG_INFINIBAND_ISERT
+#undef CONFIG_INFINIBAND_ISERT_DUMMY
+#undef CONFIG_INFINIBAND_ISER_DUMMY
+#undef CONFIG_INFINIBAND_MADEYE
+#undef CONFIG_INFINIBAND_ON_DEMAND_PAGING
+#undef CONFIG_INFINIBAND_PA_MR
+#undef CONFIG_INFINIBAND_SDP_DEBUG
+#undef CONFIG_INFINIBAND_SDP_DEBUG_DATA
+#undef CONFIG_INFINIBAND_SDP_RECV_ZCOPY
+#undef CONFIG_INFINIBAND_SDP_SEND_ZCOPY
+#undef CONFIG_INFINIBAND_SRP
+#undef CONFIG_INFINIBAND_SRP_DUMMY
+#undef CONFIG_INFINIBAND_USER_ACCESS
+#undef CONFIG_INFINIBAND_USER_ACCESS_UCM
+#undef CONFIG_INFINIBAND_USER_MAD
+#undef CONFIG_INFINIBAND_USER_MEM
+#undef CONFIG_INFINIBAND_WQE_FORMAT
+#undef CONFIG_IPOIB_ALL_MULTI
+#undef CONFIG_IPOIB_VERSION
+#undef CONFIG_IS_AZURELINUX
+#undef CONFIG_IS_MARINER
+#undef CONFIG_MEMTRACK
+#undef CONFIG_MLNX_BLOCK_REQUEST_MODULE
+#undef CONFIG_MLX5_ACCEL
+#undef CONFIG_MLX5_BRIDGE
+#undef CONFIG_MLX5_CLS_ACT
+#undef CONFIG_MLX5_CORE
+#undef CONFIG_MLX5_CORE_EN
+#undef CONFIG_MLX5_CORE_EN_DCB
+#undef CONFIG_MLX5_CORE_IPOIB
+#undef CONFIG_MLX5_DEBUG
+#undef CONFIG_MLX5_EN_ARFS
+#undef CONFIG_MLX5_EN_IPSEC
+#undef CONFIG_MLX5_EN_RXNFC
+#undef CONFIG_MLX5_EN_SPECIAL_SQ
+#undef CONFIG_MLX5_EN_TLS
+#undef CONFIG_MLX5_ESWITCH
+#undef CONFIG_MLX5_FPGA
+#undef CONFIG_MLX5_FPGA_IPSEC
+#undef CONFIG_MLX5_FPGA_TLS
+#undef CONFIG_MLX5_HW_STEERING
+#undef CONFIG_MLX5_INFINIBAND
+#undef CONFIG_MLX5_IPSEC
+#undef CONFIG_MLX5_MACSEC
+#undef CONFIG_MLX5_MPFS
+#undef CONFIG_MLX5_SF
+#undef CONFIG_MLX5_SF_CFG
+#undef CONFIG_MLX5_SF_MANAGER
+#undef CONFIG_MLX5_SF_SFC
+#undef CONFIG_MLX5_SW_STEERING
+#undef CONFIG_MLX5_TC_CT
+#undef CONFIG_MLX5_TC_SAMPLE
+#undef CONFIG_MLX5_TLS
+#undef CONFIG_MLXDEVM
+#undef CONFIG_MLXFW
+#undef CONFIG_NVME_APPLE
+#undef CONFIG_NVME_AUTH
+#undef CONFIG_NVME_CORE
+#undef CONFIG_NVME_FABRICS
+#undef CONFIG_NVME_FC
+#undef CONFIG_NVME_HOST_AUTH
+#undef CONFIG_NVME_HOST_DUMMY
+#undef CONFIG_NVME_HOST_WITHOUT_FC
+#undef CONFIG_NVME_KEYRING
+#undef CONFIG_NVME_MULTIPATH
+#undef CONFIG_NVME_POLL
+#undef CONFIG_NVME_RDMA
+#undef CONFIG_NVME_TARGET
+#undef CONFIG_NVME_TARGET_DUMMY
+#undef CONFIG_NVME_TARGET_FC
+#undef CONFIG_NVME_TARGET_FCLOOP
+#undef CONFIG_NVME_TARGET_LOOP
+#undef CONFIG_NVME_TARGET_RDMA
+#undef CONFIG_NVME_TARGET_TCP
+#undef CONFIG_NVME_TCP
+#undef CONFIG_RDMA_RXE
+#undef CONFIG_RDMA_RXE_DUMMY
+#undef CONFIG_SCSI_ISCSI_ATTRS
+#undef CONFIG_SCSI_SRP_ATTRS
+#undef CONFIG_SUNRPC_XPRT_RDMA
+#undef CONFIG_SUNRPC_XPRT_RDMA_DUMMY
+#define CONFIG_BACKPORT_LRO 1
+#define CONFIG_DEBUG_INFO 1
+#define CONFIG_ENABLE_BASECODE_EXTRAS 1
+#define CONFIG_ENABLE_VFIO 1
+#define CONFIG_ENABLE_XDP 1
+#define CONFIG_GPU_DIRECT_STORAGE 1
+#define CONFIG_INFINIBAND 1
+#define CONFIG_INFINIBAND_ADDR_TRANS 1
+#define CONFIG_INFINIBAND_ADDR_TRANS_CONFIGFS 1
+#define CONFIG_INFINIBAND_IPOIB 1
+#define CONFIG_INFINIBAND_IPOIB_CM 1
+#define CONFIG_INFINIBAND_IPOIB_DEBUG 1
+#define CONFIG_INFINIBAND_ISER 1
+#define CONFIG_SCSI_ISCSI_ATTRS 1
+#define CONFIG_ISCSI_TCP 1
+#define CONFIG_INFINIBAND_ISERT 1
+#define CONFIG_INFINIBAND_ON_DEMAND_PAGING 1
+#define CONFIG_INFINIBAND_SRP 1
+#define CONFIG_INFINIBAND_USER_ACCESS 1
+#define CONFIG_INFINIBAND_USER_ACCESS_UCM 1
+#define CONFIG_INFINIBAND_USER_MAD 1
+#define CONFIG_INFINIBAND_USER_MEM 1
+#define CONFIG_MLX5_ACCEL 1
+#define CONFIG_MLX5_BRIDGE 1
+#define CONFIG_MLX5_CLS_ACT 1
+#define CONFIG_MLX5_CORE 1
+#define CONFIG_MLX5_CORE_EN 1
+#define CONFIG_MLX5_CORE_EN_DCB 1
+#define CONFIG_MLX5_CORE_IPOIB 1
+#define CONFIG_MLX5_DEBUG 1
+#define CONFIG_MLX5_EN_ARFS 1
+#define CONFIG_MLX5_EN_IPSEC 1
+#define CONFIG_MLX5_EN_RXNFC 1
+#define CONFIG_MLX5_EN_SPECIAL_SQ 1
+#define CONFIG_MLX5_EN_TLS 1
+#define CONFIG_MLX5_ESWITCH 1
+#define CONFIG_MLX5_INFINIBAND 1
+#define CONFIG_MLX5_IPSEC 1
+#define CONFIG_MLX5_MPFS 1
+#define CONFIG_MLX5_SF 1
+#define CONFIG_MLX5_SF_MANAGER 1
+#define CONFIG_MLX5_SW_STEERING 1
+#define CONFIG_MLX5_TC_CT 1
+#define CONFIG_MLX5_TC_SAMPLE 1
+#define CONFIG_MLX5_TLS 1
+#define CONFIG_MLXDEVM 1
+#define CONFIG_MLXFW 1
+#define CONFIG_SCSI_ISCSI_ATTRS 1
+#define CONFIG_SCSI_SRP_ATTRS 1
+#define CONFIG_SUNRPC_XPRT_RDMA 1
+#endif
+checking for a BSD-compatible install... /usr/bin/install -c
+checking whether build environment is sane... yes
+checking for a thread-safe mkdir -p... /usr/bin/mkdir -p
+checking for gawk... no
+checking for mawk... mawk
+checking whether make sets $(MAKE)... yes
+checking whether make supports nested variables... yes
+/usr/src/linux-headers-5.15.0-1087-azure
+/usr/src/linux-headers-5.15.0-1087-azure
+checking for Linux sources... /usr/src/linux-headers-5.15.0-1087-azure
+checking for /usr/src/linux-headers-5.15.0-1087-azure... yes
+checking for Linux objects dir... /usr/src/linux-headers-5.15.0-1087-azure
+checking for /boot/kernel.h... no
+checking for /var/adm/running-kernel.h... no
+checking for /usr/src/linux-headers-5.15.0-1087-azure/include/config/auto.conf... yes
+checking name of module symbol version file... Module.symvers
+checking for a working kernel modules build system... .yes
+checking if Linux was built with symbol cancel_work exported... yes
+checking if Linux was built with symbol unpin_user_pages_dirty_lock exported... yes
+checking if Linux was built with symbol unpin_user_page_range_dirty_lock exported... yes
+checking if Linux was built with symbol compat_ptr_ioctl exported... yes
+checking if Linux was built with symbol flow_rule_match_cvlan exported... yes
+checking if Linux was built with symbol devlink_params_publish exported... yes
+checking if Linux was built with symbol devlink_param_publish exported... yes
+checking if Linux was built with symbol split_page exported... yes
+checking if Linux was built with symbol ip6_dst_hoplimit exported... yes
+checking if Linux was built with symbol __ip_dev_find exported... yes
+checking if Linux was built with symbol inet_confirm_addr exported... yes
+checking if Linux was built with symbol dev_pm_qos_update_user_latency_tolerance exported... yes
+checking if Linux was built with symbol tcf_exts_num_actions exported... yes
+checking if Linux was built with symbol netpoll_poll_dev exported... yes
+checking if Linux was built with symbol __put_task_struct exported... yes
+checking if Linux was built with symbol mmput_async exported... yes
+checking if Linux was built with symbol get_pid_task exported... yes
+checking if Linux was built with symbol get_task_pid exported... yes
+checking if Linux was built with symbol mm_kobj exported... yes
+checking if Linux was built with symbol interval_tree_insert exported... yes
+checking if Linux was built with symbol svc_pool_wake_idle_thread exported... no
+checking if Linux was built with symbol xprt_reconnect_delay exported... yes
+checking if Linux was built with symbol xprt_add_backlog exported... yes
+checking if Linux was built with symbol xprt_lock_connect exported... yes
+checking if Linux was built with symbol svc_xprt_deferred_close exported... yes
+checking if Linux was built with symbol svc_xprt_received exported... yes
+checking if Linux was built with symbol svc_xprt_close exported... yes
+checking if Linux was built with symbol rpc_task_gfp_mask exported... no
+configure: Test-building kernel modules test-builds
+.......................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................
+checking for results from kernel modules test-builds... done
+checking that generated files are newer than configure... done
+configure: creating ./config.status
+config.status: creating Makefile
+config.status: creating config.h
+/var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1
+Complex config: Unset CONFIG_MLX5_MACSEC in /var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/configure.mk.kernel
+Complex config: Unset CONFIG_MLX5_MACSEC in /var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/include/generated/autoconf.h
+make[1]: Leaving directory '/var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1'
+   debian/rules override_dh_auto_build
+make[1]: Entering directory '/var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1'
+make distclean || true
+make[2]: Entering directory '/var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1'
+make -C /lib/modules/5.15.0-1087-azure/build rm-files= M="/var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1"  clean
+make[3]: Entering directory '/usr/src/linux-headers-5.15.0-1087-azure'
+make[3]: Leaving directory '/usr/src/linux-headers-5.15.0-1087-azure'
+make[2]: Leaving directory '/var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1'
+make -j16
+make[2]: Entering directory '/var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1'
+Building kernel modules
+Kernel version: 5.15.0-1087-azure
+Modules directory: /var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/debian/mlnx-ofed-kernel-modules/lib/modules/5.15.0-1087-azure/updates
+Kernel build: /lib/modules/5.15.0-1087-azure/build
+Kernel sources: /lib/modules/5.15.0-1087-azure/build
+env CWD=/var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1 BACKPORT_INCLUDES= \
+	make -C /lib/modules/5.15.0-1087-azure/build M="/var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1" \
+	V=0 KBUILD_NOCMDDEP=1  \
+	CONFIG_COMPAT_VERSION= \
+	CONFIG_COMPAT_KOBJECT_BACKPORT= \
+	CONFIG_MEMTRACK= \
+	CONFIG_DEBUG_INFO=y \
+	CONFIG_DEBUG_INFO_DWARF_TOOLCHAIN_DEFAULT=y \
+	CONFIG_INFINIBAND=m \
+	CONFIG_INFINIBAND_CORE_DUMMY= \
+	CONFIG_INFINIBAND_IPOIB=m \
+	CONFIG_IPOIB_VERSION= \
+	CONFIG_INFINIBAND_IPOIB_CM=y \
+	CONFIG_IPOIB_ALL_MULTI= \
+                CONFIG_INFINIBAND_MLNX_BX= \
+	CONFIG_INFINIBAND_SRP=m \
+	CONFIG_INFINIBAND_SRP_DUMMY= \
+	CONFIG_RDMA_RXE= \
+	CONFIG_RDMA_RXE_DUMMY= \
+	CONFIG_NVME_CORE= \
+	CONFIG_NVME_HOST_WITHOUT_FC= \
+	CONFIG_BLK_DEV_NVME= \
+	CONFIG_NVME_FABRICS= \
+	CONFIG_NVME_FC= \
+	CONFIG_NVME_RDMA= \
+	CONFIG_NVME_TCP= \
+	CONFIG_NVME_APPLE= \
+	CONFIG_NVME_HOST_AUTH= \
+	CONFIG_NVME_MULTIPATH= \
+	CONFIG_NVME_HOST_DUMMY= \
+	CONFIG_NVME_TARGET= \
+	CONFIG_NVME_TARGET_LOOP= \
+	CONFIG_NVME_TARGET_RDMA= \
+	CONFIG_NVME_TARGET_TCP= \
+	CONFIG_NVME_TARGET_FC= \
+	CONFIG_NVME_TARGET_FCLOOP= \
+	CONFIG_NVME_TARGET_DUMMY= \
+	CONFIG_NVME_KEYRING= \
+	CONFIG_NVME_AUTH= \
+	CONFIG_SCSI_SRP_ATTRS=m \
+	CONFIG_INFINIBAND_USER_MAD=m \
+	CONFIG_INFINIBAND_USER_ACCESS=m \
+	CONFIG_INFINIBAND_USER_ACCESS_UCM=m \
+	CONFIG_INFINIBAND_USER_MEM=y \
+	CONFIG_INFINIBAND_ADDR_TRANS=y \
+	CONFIG_INFINIBAND_ADDR_TRANS_CONFIGFS=y \
+	CONFIG_INFINIBAND_IPOIB_DEBUG=y \
+	CONFIG_INFINIBAND_ISERT=m \
+	CONFIG_INFINIBAND_ISERT_DUMMY= \
+	CONFIG_INFINIBAND_ISER=m \
+	CONFIG_INFINIBAND_ISER_DUMMY= \
+	CONFIG_SCSI_ISCSI_ATTRS=m \
+	CONFIG_ISCSI_TCP= \
+	CONFIG_INFINIBAND_IPOIB_DEBUG_DATA= \
+	CONFIG_INFINIBAND_SDP_SEND_ZCOPY= \
+	CONFIG_INFINIBAND_SDP_RECV_ZCOPY= \
+	CONFIG_INFINIBAND_SDP_DEBUG= \
+	CONFIG_INFINIBAND_SDP_DEBUG_DATA= \
+	CONFIG_INFINIBAND_MADEYE= \
+	CONFIG_MLXFW=m \
+	CONFIG_MLX5_CORE=m \
+	CONFIG_MLX5_ACCEL=y \
+	CONFIG_MLX5_EN_TLS=y \
+	CONFIG_MLX5_TLS=y \
+	CONFIG_MLX5_FPGA_TLS= \
+	CONFIG_MLX5_FPGA_IPSEC= \
+	CONFIG_MLX5_IPSEC=y \
+	CONFIG_MLX5_EN_IPSEC=y \
+	CONFIG_MLX5_FPGA= \
+	CONFIG_MLX5_CORE_EN=y \
+	CONFIG_MLX5_CORE_EN_DCB=y \
+	CONFIG_MLX5_EN_ARFS=y \
+	CONFIG_MLX5_EN_RXNFC=y \
+	CONFIG_MLX5_MPFS=y \
+	CONFIG_MLX5_ESWITCH=y \
+	CONFIG_MLX5_CLS_ACT=y \
+	CONFIG_MLX5_BRIDGE=y \
+	CONFIG_MLX5_TC_CT=y \
+	CONFIG_MLX5_SF=y \
+	CONFIG_MLX5_SF_MANAGER=y \
+	CONFIG_MLX5_SW_STEERING=y \
+	CONFIG_MLX5_HW_STEERING= \
+	CONFIG_MLX5_CORE_IPOIB=y \
+	CONFIG_MLX5_INFINIBAND=m \
+	CONFIG_MLX5_DEBUG=y \
+	CONFIG_AUXILIARY_BUS= \
+	CONFIG_FWCTL= \
+	CONFIG_FWCTL_MLX5= \
+	CONFIG_SUNRPC_XPRT_RDMA=m \
+	CONFIG_SUNRPC_XPRT_RDMA_DUMMY= \
+	CONFIG_DTRACE= \
+	CONFIG_CTF= \
+	CONFIG_INFINIBAND_ON_DEMAND_PAGING=y \
+	CONFIG_BF_DEVICE_EMULATION= \
+	CONFIG_BF_POWER_FAILURE_EVENT= \
+	CONFIG_GPU_DIRECT_STORAGE=y \
+	CONFIG_ENABLE_MLX5_FS_DEBUGFS= \
+	CONFIG_MLXDEVM=m \
+	CONFIG_MLX5_SF_CFG= \
+	CONFIG_MLX5_TC_SAMPLE=y \
+	CONFIG_MLX5_MACSEC= \
+	CONFIG_MLX5_DPLL= \
+	CONFIG_GCC_VERSION=120300 \
+	CONFIG_IS_MARINER= \
+	CONFIG_IS_AZURELINUX= \
+	LINUXINCLUDE='-D__OFED_BUILD__ -D__KERNEL__ -DCOMPAT_BASE="\"mlnx-ofa_kernel-compat-20250208-2114-f5ad9dd\"" -DCOMPAT_BASE_TREE="\"https://${SVC_OFED_BOT_USER}:${SVC_OFED_BOT_KEY}@git-nbu.nvidia.com/r/a/mlnx_ofed/mlnx-ofa_kernel-4.0.git\"" -DCOMPAT_BASE_TREE_VERSION="\"f5ad9dd\"" -DCOMPAT_PROJECT="\"Compat-mlnx-ofed\"" -DCOMPAT_VERSION="\"f5ad9dd\""  -include /lib/modules/5.15.0-1087-azure/build/include/generated/autoconf.h -include /lib/modules/5.15.0-1087-azure/build/include/linux/kconfig.h -include /var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/include/linux/compat-2.6.h    -I/var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/include -I/var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/include/uapi -I/var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/drivers/infiniband/debug $(if $(CONFIG_XEN),-D__XEN_INTERFACE_VERSION__=$(CONFIG_XEN_INTERFACE_VERSION)) $(if $(CONFIG_XEN),-I$(srctree)/arch/x86/include/mach-xen) -I$(srctree)/arch/$(SRCARCH)/include -I$(objtree)/arch/$(SRCARCH)/include/generated -I$(objtree)/include -I$(srctree)/arch/$(SRCARCH)/include/uapi -I$(objtree)/arch/$(SRCARCH)/include/generated/uapi -I$(srctree)/include -I$(srctree)/include/uapi -I$(objtree)/include/generated/uapi $(if $(KBUILD_SRC),-I$(objtree)/include2 -I$(srctree)/include) -I$(srctree)/arch/$(SRCARCH)/include -I$(objtree)/arch/$(SRCARCH)/include/generated ' \
+	modules
+make[3]: Entering directory '/usr/src/linux-headers-5.15.0-1087-azure'
+warning: the compiler differs from the one used to build the kernel
+  The kernel was built by: gcc (Ubuntu 11.4.0-1ubuntu1~22.04) 11.4.0
+  You are using:           gcc (Ubuntu 12.3.0-1ubuntu1~22.04) 12.3.0
+  CC [M]  /var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/compat/main.o
+  CC [M]  /var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/drivers/block/rnbd/rnbd-dummy.o
+  CC [M]  /var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/compat/output_core.o
+  CC [M]  /var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/drivers/net/ethernet/mellanox/mlxfw/mlxfw_fsm.o
+  CC [M]  /var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/drivers/net/ethernet/mellanox/mlxsw/spectrum_main.o
+  CC [M]  /var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/net/rds/rds_rdma_dummy.o
+  CC [M]  /var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/net/mlxdevm/mlxdevm.o
+  CC [M]  /var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/net/9p/9pnet_rdma.o
+  CC [M]  /var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/net/sunrpc/xprtrdma/transport.o
+  CC [M]  /var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/drivers/scsi/scsi_transport_srp.o
+  CC [M]  /var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/net/smc/smc_dummy.o
+  CC [M]  /var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/drivers/infiniband/hw/mthca/main.o
+  CC [M]  /var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/drivers/infiniband/core/packer.o
+  CC [M]  /var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/drivers/infiniband/ulp/ipoib/ipoib_main.o
+  CC [M]  /var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/drivers/infiniband/sw/rdmavt/main.o
+  CC [M]  /var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/drivers/net/ethernet/mellanox/mlx5/core/main.o
+  CC [M]  /var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/drivers/block/rnbd/rnbd-server-dummy.o
+  LD [M]  /var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/drivers/net/ethernet/mellanox/mlxsw/mlxsw_spectrum.o
+  LD [M]  /var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/net/rds/rds_rdma.o
+  CC [M]  /var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/compat/interval_tree.o
+  CC [M]  /var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/drivers/infiniband/core/ud_header.o
+  LD [M]  /var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/drivers/infiniband/hw/mthca/ib_mthca.o
+  CC [M]  /var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/drivers/net/ethernet/mellanox/mlxfw/mlxfw_mfa2_tlv_multi.o
+  CC [M]  /var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/net/smc/smc_diag_dummy.o
+  LD [M]  /var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/drivers/infiniband/sw/rdmavt/rdmavt.o
+  CC [M]  /var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/drivers/infiniband/hw/qib/main.o
+  CC [M]  /var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/drivers/infiniband/sw/siw/main.o
+  CC [M]  /var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/drivers/infiniband/hw/efa/efa_main.o
+  LD [M]  /var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/net/smc/smc.o
+  LD [M]  /var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/drivers/block/rnbd/rnbd-client.o
+  CC [M]  /var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/drivers/infiniband/core/verbs.o
+  LD [M]  /var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/drivers/block/rnbd/rnbd-server.o
+  LD [M]  /var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/net/smc/smc_diag.o
+  CC [M]  /var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/net/sunrpc/xprtrdma/rpc_rdma.o
+  LD [M]  /var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/drivers/infiniband/hw/qib/ib_qib.o
+  CC [M]  /var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/drivers/infiniband/hw/irdma/irdma_dummy.o
+  LD [M]  /var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/drivers/infiniband/sw/siw/siw.o
+  CC [M]  /var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/net/sunrpc/xprtrdma/verbs.o
+  CC [M]  /var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/compat/xz_crc32.o
+  CC [M]  /var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/drivers/net/ethernet/mellanox/mlx5/core/cmd.o
+  LD [M]  /var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/drivers/infiniband/hw/efa/efa.o
+  CC [M]  /var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/drivers/net/ethernet/mellanox/mlxfw/mlxfw_mfa2.o
+  LD [M]  /var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/drivers/infiniband/hw/irdma/irdma.o
+  CC [M]  /var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/compat/xz_dec_lzma2.o
+  CC [M]  /var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/drivers/infiniband/hw/mana/mana_dummy.o
+  CC [M]  /var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/drivers/infiniband/hw/mlx4/main.o
+  CC [M]  /var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/drivers/infiniband/ulp/ipoib/ipoib_ib.o
+  CC [M]  /var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/compat/xz_dec_stream.o
+  LD [M]  /var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/drivers/infiniband/hw/mana/mana_ib.o
+  LD [M]  /var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/drivers/infiniband/hw/mlx4/mlx4_ib.o
+  CC [M]  /var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/net/sunrpc/xprtrdma/frwr_ops.o
+  CC [M]  /var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/drivers/infiniband/core/cq.o
+  CC [M]  /var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/drivers/infiniband/hw/mlx5/ah.o
+  CC [M]  /var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/drivers/infiniband/hw/mlx5/cmd.o
+  CC [M]  /var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/compat/xz_dec_syms.o
+  LD [M]  /var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/drivers/net/ethernet/mellanox/mlxfw/mlxfw.o
+  CC [M]  /var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/drivers/infiniband/hw/usnic/main.o
+  CC [M]  /var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/drivers/infiniband/hw/hfi1/main.o
+  CC [M]  /var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/compat/xz_dec_bcj.o
+  CC [M]  /var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/net/sunrpc/xprtrdma/ib_client.o
+  LD [M]  /var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/drivers/infiniband/hw/usnic/usnic_verbs.o
+  LD [M]  /var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/drivers/infiniband/hw/hfi1/hfi1.o
+  CC [M]  /var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/net/sunrpc/xprtrdma/svc_rdma.o
+  CC [M]  /var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/compat/pci.o
+  CC [M]  /var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/net/sunrpc/xprtrdma/svc_rdma_backchannel.o
+  CC [M]  /var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/drivers/infiniband/hw/mlx5/cong.o
+  CC [M]  /var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/drivers/infiniband/ulp/srp/ib_srp.o
+  CC [M]  /var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/drivers/infiniband/core/rw.o
+  CC [M]  /var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/net/sunrpc/xprtrdma/svc_rdma_transport.o
+  CC [M]  /var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/net/sunrpc/xprtrdma/svc_rdma_sendto.o
+  CC [M]  /var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/drivers/infiniband/core/sysfs.o
+  CC [M]  /var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/net/sunrpc/xprtrdma/svc_rdma_recvfrom.o
+  CC [M]  /var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/compat/mmu_notifier.o
+  CC [M]  /var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/compat/xarray.o
+  CC [M]  /var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/drivers/infiniband/ulp/ipoib/ipoib_multicast.o
+  CC [M]  /var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/drivers/infiniband/ulp/ipoib/ipoib_verbs.o
+  CC [M]  /var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/drivers/infiniband/ulp/ipoib/ipoib_vlan.o
+  CC [M]  /var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/drivers/infiniband/ulp/ipoib/ipoib_ethtool.o
+  CC [M]  /var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/net/sunrpc/xprtrdma/svc_rdma_rw.o
+  CC [M]  /var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/compat/rdma_dim.o
+  CC [M]  /var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/compat/dim.o
+  CC [M]  /var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/compat/net_dim.o
+  CC [M]  /var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/drivers/infiniband/hw/mlx5/counters.o
+  CC [M]  /var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/drivers/infiniband/hw/mlx5/cq.o
+  CC [M]  /var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/drivers/infiniband/core/verbs_nvmf.o
+  CC [M]  /var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/drivers/net/ethernet/mellanox/mlx5/core/debugfs.o
+  CC [M]  /var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/drivers/net/ethernet/mellanox/mlx5/core/fw.o
+  CC [M]  /var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/compat/file.o
+  CC [M]  /var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/compat/flow_offload.o
+  CC [M]  /var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/drivers/infiniband/core/device.o
+  CC [M]  /var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/drivers/infiniband/ulp/ipoib/ipoib_netlink.o
+  CC [M]  /var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/compat/cls_api.o
+  CC [M]  /var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/net/sunrpc/xprtrdma/svc_rdma_pcl.o
+  CC [M]  /var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/net/sunrpc/xprtrdma/module.o
+  CC [M]  /var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/drivers/infiniband/ulp/iser/ib_iser_dummy.o
+  CC [M]  /var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/drivers/infiniband/hw/mlx5/data_direct.o
+  CC [M]  /var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/drivers/infiniband/ulp/isert/ib_isert.o
+  LD [M]  /var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/drivers/infiniband/ulp/iser/ib_iser.o
+  CC [M]  /var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/drivers/infiniband/ulp/ipoib/ipoib_genetlink.o
+  CC [M]  /var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/drivers/infiniband/ulp/ipoib/ipoib_cm.o
+  CC [M]  /var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/drivers/infiniband/ulp/ipoib/ipoib_fs.o
+  CC [M]  /var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/net/sunrpc/xprtrdma/nvfs_rpc_rdma.o
+  LD [M]  /var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/compat/mlx_compat.o
+  CC [M]  /var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/drivers/infiniband/core/cache.o
+  CC [M]  /var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/drivers/infiniband/core/netlink.o
+  CC [M]  /var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/net/sunrpc/xprtrdma/backchannel.o
+  CC [M]  /var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/drivers/infiniband/hw/mlx5/dm.o
+  CC [M]  /var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/drivers/infiniband/ulp/opa_vnic/main.o
+  CC [M]  /var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/drivers/infiniband/ulp/rtrs/rtrs-core_dummy.o
+  CC [M]  /var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/drivers/infiniband/ulp/rtrs/rtrs-clt_dummy.o
+  CC [M]  /var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/drivers/infiniband/ulp/rtrs/rtrs-srv_dummy.o
+  LD [M]  /var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/drivers/infiniband/ulp/opa_vnic/opa_vnic.o
+  CC [M]  /var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/drivers/net/ethernet/mellanox/mlx5/core/eq.o
+  LD [M]  /var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/drivers/infiniband/ulp/rtrs/rtrs-core.o
+  CC [M]  /var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/drivers/infiniband/hw/mlx5/doorbell.o
+  CC [M]  /var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/drivers/net/ethernet/mellanox/mlx5/core/uar.o
+  CC [M]  /var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/drivers/infiniband/core/roce_gid_mgmt.o
+  CC [M]  /var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/drivers/infiniband/hw/mlx5/gsi.o
+  CC [M]  /var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/drivers/infiniband/core/mr_pool.o
+  CC [M]  /var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/drivers/infiniband/core/addr.o
+  CC [M]  /var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/drivers/infiniband/hw/mlx5/ib_virt.o
+  LD [M]  /var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/drivers/infiniband/ulp/rtrs/rtrs-client.o
+  LD [M]  /var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/drivers/infiniband/ulp/rtrs/rtrs-server.o
+  CC [M]  /var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/drivers/infiniband/core/sa_query.o
+  LD [M]  /var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/net/sunrpc/xprtrdma/rpcrdma.o
+  CC [M]  /var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/drivers/infiniband/hw/mlx5/mad.o
+  CC [M]  /var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/drivers/net/ethernet/mellanox/mlx5/core/pagealloc.o
+  LD [M]  /var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/drivers/infiniband/ulp/ipoib/ib_ipoib.o
+  CC [M]  /var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/drivers/infiniband/hw/mlx5/main.o
+  CC [M]  /var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/drivers/net/ethernet/mellanox/mlx5/core/health.o
+  CC [M]  /var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/drivers/net/ethernet/mellanox/mlx5/core/mcg.o
+  CC [M]  /var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/drivers/infiniband/hw/mlx5/main_ext.o
+  CC [M]  /var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/drivers/net/ethernet/mellanox/mlx5/core/cq.o
+  CC [M]  /var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/drivers/infiniband/core/multicast.o
+/var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/drivers/net/ethernet/mellanox/mlx5/core/eq.c: In function 'comp_irq_request_sf':
+/var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/drivers/net/ethernet/mellanox/mlx5/core/eq.c:978:1: warning: the frame size of 1056 bytes is larger than 1024 bytes [-Wframe-larger-than=]
+  978 | }
+      | ^
+  CC [M]  /var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/drivers/net/ethernet/mellanox/mlx5/core/alloc.o
+  CC [M]  /var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/drivers/net/ethernet/mellanox/mlx5/core/port.o
+  CC [M]  /var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/drivers/net/ethernet/mellanox/mlx5/core/mr.o
+  CC [M]  /var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/drivers/net/ethernet/mellanox/mlx5/core/pd.o
+  CC [M]  /var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/drivers/infiniband/core/mad.o
+  CC [M]  /var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/drivers/infiniband/hw/mlx5/mem.o
+  CC [M]  /var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/drivers/infiniband/core/smi.o
+  CC [M]  /var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/drivers/infiniband/core/agent.o
+  CC [M]  /var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/drivers/net/ethernet/mellanox/mlx5/core/transobj.o
+  CC [M]  /var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/drivers/infiniband/core/mad_rmpp.o
+  CC [M]  /var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/drivers/infiniband/core/nldev.o
+  CC [M]  /var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/drivers/infiniband/core/restrack.o
+  CC [M]  /var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/drivers/infiniband/core/counters.o
+  CC [M]  /var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/drivers/infiniband/core/ib_core_uverbs.o
+  CC [M]  /var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/drivers/infiniband/core/trace.o
+  CC [M]  /var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/drivers/infiniband/hw/mlx5/mr.o
+  CC [M]  /var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/drivers/infiniband/hw/mlx5/nvmf.o
+  CC [M]  /var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/drivers/infiniband/hw/mlx5/qp.o
+  CC [M]  /var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/drivers/infiniband/hw/mlx5/qpc.o
+  CC [M]  /var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/drivers/infiniband/hw/mlx5/qp_nvmf.o
+  CC [M]  /var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/drivers/infiniband/hw/mlx5/restrack.o
+  CC [M]  /var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/drivers/infiniband/core/lag.o
+  CC [M]  /var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/drivers/net/ethernet/mellanox/mlx5/core/vport.o
+  CC [M]  /var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/drivers/infiniband/core/security.o
+  CC [M]  /var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/drivers/net/ethernet/mellanox/mlx5/core/sriov.o
+  CC [M]  /var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/drivers/infiniband/hw/mlx5/srq.o
+  CC [M]  /var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/drivers/infiniband/hw/mlx5/srq_cmd.o
+  CC [M]  /var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/drivers/net/ethernet/mellanox/mlx5/core/fs_cmd.o
+  CC [M]  /var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/drivers/infiniband/core/cgroup.o
+  CC [M]  /var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/drivers/infiniband/hw/mlx5/srq_nvmf.o
+  CC [M]  /var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/drivers/infiniband/hw/mlx5/umr.o
+  CC [M]  /var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/drivers/infiniband/core/cm.o
+  CC [M]  /var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/drivers/infiniband/core/cm_trace.o
+  CC [M]  /var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/drivers/net/ethernet/mellanox/mlx5/core/fs_core.o
+  CC [M]  /var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/drivers/net/ethernet/mellanox/mlx5/core/pci_irq.o
+  CC [M]  /var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/drivers/infiniband/core/iwcm.o
+  CC [M]  /var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/drivers/net/ethernet/mellanox/mlx5/core/fs_counters.o
+  CC [M]  /var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/drivers/infiniband/hw/mlx5/wr.o
+  CC [M]  /var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/drivers/infiniband/core/iwpm_util.o
+  CC [M]  /var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/drivers/net/ethernet/mellanox/mlx5/core/fs_ft_pool.o
+  CC [M]  /var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/drivers/net/ethernet/mellanox/mlx5/core/rl.o
+  CC [M]  /var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/drivers/infiniband/core/iwpm_msg.o
+  CC [M]  /var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/drivers/net/ethernet/mellanox/mlx5/core/lag/debugfs.o
+  CC [M]  /var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/drivers/infiniband/core/cma.o
+  CC [M]  /var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/drivers/net/ethernet/mellanox/mlx5/core/lag/lag.o
+  CC [M]  /var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/drivers/infiniband/hw/mlx5/odp.o
+  CC [M]  /var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/drivers/net/ethernet/mellanox/mlx5/core/dev.o
+/var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/drivers/net/ethernet/mellanox/mlx5/core/pci_irq.c: In function 'mlx5_ctrl_irq_request':
+/var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/drivers/net/ethernet/mellanox/mlx5/core/pci_irq.c:515:1: warning: the frame size of 1040 bytes is larger than 1024 bytes [-Wframe-larger-than=]
+  515 | }
+      | ^
+/var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/drivers/net/ethernet/mellanox/mlx5/core/pci_irq.c: In function 'mlx5_irq_request_vector':
+/var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/drivers/net/ethernet/mellanox/mlx5/core/pci_irq.c:582:1: warning: the frame size of 1040 bytes is larger than 1024 bytes [-Wframe-larger-than=]
+  582 | }
+      | ^
+  CC [M]  /var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/drivers/infiniband/core/cma_trace.o
+  CC [M]  /var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/drivers/net/ethernet/mellanox/mlx5/core/events.o
+  CC [M]  /var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/drivers/infiniband/core/cma_configfs.o
+  CC [M]  /var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/drivers/infiniband/hw/mlx5/ib_rep.o
+  CC [M]  /var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/drivers/infiniband/core/user_mad.o
+  CC [M]  /var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/drivers/infiniband/core/uverbs_main.o
+  CC [M]  /var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/drivers/net/ethernet/mellanox/mlx5/core/wq.o
+  CC [M]  /var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/drivers/infiniband/core/uverbs_cmd.o
+  CC [M]  /var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/drivers/infiniband/core/uverbs_marshall.o
+  CC [M]  /var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/drivers/infiniband/hw/mlx5/devx.o
+  CC [M]  /var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/drivers/infiniband/core/rdma_core.o
+  CC [M]  /var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/drivers/infiniband/hw/mlx5/fs.o
+  CC [M]  /var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/drivers/infiniband/hw/mlx5/qos.o
+  CC [M]  /var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/drivers/infiniband/core/uverbs_std_types.o
+  CC [M]  /var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/drivers/infiniband/core/uverbs_ioctl.o
+  CC [M]  /var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/drivers/infiniband/core/uverbs_std_types_cq.o
+  CC [M]  /var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/drivers/infiniband/hw/mlx5/std_types.o
+  CC [M]  /var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/drivers/net/ethernet/mellanox/mlx5/core/lib/gid.o
+  CC [M]  /var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/drivers/infiniband/core/uverbs_std_types_flow_action.o
+  CC [M]  /var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/drivers/infiniband/core/uverbs_std_types_dm.o
+  CC [M]  /var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/drivers/infiniband/core/uverbs_std_types_mr.o
+  CC [M]  /var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/drivers/infiniband/core/uverbs_std_types_counters.o
+  CC [M]  /var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/drivers/net/ethernet/mellanox/mlx5/core/lib/devcom.o
+  CC [M]  /var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/drivers/net/ethernet/mellanox/mlx5/core/lib/pci_vsc.o
+  CC [M]  /var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/drivers/net/ethernet/mellanox/mlx5/core/lib/dm.o
+  CC [M]  /var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/drivers/net/ethernet/mellanox/mlx5/core/lib/fs_ttc.o
+  CC [M]  /var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/drivers/net/ethernet/mellanox/mlx5/core/diag/fs_tracepoint.o
+  CC [M]  /var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/drivers/net/ethernet/mellanox/mlx5/core/diag/fw_tracer.o
+  CC [M]  /var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/drivers/net/ethernet/mellanox/mlx5/core/diag/crdump.o
+  CC [M]  /var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/drivers/net/ethernet/mellanox/mlx5/core/devlink.o
+  CC [M]  /var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/drivers/net/ethernet/mellanox/mlx5/core/diag/rsc_dump.o
+  CC [M]  /var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/drivers/net/ethernet/mellanox/mlx5/core/diag/reporter_vnic.o
+  CC [M]  /var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/drivers/net/ethernet/mellanox/mlx5/core/fw_reset.o
+  LD [M]  /var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/drivers/infiniband/hw/mlx5/mlx5_ib.o
+  CC [M]  /var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/drivers/net/ethernet/mellanox/mlx5/core/qos.o
+  CC [M]  /var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/drivers/net/ethernet/mellanox/mlx5/core/lib/tout.o
+  CC [M]  /var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/drivers/net/ethernet/mellanox/mlx5/core/lib/aso.o
+  CC [M]  /var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/drivers/infiniband/core/uverbs_uapi.o
+  CC [M]  /var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/drivers/infiniband/core/uverbs_std_types_device.o
+  CC [M]  /var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/drivers/infiniband/core/uverbs_std_types_async_fd.o
+  CC [M]  /var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/drivers/infiniband/core/uverbs_std_types_srq.o
+  CC [M]  /var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/drivers/infiniband/core/uverbs_std_types_wq.o
+  CC [M]  /var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/drivers/infiniband/core/uverbs_std_types_qp.o
+  CC [M]  /var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/drivers/infiniband/core/umem.o
+  CC [M]  /var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/drivers/infiniband/core/umem_dmabuf.o
+  CC [M]  /var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/drivers/infiniband/core/peer_mem.o
+  CC [M]  /var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/drivers/infiniband/core/umem_odp.o
+  CC [M]  /var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/drivers/infiniband/core/ucma.o
+  CC [M]  /var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/drivers/net/ethernet/mellanox/mlx5/core/wc.o
+  CC [M]  /var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/drivers/net/ethernet/mellanox/mlx5/core/mst_dump.o
+  CC [M]  /var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/drivers/infiniband/core/ib_ucm_dummy.o
+  LD [M]  /var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/drivers/infiniband/core/ib_core.o
+  CC [M]  /var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/drivers/net/ethernet/mellanox/mlx5/core/en_diag.o
+  CC [M]  /var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/drivers/net/ethernet/mellanox/mlx5/core/sriov_sysfs.o
+  LD [M]  /var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/drivers/infiniband/core/ib_cm.o
+  CC [M]  /var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/drivers/net/ethernet/mellanox/mlx5/core/crdump.o
+  CC [M]  /var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/drivers/net/ethernet/mellanox/mlx5/core/diag/diag_cnt.o
+  CC [M]  /var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/drivers/net/ethernet/mellanox/mlx5/core/eswitch_devlink_compat.o
+  CC [M]  /var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/drivers/net/ethernet/mellanox/mlx5/core/ecpf.o
+  LD [M]  /var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/drivers/infiniband/core/iw_cm.o
+  CC [M]  /var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/drivers/net/ethernet/mellanox/mlx5/core/auxiliary_sysfs_compat.o
+  LD [M]  /var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/drivers/infiniband/core/rdma_cm.o
+  CC [M]  /var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/drivers/net/ethernet/mellanox/mlx5/core/compat.o
+  CC [M]  /var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/drivers/net/ethernet/mellanox/mlx5/core/en/rqt.o
+  LD [M]  /var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/drivers/infiniband/core/ib_umad.o
+  CC [M]  /var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/drivers/net/ethernet/mellanox/mlx5/core/en/tir.o
+  LD [M]  /var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/drivers/infiniband/core/ib_ucm.o
+  CC [M]  /var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/drivers/net/ethernet/mellanox/mlx5/core/en/rss.o
+  CC [M]  /var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/drivers/net/ethernet/mellanox/mlx5/core/en/rx_res.o
+  CC [M]  /var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/drivers/net/ethernet/mellanox/mlx5/core/en/channels.o
+  CC [M]  /var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/drivers/net/ethernet/mellanox/mlx5/core/en_main.o
+  CC [M]  /var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/drivers/net/ethernet/mellanox/mlx5/core/en_common.o
+  CC [M]  /var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/drivers/net/ethernet/mellanox/mlx5/core/en_fs.o
+  CC [M]  /var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/drivers/net/ethernet/mellanox/mlx5/core/en_ethtool.o
+  LD [M]  /var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/drivers/infiniband/core/ib_uverbs.o
+  LD [M]  /var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/drivers/infiniband/core/rdma_ucm.o
+  CC [M]  /var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/drivers/net/ethernet/mellanox/mlx5/core/en_tx.o
+  CC [M]  /var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/drivers/net/ethernet/mellanox/mlx5/core/en_rx.o
+  CC [M]  /var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/drivers/net/ethernet/mellanox/mlx5/core/en_dim.o
+  CC [M]  /var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/drivers/net/ethernet/mellanox/mlx5/core/en_txrx.o
+  CC [M]  /var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/drivers/net/ethernet/mellanox/mlx5/core/en/xdp.o
+  CC [M]  /var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/drivers/net/ethernet/mellanox/mlx5/core/en_stats.o
+  CC [M]  /var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/drivers/net/ethernet/mellanox/mlx5/core/en_sysfs.o
+  CC [M]  /var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/drivers/net/ethernet/mellanox/mlx5/core/en_ecn.o
+  CC [M]  /var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/drivers/net/ethernet/mellanox/mlx5/core/en_selftest.o
+  CC [M]  /var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/drivers/net/ethernet/mellanox/mlx5/core/en/port.o
+  CC [M]  /var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/drivers/net/ethernet/mellanox/mlx5/core/en/monitor_stats.o
+  CC [M]  /var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/drivers/net/ethernet/mellanox/mlx5/core/en/health.o
+  CC [M]  /var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/drivers/net/ethernet/mellanox/mlx5/core/en/reporter_tx.o
+  CC [M]  /var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/drivers/net/ethernet/mellanox/mlx5/core/en/reporter_rx.o
+  CC [M]  /var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/drivers/net/ethernet/mellanox/mlx5/core/en/params.o
+  CC [M]  /var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/drivers/net/ethernet/mellanox/mlx5/core/en/xsk/pool.o
+  CC [M]  /var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/drivers/net/ethernet/mellanox/mlx5/core/en/xsk/setup.o
+  CC [M]  /var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/drivers/net/ethernet/mellanox/mlx5/core/en/xsk/rx.o
+  CC [M]  /var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/drivers/net/ethernet/mellanox/mlx5/core/en/xsk/tx.o
+  CC [M]  /var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/drivers/net/ethernet/mellanox/mlx5/core/en/devlink.o
+  CC [M]  /var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/drivers/net/ethernet/mellanox/mlx5/core/en/ptp.o
+  CC [M]  /var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/drivers/net/ethernet/mellanox/mlx5/core/en/qos.o
+  CC [M]  /var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/drivers/net/ethernet/mellanox/mlx5/core/en/htb.o
+  CC [M]  /var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/drivers/net/ethernet/mellanox/mlx5/core/en/trap.o
+  CC [M]  /var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/drivers/net/ethernet/mellanox/mlx5/core/en/fs_tt_redirect.o
+  CC [M]  /var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/drivers/net/ethernet/mellanox/mlx5/core/en/selq.o
+  CC [M]  /var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/drivers/net/ethernet/mellanox/mlx5/core/lib/crypto.o
+  CC [M]  /var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/drivers/net/ethernet/mellanox/mlx5/core/lib/sd.o
+  CC [M]  /var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/drivers/net/ethernet/mellanox/mlx5/core/en_debugfs.o
+  CC [M]  /var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/drivers/net/ethernet/mellanox/mlx5/core/en_arfs.o
+  CC [M]  /var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/drivers/net/ethernet/mellanox/mlx5/core/en_fs_ethtool.o
+  CC [M]  /var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/drivers/net/ethernet/mellanox/mlx5/core/en_dcbnl.o
+  CC [M]  /var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/drivers/net/ethernet/mellanox/mlx5/core/en/port_buffer.o
+  CC [M]  /var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/drivers/net/ethernet/mellanox/mlx5/core/en/hv_vhca_stats.o
+  CC [M]  /var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/drivers/net/ethernet/mellanox/mlx5/core/lag/mp.o
+  CC [M]  /var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/drivers/net/ethernet/mellanox/mlx5/core/lag/port_sel.o
+  CC [M]  /var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/drivers/net/ethernet/mellanox/mlx5/core/lib/geneve.o
+  CC [M]  /var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/drivers/net/ethernet/mellanox/mlx5/core/lib/port_tun.o
+  CC [M]  /var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/drivers/net/ethernet/mellanox/mlx5/core/en_rep.o
+  CC [M]  /var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/drivers/net/ethernet/mellanox/mlx5/core/en/rep/bond.o
+  CC [M]  /var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/drivers/net/ethernet/mellanox/mlx5/core/en/mod_hdr.o
+  CC [M]  /var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/drivers/net/ethernet/mellanox/mlx5/core/en/mapping.o
+  CC [M]  /var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/drivers/net/ethernet/mellanox/mlx5/core/lag/mpesw.o
+  CC [M]  /var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/drivers/net/ethernet/mellanox/mlx5/core/en/rep/meter.o
+  CC [M]  /var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/drivers/net/ethernet/mellanox/mlx5/core/en/rep/sysfs.o
+  CC [M]  /var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/drivers/net/ethernet/mellanox/mlx5/core/en_tc.o
+  CC [M]  /var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/drivers/net/ethernet/mellanox/mlx5/core/en/rep/tc.o
+  CC [M]  /var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/drivers/net/ethernet/mellanox/mlx5/core/en/rep/neigh.o
+  CC [M]  /var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/drivers/net/ethernet/mellanox/mlx5/core/lib/fs_chains.o
+  CC [M]  /var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/drivers/net/ethernet/mellanox/mlx5/core/en/tc_tun.o
+  CC [M]  /var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/drivers/net/ethernet/mellanox/mlx5/core/esw/indir_table.o
+  CC [M]  /var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/drivers/net/ethernet/mellanox/mlx5/core/en/tc_tun_encap.o
+  CC [M]  /var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/drivers/net/ethernet/mellanox/mlx5/core/en/tc_tun_vxlan.o
+  CC [M]  /var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/drivers/net/ethernet/mellanox/mlx5/core/en/tc_tun_gre.o
+  CC [M]  /var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/drivers/net/ethernet/mellanox/mlx5/core/en/tc_tun_geneve.o
+  CC [M]  /var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/drivers/net/ethernet/mellanox/mlx5/core/en/tc_tun_mplsoudp.o
+  CC [M]  /var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/drivers/net/ethernet/mellanox/mlx5/core/diag/en_tc_tracepoint.o
+  CC [M]  /var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/drivers/net/ethernet/mellanox/mlx5/core/en/tc/post_act.o
+  CC [M]  /var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/drivers/net/ethernet/mellanox/mlx5/core/en/tc/int_port.o
+  CC [M]  /var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/drivers/net/ethernet/mellanox/mlx5/core/en/tc/meter.o
+  CC [M]  /var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/drivers/net/ethernet/mellanox/mlx5/core/en/tc/post_meter.o
+  CC [M]  /var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/drivers/net/ethernet/mellanox/mlx5/core/en/tc/act_stats.o
+  CC [M]  /var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/drivers/net/ethernet/mellanox/mlx5/core/en/tc/act/act.o
+  CC [M]  /var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/drivers/net/ethernet/mellanox/mlx5/core/en/tc/act/drop.o
+  CC [M]  /var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/drivers/net/ethernet/mellanox/mlx5/core/en/tc/act/trap.o
+  CC [M]  /var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/drivers/net/ethernet/mellanox/mlx5/core/en/tc/act/accept.o
+  CC [M]  /var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/drivers/net/ethernet/mellanox/mlx5/core/en/tc/act/mark.o
+  CC [M]  /var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/drivers/net/ethernet/mellanox/mlx5/core/en/tc/act/goto.o
+  CC [M]  /var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/drivers/net/ethernet/mellanox/mlx5/core/en/tc/act/tun.o
+  CC [M]  /var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/drivers/net/ethernet/mellanox/mlx5/core/en/tc/act/csum.o
+  CC [M]  /var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/drivers/net/ethernet/mellanox/mlx5/core/en/tc/act/pedit.o
+  CC [M]  /var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/drivers/net/ethernet/mellanox/mlx5/core/en/tc/act/vlan.o
+  CC [M]  /var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/drivers/net/ethernet/mellanox/mlx5/core/en/tc/act/vlan_mangle.o
+  CC [M]  /var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/drivers/net/ethernet/mellanox/mlx5/core/en/tc/act/mpls.o
+  CC [M]  /var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/drivers/net/ethernet/mellanox/mlx5/core/en/tc/act/mirred.o
+  CC [M]  /var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/drivers/net/ethernet/mellanox/mlx5/core/en/tc/act/mirred_nic.o
+  CC [M]  /var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/drivers/net/ethernet/mellanox/mlx5/core/en/tc/act/sample.o
+  CC [M]  /var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/drivers/net/ethernet/mellanox/mlx5/core/en/tc/act/ptype.o
+  CC [M]  /var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/drivers/net/ethernet/mellanox/mlx5/core/en/tc/act/redirect_ingress.o
+  CC [M]  /var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/drivers/net/ethernet/mellanox/mlx5/core/en/tc/act/police.o
+  CC [M]  /var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/drivers/net/ethernet/mellanox/mlx5/core/en/tc/act/prio.o
+  CC [M]  /var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/drivers/net/ethernet/mellanox/mlx5/core/en/tc_ct.o
+  CC [M]  /var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/drivers/net/ethernet/mellanox/mlx5/core/en/tc/ct_fs_dmfs.o
+  CC [M]  /var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/drivers/net/ethernet/mellanox/mlx5/core/en/tc/ct_fs_smfs.o
+  CC [M]  /var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/drivers/net/ethernet/mellanox/mlx5/core/en/tc/act/ct.o
+  CC [M]  /var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/drivers/net/ethernet/mellanox/mlx5/core/en/tc/sample.o
+  CC [M]  /var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/drivers/net/ethernet/mellanox/mlx5/core/eswitch.o
+  CC [M]  /var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/drivers/net/ethernet/mellanox/mlx5/core/eswitch_offloads.o
+  CC [M]  /var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/drivers/net/ethernet/mellanox/mlx5/core/eswitch_offloads_termtbl.o
+  CC [M]  /var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/drivers/net/ethernet/mellanox/mlx5/core/rdma.o
+  CC [M]  /var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/drivers/net/ethernet/mellanox/mlx5/core/esw/legacy.o
+  CC [M]  /var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/drivers/net/ethernet/mellanox/mlx5/core/esw/devlink_port.o
+  CC [M]  /var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/drivers/net/ethernet/mellanox/mlx5/core/esw/vporttbl.o
+  CC [M]  /var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/drivers/net/ethernet/mellanox/mlx5/core/esw/qos.o
+  CC [M]  /var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/drivers/net/ethernet/mellanox/mlx5/core/esw/ipsec.o
+  CC [M]  /var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/drivers/net/ethernet/mellanox/mlx5/core/esw/pet_offloads.o
+  CC [M]  /var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/drivers/net/ethernet/mellanox/mlx5/core/esw/vf_meter.o
+  CC [M]  /var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/drivers/net/ethernet/mellanox/mlx5/core/esw/acl/helper.o
+  CC [M]  /var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/drivers/net/ethernet/mellanox/mlx5/core/esw/acl/egress_lgcy.o
+  CC [M]  /var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/drivers/net/ethernet/mellanox/mlx5/core/esw/acl/egress_ofld.o
+  CC [M]  /var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/drivers/net/ethernet/mellanox/mlx5/core/esw/acl/ingress_lgcy.o
+  CC [M]  /var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/drivers/net/ethernet/mellanox/mlx5/core/esw/acl/ingress_ofld.o
+  CC [M]  /var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/drivers/net/ethernet/mellanox/mlx5/core/esw/ipsec_fs.o
+  CC [M]  /var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/drivers/net/ethernet/mellanox/mlx5/core/esw/bridge.o
+  CC [M]  /var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/drivers/net/ethernet/mellanox/mlx5/core/esw/bridge_mcast.o
+  CC [M]  /var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/drivers/net/ethernet/mellanox/mlx5/core/esw/bridge_debugfs.o
+  CC [M]  /var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/drivers/net/ethernet/mellanox/mlx5/core/en/rep/bridge.o
+  CC [M]  /var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/drivers/net/ethernet/mellanox/mlx5/core/hwmon.o
+  CC [M]  /var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/drivers/net/ethernet/mellanox/mlx5/core/lib/mpfs.o
+  CC [M]  /var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/drivers/net/ethernet/mellanox/mlx5/core/lib/vxlan.o
+  CC [M]  /var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/drivers/net/ethernet/mellanox/mlx5/core/lib/clock.o
+  CC [M]  /var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/drivers/net/ethernet/mellanox/mlx5/core/lib/hv.o
+  CC [M]  /var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/drivers/net/ethernet/mellanox/mlx5/core/lib/hv_vhca.o
+  CC [M]  /var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/drivers/net/ethernet/mellanox/mlx5/core/ipoib/ipoib.o
+  CC [M]  /var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/drivers/net/ethernet/mellanox/mlx5/core/ipoib/ethtool.o
+  CC [M]  /var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/drivers/net/ethernet/mellanox/mlx5/core/ipoib/ipoib_vlan.o
+  CC [M]  /var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/drivers/net/ethernet/mellanox/mlx5/core/en_accel/ipsec.o
+  CC [M]  /var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/drivers/net/ethernet/mellanox/mlx5/core/en_accel/ipsec_rxtx.o
+  CC [M]  /var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/drivers/net/ethernet/mellanox/mlx5/core/en_accel/ipsec_stats.o
+  CC [M]  /var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/drivers/net/ethernet/mellanox/mlx5/core/en_accel/ipsec_fs.o
+  CC [M]  /var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/drivers/net/ethernet/mellanox/mlx5/core/en_accel/ipsec_offload.o
+  CC [M]  /var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/drivers/net/ethernet/mellanox/mlx5/core/lib/ipsec_fs_roce.o
+  CC [M]  /var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/drivers/net/ethernet/mellanox/mlx5/core/en_accel/ktls_stats.o
+  CC [M]  /var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/drivers/net/ethernet/mellanox/mlx5/core/en_accel/fs_tcp.o
+  CC [M]  /var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/drivers/net/ethernet/mellanox/mlx5/core/en_accel/ktls.o
+  CC [M]  /var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/drivers/net/ethernet/mellanox/mlx5/core/en_accel/ktls_txrx.o
+  CC [M]  /var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/drivers/net/ethernet/mellanox/mlx5/core/en_accel/ktls_tx.o
+  CC [M]  /var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/drivers/net/ethernet/mellanox/mlx5/core/en_accel/ktls_rx.o
+  CC [M]  /var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/drivers/net/ethernet/mellanox/mlx5/core/steering/dr_domain.o
+  CC [M]  /var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/drivers/net/ethernet/mellanox/mlx5/core/steering/dr_table.o
+  CC [M]  /var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/drivers/net/ethernet/mellanox/mlx5/core/steering/dr_matcher.o
+  CC [M]  /var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/drivers/net/ethernet/mellanox/mlx5/core/steering/dr_rule.o
+  CC [M]  /var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/drivers/net/ethernet/mellanox/mlx5/core/steering/dr_icm_pool.o
+  CC [M]  /var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/drivers/net/ethernet/mellanox/mlx5/core/steering/dr_buddy.o
+  CC [M]  /var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/drivers/net/ethernet/mellanox/mlx5/core/steering/dr_ste.o
+  CC [M]  /var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/drivers/net/ethernet/mellanox/mlx5/core/steering/dr_send.o
+  CC [M]  /var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/drivers/net/ethernet/mellanox/mlx5/core/steering/dr_ste_v0.o
+  CC [M]  /var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/drivers/net/ethernet/mellanox/mlx5/core/steering/dr_ste_v1.o
+  CC [M]  /var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/drivers/net/ethernet/mellanox/mlx5/core/steering/dr_ste_v2.o
+  CC [M]  /var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/drivers/net/ethernet/mellanox/mlx5/core/steering/dr_ste_v3.o
+  CC [M]  /var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/drivers/net/ethernet/mellanox/mlx5/core/steering/dr_cmd.o
+  CC [M]  /var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/drivers/net/ethernet/mellanox/mlx5/core/steering/dr_fw.o
+  CC [M]  /var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/drivers/net/ethernet/mellanox/mlx5/core/steering/dr_action.o
+  CC [M]  /var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/drivers/net/ethernet/mellanox/mlx5/core/steering/fs_dr.o
+  CC [M]  /var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/drivers/net/ethernet/mellanox/mlx5/core/steering/dr_definer.o
+  CC [M]  /var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/drivers/net/ethernet/mellanox/mlx5/core/steering/dr_ptrn.o
+  CC [M]  /var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/drivers/net/ethernet/mellanox/mlx5/core/steering/dr_arg.o
+  CC [M]  /var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/drivers/net/ethernet/mellanox/mlx5/core/steering/dr_dbg.o
+  CC [M]  /var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/drivers/net/ethernet/mellanox/mlx5/core/lib/smfs.o
+  CC [M]  /var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/drivers/net/ethernet/mellanox/mlx5/core/sf/vhca_event.o
+  CC [M]  /var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/drivers/net/ethernet/mellanox/mlx5/core/sf/dev/dev.o
+  CC [M]  /var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/drivers/net/ethernet/mellanox/mlx5/core/sf/dev/driver.o
+  CC [M]  /var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/drivers/net/ethernet/mellanox/mlx5/core/irq_affinity.o
+  CC [M]  /var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/drivers/net/ethernet/mellanox/mlx5/core/sf/cmd.o
+  CC [M]  /var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/drivers/net/ethernet/mellanox/mlx5/core/sf/hw_table.o
+  CC [M]  /var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/drivers/net/ethernet/mellanox/mlx5/core/sf/devlink.o
+  CC [M]  /var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/drivers/net/ethernet/mellanox/mlx5/core/mlx5_devm.o
+  CC [M]  /var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/drivers/net/ethernet/mellanox/mlx5/core/esw/devm_port.o
+/var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/drivers/net/ethernet/mellanox/mlx5/core/irq_affinity.c: In function 'irq_pool_request_irq':
+/var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/drivers/net/ethernet/mellanox/mlx5/core/irq_affinity.c:101:1: warning: the frame size of 1056 bytes is larger than 1024 bytes [-Wframe-larger-than=]
+  101 | }
+      | ^
+  LD [M]  /var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/drivers/net/ethernet/mellanox/mlx5/core/mlx5_core.o
+  MODPOST /var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/Module.symvers
+  CC [M]  /var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/compat/mlx_compat.mod.o
+  CC [M]  /var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/drivers/block/rnbd/rnbd-client.mod.o
+  CC [M]  /var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/drivers/block/rnbd/rnbd-server.mod.o
+  CC [M]  /var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/drivers/infiniband/core/ib_cm.mod.o
+  CC [M]  /var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/drivers/infiniband/core/ib_core.mod.o
+  CC [M]  /var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/drivers/infiniband/core/ib_ucm.mod.o
+  CC [M]  /var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/drivers/infiniband/core/ib_umad.mod.o
+  CC [M]  /var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/drivers/infiniband/core/ib_uverbs.mod.o
+  CC [M]  /var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/drivers/infiniband/core/iw_cm.mod.o
+  CC [M]  /var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/drivers/infiniband/core/rdma_cm.mod.o
+  CC [M]  /var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/drivers/infiniband/core/rdma_ucm.mod.o
+  CC [M]  /var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/drivers/infiniband/hw/efa/efa.mod.o
+  CC [M]  /var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/drivers/infiniband/hw/hfi1/hfi1.mod.o
+  CC [M]  /var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/drivers/infiniband/hw/irdma/irdma.mod.o
+  CC [M]  /var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/drivers/infiniband/hw/mana/mana_ib.mod.o
+  CC [M]  /var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/drivers/infiniband/hw/mlx4/mlx4_ib.mod.o
+  CC [M]  /var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/drivers/infiniband/hw/mlx5/mlx5_ib.mod.o
+  CC [M]  /var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/drivers/infiniband/hw/mthca/ib_mthca.mod.o
+  CC [M]  /var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/drivers/infiniband/hw/qib/ib_qib.mod.o
+  CC [M]  /var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/drivers/infiniband/hw/usnic/usnic_verbs.mod.o
+  CC [M]  /var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/drivers/infiniband/sw/rdmavt/rdmavt.mod.o
+  CC [M]  /var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/drivers/infiniband/sw/siw/siw.mod.o
+  CC [M]  /var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/drivers/infiniband/ulp/ipoib/ib_ipoib.mod.o
+  CC [M]  /var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/drivers/infiniband/ulp/iser/ib_iser.mod.o
+  CC [M]  /var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/drivers/infiniband/ulp/isert/ib_isert.mod.o
+  CC [M]  /var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/drivers/infiniband/ulp/opa_vnic/opa_vnic.mod.o
+  CC [M]  /var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/drivers/infiniband/ulp/rtrs/rtrs-client.mod.o
+  CC [M]  /var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/drivers/infiniband/ulp/rtrs/rtrs-core.mod.o
+  CC [M]  /var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/drivers/infiniband/ulp/rtrs/rtrs-server.mod.o
+  CC [M]  /var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/drivers/infiniband/ulp/srp/ib_srp.mod.o
+  CC [M]  /var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/drivers/net/ethernet/mellanox/mlx5/core/mlx5_core.mod.o
+  CC [M]  /var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/drivers/net/ethernet/mellanox/mlxfw/mlxfw.mod.o
+  CC [M]  /var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/drivers/net/ethernet/mellanox/mlxsw/mlxsw_spectrum.mod.o
+  CC [M]  /var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/drivers/scsi/scsi_transport_srp.mod.o
+  CC [M]  /var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/net/9p/9pnet_rdma.mod.o
+  CC [M]  /var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/net/mlxdevm/mlxdevm.mod.o
+  CC [M]  /var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/net/rds/rds_rdma.mod.o
+  CC [M]  /var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/net/smc/smc.mod.o
+  CC [M]  /var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/net/smc/smc_diag.mod.o
+  CC [M]  /var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/net/sunrpc/xprtrdma/rpcrdma.mod.o
+  LD [M]  /var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/compat/mlx_compat.ko
+  LD [M]  /var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/drivers/block/rnbd/rnbd-client.ko
+  LD [M]  /var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/drivers/block/rnbd/rnbd-server.ko
+  LD [M]  /var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/drivers/infiniband/core/ib_cm.ko
+  LD [M]  /var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/drivers/infiniband/core/ib_core.ko
+  LD [M]  /var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/drivers/infiniband/core/ib_ucm.ko
+  LD [M]  /var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/drivers/infiniband/core/ib_umad.ko
+  LD [M]  /var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/drivers/infiniband/core/ib_uverbs.ko
+  BTF [M] /var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/drivers/block/rnbd/rnbd-client.ko
+Skipping BTF generation for /var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/drivers/block/rnbd/rnbd-client.ko due to unavailability of vmlinux
+  BTF [M] /var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/drivers/block/rnbd/rnbd-server.ko
+Skipping BTF generation for /var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/drivers/block/rnbd/rnbd-server.ko due to unavailability of vmlinux
+  LD [M]  /var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/drivers/infiniband/core/iw_cm.ko
+  BTF [M] /var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/compat/mlx_compat.ko
+Skipping BTF generation for /var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/compat/mlx_compat.ko due to unavailability of vmlinux
+  LD [M]  /var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/drivers/infiniband/core/rdma_cm.ko
+  BTF [M] /var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/drivers/infiniband/core/ib_ucm.ko
+Skipping BTF generation for /var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/drivers/infiniband/core/ib_ucm.ko due to unavailability of vmlinux
+  LD [M]  /var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/drivers/infiniband/core/rdma_ucm.ko
+  LD [M]  /var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/drivers/infiniband/hw/efa/efa.ko
+  BTF [M] /var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/drivers/infiniband/core/ib_umad.ko
+Skipping BTF generation for /var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/drivers/infiniband/core/ib_umad.ko due to unavailability of vmlinux
+  BTF [M] /var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/drivers/infiniband/hw/efa/efa.ko
+Skipping BTF generation for /var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/drivers/infiniband/hw/efa/efa.ko due to unavailability of vmlinux
+  LD [M]  /var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/drivers/infiniband/hw/hfi1/hfi1.ko
+  LD [M]  /var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/drivers/infiniband/hw/irdma/irdma.ko
+  BTF [M] /var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/drivers/infiniband/core/rdma_ucm.ko
+Skipping BTF generation for /var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/drivers/infiniband/core/rdma_ucm.ko due to unavailability of vmlinux
+  BTF [M] /var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/drivers/infiniband/hw/hfi1/hfi1.ko
+Skipping BTF generation for /var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/drivers/infiniband/hw/hfi1/hfi1.ko due to unavailability of vmlinux
+  BTF [M] /var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/drivers/infiniband/core/ib_cm.ko
+Skipping BTF generation for /var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/drivers/infiniband/core/ib_cm.ko due to unavailability of vmlinux
+  BTF [M] /var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/drivers/infiniband/core/iw_cm.ko
+Skipping BTF generation for /var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/drivers/infiniband/core/iw_cm.ko due to unavailability of vmlinux
+  BTF [M] /var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/drivers/infiniband/hw/irdma/irdma.ko
+Skipping BTF generation for /var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/drivers/infiniband/hw/irdma/irdma.ko due to unavailability of vmlinux
+  LD [M]  /var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/drivers/infiniband/hw/mana/mana_ib.ko
+  LD [M]  /var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/drivers/infiniband/hw/mlx4/mlx4_ib.ko
+  LD [M]  /var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/drivers/infiniband/hw/mlx5/mlx5_ib.ko
+  LD [M]  /var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/drivers/infiniband/hw/mthca/ib_mthca.ko
+  LD [M]  /var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/drivers/infiniband/hw/qib/ib_qib.ko
+  BTF [M] /var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/drivers/infiniband/hw/mana/mana_ib.ko
+Skipping BTF generation for /var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/drivers/infiniband/hw/mana/mana_ib.ko due to unavailability of vmlinux
+  BTF [M] /var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/drivers/infiniband/hw/mlx4/mlx4_ib.ko
+Skipping BTF generation for /var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/drivers/infiniband/hw/mlx4/mlx4_ib.ko due to unavailability of vmlinux
+  LD [M]  /var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/drivers/infiniband/hw/usnic/usnic_verbs.ko
+  BTF [M] /var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/drivers/infiniband/core/rdma_cm.ko
+Skipping BTF generation for /var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/drivers/infiniband/core/rdma_cm.ko due to unavailability of vmlinux
+  BTF [M] /var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/drivers/infiniband/hw/mthca/ib_mthca.ko
+Skipping BTF generation for /var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/drivers/infiniband/hw/mthca/ib_mthca.ko due to unavailability of vmlinux
+  BTF [M] /var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/drivers/infiniband/hw/qib/ib_qib.ko
+Skipping BTF generation for /var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/drivers/infiniband/hw/qib/ib_qib.ko due to unavailability of vmlinux
+  LD [M]  /var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/drivers/infiniband/sw/rdmavt/rdmavt.ko
+  LD [M]  /var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/drivers/infiniband/sw/siw/siw.ko
+  LD [M]  /var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/drivers/infiniband/ulp/ipoib/ib_ipoib.ko
+  LD [M]  /var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/drivers/infiniband/ulp/iser/ib_iser.ko
+  BTF [M] /var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/drivers/infiniband/hw/usnic/usnic_verbs.ko
+Skipping BTF generation for /var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/drivers/infiniband/hw/usnic/usnic_verbs.ko due to unavailability of vmlinux
+  LD [M]  /var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/drivers/infiniband/ulp/isert/ib_isert.ko
+  BTF [M] /var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/drivers/infiniband/sw/rdmavt/rdmavt.ko
+Skipping BTF generation for /var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/drivers/infiniband/sw/rdmavt/rdmavt.ko due to unavailability of vmlinux
+  BTF [M] /var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/drivers/infiniband/sw/siw/siw.ko
+Skipping BTF generation for /var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/drivers/infiniband/sw/siw/siw.ko due to unavailability of vmlinux
+  BTF [M] /var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/drivers/infiniband/ulp/iser/ib_iser.ko
+Skipping BTF generation for /var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/drivers/infiniband/ulp/iser/ib_iser.ko due to unavailability of vmlinux
+  LD [M]  /var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/drivers/infiniband/ulp/opa_vnic/opa_vnic.ko
+  LD [M]  /var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/drivers/infiniband/ulp/rtrs/rtrs-client.ko
+  LD [M]  /var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/drivers/infiniband/ulp/rtrs/rtrs-core.ko
+  BTF [M] /var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/drivers/infiniband/ulp/opa_vnic/opa_vnic.ko
+Skipping BTF generation for /var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/drivers/infiniband/ulp/opa_vnic/opa_vnic.ko due to unavailability of vmlinux
+  BTF [M] /var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/drivers/infiniband/ulp/rtrs/rtrs-client.ko
+Skipping BTF generation for /var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/drivers/infiniband/ulp/rtrs/rtrs-client.ko due to unavailability of vmlinux
+  LD [M]  /var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/drivers/infiniband/ulp/rtrs/rtrs-server.ko
+  BTF [M] /var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/drivers/infiniband/ulp/rtrs/rtrs-core.ko
+Skipping BTF generation for /var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/drivers/infiniband/ulp/rtrs/rtrs-core.ko due to unavailability of vmlinux
+  LD [M]  /var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/drivers/infiniband/ulp/srp/ib_srp.ko
+  BTF [M] /var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/drivers/infiniband/ulp/isert/ib_isert.ko
+Skipping BTF generation for /var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/drivers/infiniband/ulp/isert/ib_isert.ko due to unavailability of vmlinux
+  LD [M]  /var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/drivers/net/ethernet/mellanox/mlx5/core/mlx5_core.ko
+  LD [M]  /var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/drivers/net/ethernet/mellanox/mlxfw/mlxfw.ko
+  BTF [M] /var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/drivers/infiniband/ulp/rtrs/rtrs-server.ko
+Skipping BTF generation for /var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/drivers/infiniband/ulp/rtrs/rtrs-server.ko due to unavailability of vmlinux
+  BTF [M] /var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/drivers/net/ethernet/mellanox/mlxfw/mlxfw.ko
+Skipping BTF generation for /var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/drivers/net/ethernet/mellanox/mlxfw/mlxfw.ko due to unavailability of vmlinux
+  BTF [M] /var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/drivers/infiniband/ulp/srp/ib_srp.ko
+Skipping BTF generation for /var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/drivers/infiniband/ulp/srp/ib_srp.ko due to unavailability of vmlinux
+  BTF [M] /var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/drivers/infiniband/core/ib_uverbs.ko
+Skipping BTF generation for /var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/drivers/infiniband/core/ib_uverbs.ko due to unavailability of vmlinux
+  BTF [M] /var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/drivers/infiniband/ulp/ipoib/ib_ipoib.ko
+Skipping BTF generation for /var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/drivers/infiniband/ulp/ipoib/ib_ipoib.ko due to unavailability of vmlinux
+  BTF [M] /var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/drivers/infiniband/core/ib_core.ko
+Skipping BTF generation for /var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/drivers/infiniband/core/ib_core.ko due to unavailability of vmlinux
+  BTF [M] /var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/drivers/infiniband/hw/mlx5/mlx5_ib.ko
+Skipping BTF generation for /var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/drivers/infiniband/hw/mlx5/mlx5_ib.ko due to unavailability of vmlinux
+  LD [M]  /var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/drivers/net/ethernet/mellanox/mlxsw/mlxsw_spectrum.ko
+  LD [M]  /var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/drivers/scsi/scsi_transport_srp.ko
+  BTF [M] /var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/drivers/net/ethernet/mellanox/mlxsw/mlxsw_spectrum.ko
+Skipping BTF generation for /var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/drivers/net/ethernet/mellanox/mlxsw/mlxsw_spectrum.ko due to unavailability of vmlinux
+  LD [M]  /var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/net/9p/9pnet_rdma.ko
+  LD [M]  /var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/net/mlxdevm/mlxdevm.ko
+  LD [M]  /var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/net/rds/rds_rdma.ko
+  BTF [M] /var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/net/9p/9pnet_rdma.ko
+Skipping BTF generation for /var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/net/9p/9pnet_rdma.ko due to unavailability of vmlinux
+  BTF [M] /var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/drivers/scsi/scsi_transport_srp.ko
+Skipping BTF generation for /var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/drivers/scsi/scsi_transport_srp.ko due to unavailability of vmlinux
+  BTF [M] /var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/net/rds/rds_rdma.ko
+Skipping BTF generation for /var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/net/rds/rds_rdma.ko due to unavailability of vmlinux
+  LD [M]  /var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/net/smc/smc.ko
+  LD [M]  /var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/net/smc/smc_diag.ko
+  BTF [M] /var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/net/mlxdevm/mlxdevm.ko
+Skipping BTF generation for /var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/net/mlxdevm/mlxdevm.ko due to unavailability of vmlinux
+  LD [M]  /var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/net/sunrpc/xprtrdma/rpcrdma.ko
+  BTF [M] /var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/net/smc/smc.ko
+Skipping BTF generation for /var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/net/smc/smc.ko due to unavailability of vmlinux
+  BTF [M] /var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/net/smc/smc_diag.ko
+Skipping BTF generation for /var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/net/smc/smc_diag.ko due to unavailability of vmlinux
+  BTF [M] /var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/net/sunrpc/xprtrdma/rpcrdma.ko
+Skipping BTF generation for /var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/net/sunrpc/xprtrdma/rpcrdma.ko due to unavailability of vmlinux
+  BTF [M] /var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/drivers/net/ethernet/mellanox/mlx5/core/mlx5_core.ko
+Skipping BTF generation for /var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/drivers/net/ethernet/mellanox/mlx5/core/mlx5_core.ko due to unavailability of vmlinux
+make[3]: Leaving directory '/usr/src/linux-headers-5.15.0-1087-azure'
+make[2]: Leaving directory '/var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1'
+make[1]: Leaving directory '/var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1'
+ debian/rules binary
+dh binary
+dh: warning: Compatibility levels before 10 are deprecated (level 8 in use)
+   dh_testroot
+   dh_prep
+   debian/rules override_dh_auto_install
+make[1]: Entering directory '/var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1'
+make install_modules INSTALL_MOD_DIR=updates INSTALL_MOD_PATH=/var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/debian/mlnx-ofed-kernel-modules KERNELRELEASE=5.15.0-1087-azure
+make[2]: Entering directory '/var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1'
+Installing kernel modules
+install -d /var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/debian/mlnx-ofed-kernel-modules/lib/modules/5.15.0-1087-azure/updates/dkms/
+find /var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/ \( -name "*.ko" -o -name "*.ko.gz" \) -exec /bin/cp -f '{}' /var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/debian/mlnx-ofed-kernel-modules/lib/modules/5.15.0-1087-azure/updates/dkms/ \;
+/bin/cp: '/var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/debian/mlnx-ofed-kernel-modules/lib/modules/5.15.0-1087-azure/updates/dkms/rpcrdma.ko' and '/var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/debian/mlnx-ofed-kernel-modules/lib/modules/5.15.0-1087-azure/updates/dkms/rpcrdma.ko' are the same file
+/bin/cp: '/var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/debian/mlnx-ofed-kernel-modules/lib/modules/5.15.0-1087-azure/updates/dkms/rds_rdma.ko' and '/var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/debian/mlnx-ofed-kernel-modules/lib/modules/5.15.0-1087-azure/updates/dkms/rds_rdma.ko' are the same file
+/bin/cp: '/var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/debian/mlnx-ofed-kernel-modules/lib/modules/5.15.0-1087-azure/updates/dkms/smc.ko' and '/var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/debian/mlnx-ofed-kernel-modules/lib/modules/5.15.0-1087-azure/updates/dkms/smc.ko' are the same file
+/bin/cp: '/var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/debian/mlnx-ofed-kernel-modules/lib/modules/5.15.0-1087-azure/updates/dkms/9pnet_rdma.ko' and '/var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/debian/mlnx-ofed-kernel-modules/lib/modules/5.15.0-1087-azure/updates/dkms/9pnet_rdma.ko' are the same file
+/bin/cp: '/var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/debian/mlnx-ofed-kernel-modules/lib/modules/5.15.0-1087-azure/updates/dkms/mlxdevm.ko' and '/var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/debian/mlnx-ofed-kernel-modules/lib/modules/5.15.0-1087-azure/updates/dkms/mlxdevm.ko' are the same file
+/bin/cp: '/var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/debian/mlnx-ofed-kernel-modules/lib/modules/5.15.0-1087-azure/updates/dkms/smc_diag.ko' and '/var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/debian/mlnx-ofed-kernel-modules/lib/modules/5.15.0-1087-azure/updates/dkms/smc_diag.ko' are the same file
+if [ ! -n "/var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/debian/mlnx-ofed-kernel-modules" ]; then /sbin/depmod 5.15.0-1087-azure;fi;
+make[2]: Leaving directory '/var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1'
+find /var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/debian/mlnx-ofed-kernel-modules \( -type f -a -name "modules.*" \) -delete
+#
+# Sources for building stuff over MLNX_OFED
+#
+# With DKMS, copy the below files and folders during post_build since the
+# new DKMS versions started to remove the whole build directory.
+# however, some old versions of DKMS are buggy and ignores POST_BUILD
+dh_installdirs -pmlnx-ofed-kernel-modules  /usr/src/ofa_kernel/x86_64/5.15.0-1087-azure
+dh_installdirs: warning: Compatibility levels before 10 are deprecated (level 8 in use)
+cp -a include/			debian/mlnx-ofed-kernel-modules/usr/src/ofa_kernel/x86_64/5.15.0-1087-azure
+cp -a config*			debian/mlnx-ofed-kernel-modules/usr/src/ofa_kernel/x86_64/5.15.0-1087-azure
+cp -a compat*			debian/mlnx-ofed-kernel-modules/usr/src/ofa_kernel/x86_64/5.15.0-1087-azure
+cp -a ofed_scripts		debian/mlnx-ofed-kernel-modules/usr/src/ofa_kernel/x86_64/5.15.0-1087-azure
+cp -a Module*.symvers		debian/mlnx-ofed-kernel-modules/usr/src/ofa_kernel/x86_64/5.15.0-1087-azure
+# Force DKMS to install our modules.
+# This is mostly needed for modules that do not have a version number info, as DKMS
+# will compare their srcversion field, which does not really say which module is newer.
+# For utils
+dh_installdirs -pmlnx-ofed-kernel-utils  etc/infiniband
+dh_installdirs: warning: Compatibility levels before 10 are deprecated (level 8 in use)
+dh_installdirs -pmlnx-ofed-kernel-utils  etc/modprobe.d
+dh_installdirs: warning: Compatibility levels before 10 are deprecated (level 8 in use)
+dh_installdirs -pmlnx-ofed-kernel-utils  sbin
+dh_installdirs: warning: Compatibility levels before 10 are deprecated (level 8 in use)
+dh_installdirs -pmlnx-ofed-kernel-utils  bin
+dh_installdirs: warning: Compatibility levels before 10 are deprecated (level 8 in use)
+dh_installdirs -pmlnx-ofed-kernel-utils  usr/bin
+dh_installdirs: warning: Compatibility levels before 10 are deprecated (level 8 in use)
+dh_installdirs -pmlnx-ofed-kernel-utils  usr/sbin
+dh_installdirs: warning: Compatibility levels before 10 are deprecated (level 8 in use)
+dh_installdirs -pmlnx-ofed-kernel-utils  lib/udev
+dh_installdirs: warning: Compatibility levels before 10 are deprecated (level 8 in use)
+dh_installdirs -pmlnx-ofed-kernel-utils  lib/systemd/system
+dh_installdirs: warning: Compatibility levels before 10 are deprecated (level 8 in use)
+dh_installdirs -pmlnx-ofed-kernel-utils  lib/udev/rules.d
+dh_installdirs: warning: Compatibility levels before 10 are deprecated (level 8 in use)
+dh_installdirs -pmlnx-ofed-kernel-utils  etc/init.d
+dh_installdirs: warning: Compatibility levels before 10 are deprecated (level 8 in use)
+dh_installdirs -pmlnx-ofed-kernel-utils  etc/init
+dh_installdirs: warning: Compatibility levels before 10 are deprecated (level 8 in use)
+dh_installdirs -pmlnx-ofed-kernel-utils  etc/systemd/system
+dh_installdirs: warning: Compatibility levels before 10 are deprecated (level 8 in use)
+dh_installdirs -pmlnx-ofed-kernel-utils  usr/share/mlnx_ofed
+dh_installdirs: warning: Compatibility levels before 10 are deprecated (level 8 in use)
+cp source/ofed_scripts/openib.conf debian/mlnx-ofed-kernel-utils/etc/infiniband
+cp source/ofed_scripts/mlx5.conf   debian/mlnx-ofed-kernel-utils/etc/infiniband
+/var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/ofed_scripts/install_helper /var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/debian/mlnx-ofed-kernel-utils
++ DEST_DIR=/var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/debian/mlnx-ofed-kernel-utils
++ install -d /var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/debian/mlnx-ofed-kernel-utils/etc/infiniband
++ '[' '!' -s /var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/debian/mlnx-ofed-kernel-utils/etc/infiniband/openib.conf ']'
++ '[' '!' -s /var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/debian/mlnx-ofed-kernel-utils/etc/infiniband/mlx5.conf ']'
++ read line
+++ echo ''
+++ sed -e 's/=.*//g'
++ item=
++ '[' X '!=' X ']'
++ read line
+++ echo '# Load UMAD module'
+++ sed -e 's/=.*//g'
++ item='# Load UMAD module'
++ '[' 'X# Load UMAD module' '!=' X ']'
++ grep -q '# Load UMAD module' /var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/debian/mlnx-ofed-kernel-utils/etc/infiniband/openib.conf
++ echo '# Load UMAD module'
++ read line
+++ echo UMAD_LOAD=yes
+++ sed -e 's/=.*//g'
++ item=UMAD_LOAD
++ '[' XUMAD_LOAD '!=' X ']'
++ grep -q UMAD_LOAD /var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/debian/mlnx-ofed-kernel-utils/etc/infiniband/openib.conf
++ echo UMAD_LOAD=yes
++ read line
+++ echo ''
+++ sed -e 's/=.*//g'
++ item=
++ '[' X '!=' X ']'
++ read line
+++ echo '# Load UVERBS module'
+++ sed -e 's/=.*//g'
++ item='# Load UVERBS module'
++ '[' 'X# Load UVERBS module' '!=' X ']'
++ grep -q '# Load UVERBS module' /var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/debian/mlnx-ofed-kernel-utils/etc/infiniband/openib.conf
++ echo '# Load UVERBS module'
++ read line
+++ echo UVERBS_LOAD=yes
+++ sed -e 's/=.*//g'
++ item=UVERBS_LOAD
++ '[' XUVERBS_LOAD '!=' X ']'
++ grep -q UVERBS_LOAD /var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/debian/mlnx-ofed-kernel-utils/etc/infiniband/openib.conf
++ echo UVERBS_LOAD=yes
++ read line
+++ echo ''
+++ sed -e 's/=.*//g'
++ item=
++ '[' X '!=' X ']'
++ read line
+++ echo '# Load RDMA_CM module'
+++ sed -e 's/=.*//g'
++ item='# Load RDMA_CM module'
++ '[' 'X# Load RDMA_CM module' '!=' X ']'
++ grep -q '# Load RDMA_CM module' /var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/debian/mlnx-ofed-kernel-utils/etc/infiniband/openib.conf
++ echo '# Load RDMA_CM module'
++ read line
+++ echo RDMA_CM_LOAD=yes
+++ sed -e 's/=.*//g'
++ item=RDMA_CM_LOAD
++ '[' XRDMA_CM_LOAD '!=' X ']'
++ grep -q RDMA_CM_LOAD /var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/debian/mlnx-ofed-kernel-utils/etc/infiniband/openib.conf
++ echo RDMA_CM_LOAD=yes
++ read line
+++ echo ''
+++ sed -e 's/=.*//g'
++ item=
++ '[' X '!=' X ']'
++ read line
+++ echo '# Load RDMA_UCM module'
+++ sed -e 's/=.*//g'
++ item='# Load RDMA_UCM module'
++ '[' 'X# Load RDMA_UCM module' '!=' X ']'
++ grep -q '# Load RDMA_UCM module' /var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/debian/mlnx-ofed-kernel-utils/etc/infiniband/openib.conf
++ echo '# Load RDMA_UCM module'
++ read line
+++ echo RDMA_UCM_LOAD=yes
+++ sed -e 's/=.*//g'
++ item=RDMA_UCM_LOAD
++ '[' XRDMA_UCM_LOAD '!=' X ']'
++ grep -q RDMA_UCM_LOAD /var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/debian/mlnx-ofed-kernel-utils/etc/infiniband/openib.conf
++ echo RDMA_UCM_LOAD=yes
++ read line
+++ echo ''
+++ sed -e 's/=.*//g'
++ item=
++ '[' X '!=' X ']'
++ read line
+++ echo '# Load MLX5 modules'
+++ sed -e 's/=.*//g'
++ item='# Load MLX5 modules'
++ '[' 'X# Load MLX5 modules' '!=' X ']'
++ grep -q '# Load MLX5 modules' /var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/debian/mlnx-ofed-kernel-utils/etc/infiniband/openib.conf
++ echo '# Load MLX5 modules'
++ read line
+++ echo MLX5_LOAD=yes
+++ sed -e 's/=.*//g'
++ item=MLX5_LOAD
++ '[' XMLX5_LOAD '!=' X ']'
++ grep -q MLX5_LOAD /var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/debian/mlnx-ofed-kernel-utils/etc/infiniband/openib.conf
++ echo MLX5_LOAD=yes
++ read line
+++ echo ''
+++ sed -e 's/=.*//g'
++ item=
++ '[' X '!=' X ']'
++ read line
+++ echo '# Load IPoIB'
+++ sed -e 's/=.*//g'
++ item='# Load IPoIB'
++ '[' 'X# Load IPoIB' '!=' X ']'
++ grep -q '# Load IPoIB' /var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/debian/mlnx-ofed-kernel-utils/etc/infiniband/openib.conf
++ echo '# Load IPoIB'
++ read line
+++ echo IPOIB_LOAD=yes
+++ sed -e 's/=.*//g'
++ item=IPOIB_LOAD
++ '[' XIPOIB_LOAD '!=' X ']'
++ grep -q IPOIB_LOAD /var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/debian/mlnx-ofed-kernel-utils/etc/infiniband/openib.conf
++ echo IPOIB_LOAD=yes
++ read line
+++ echo ''
+++ sed -e 's/=.*//g'
++ item=
++ '[' X '!=' X ']'
++ read line
+++ echo '# Load SRP module'
+++ sed -e 's/=.*//g'
++ item='# Load SRP module'
++ '[' 'X# Load SRP module' '!=' X ']'
++ grep -q '# Load SRP module' /var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/debian/mlnx-ofed-kernel-utils/etc/infiniband/openib.conf
++ echo '# Load SRP module'
++ read line
+++ echo SRP_LOAD=no
+++ sed -e 's/=.*//g'
++ item=SRP_LOAD
++ '[' XSRP_LOAD '!=' X ']'
++ grep -q SRP_LOAD /var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1/debian/mlnx-ofed-kernel-utils/etc/infiniband/openib.conf
++ echo SRP_LOAD=no
++ read line
+install -m 0644 source/ofed_scripts/90-ib.rules   debian/mlnx-ofed-kernel-utils/lib/udev/rules.d
+install -m 0644 source/ofed_scripts/83-mlnx-sf-name.rules   debian/mlnx-ofed-kernel-utils/lib/udev/rules.d
+install -m 0644 ofed_scripts/openibd.service   debian/mlnx-ofed-kernel-utils/lib/systemd/system
+install -m 0644 ofed_scripts/mlnx_interface_mgr\@.service  debian/mlnx-ofed-kernel-utils/etc/systemd/system
+# Prepare /etc/infiniband/info
+echo '#!/bin/bash'						> debian/mlnx-ofed-kernel-utils/etc/infiniband/info
+echo								>> debian/mlnx-ofed-kernel-utils/etc/infiniband/info
+echo 'echo prefix=/usr'						>> debian/mlnx-ofed-kernel-utils/etc/infiniband/info
+echo 'echo Kernel=`uname -r`'					>> debian/mlnx-ofed-kernel-utils/etc/infiniband/info
+echo 'echo'							>> debian/mlnx-ofed-kernel-utils/etc/infiniband/info
+echo 'echo Configure options: --all'				>> debian/mlnx-ofed-kernel-utils/etc/infiniband/info
+echo 'echo'							>> debian/mlnx-ofed-kernel-utils/etc/infiniband/info
+chmod 755 debian/mlnx-ofed-kernel-utils/etc/infiniband/info
+install -m 0755 source/ofed_scripts/sf-rep-netdev-rename	debian/mlnx-ofed-kernel-utils/lib/udev
+install -m 0755 source/ofed_scripts/auxdev-sf-netdev-rename	debian/mlnx-ofed-kernel-utils/lib/udev
+install -m 0755 source/ofed_scripts/net-interfaces		debian/mlnx-ofed-kernel-utils/usr/sbin
+install -m 0755 source/ofed_scripts/ibdev2netdev		debian/mlnx-ofed-kernel-utils/usr/sbin
+install -m 0644 source/ofed_scripts/mlnx-ofed-kernel-utils.openibd.upstart	debian/mlnx-ofed-kernel-utils/etc/init/openibd.conf
+install -m 0755 source/ofed_scripts/mlnx-ofed-kernel-utils.openibd.init	debian/mlnx-ofed-kernel-utils/etc/init.d/openibd
+install -m 0644 source/ofed_scripts/mlnx.conf			debian/mlnx-ofed-kernel-utils/etc/modprobe.d
+install -m 0644 source/ofed_scripts/mlnx-bf.conf	debian/mlnx-ofed-kernel-utils/etc/modprobe.d
+install -m 0644 source/ofed_scripts/ib_ipoib.conf		debian/mlnx-ofed-kernel-utils/etc/modprobe.d
+install -m 0755 source/ofed_scripts/mlnx_interface_mgr_deb.sh	debian/mlnx-ofed-kernel-utils/bin/mlnx_interface_mgr.sh
+install -m 0755 source/ofed_scripts/mlnx_conf_mgr.sh		debian/mlnx-ofed-kernel-utils/bin/
+install -m 0755 source/ofed_scripts/setup_mr_cache.sh		debian/mlnx-ofed-kernel-utils/usr/sbin
+install -m 0755 ofed_scripts/mlnx_bf_assign_ct_cores.sh		debian/mlnx-ofed-kernel-utils/usr/share/mlnx_ofed
+make[1]: Leaving directory '/var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1'
+   dh_installdocs
+dh_installdocs: warning: Compatibility levels before 10 are deprecated (level 8 in use)
+   dh_installchangelogs
+   dh_installexamples
+dh_installexamples: warning: Compatibility levels before 10 are deprecated (level 8 in use)
+   dh_installmodules
+   dh_perl
+   dh_link
+   dh_strip_nondeterminism
+   debian/rules override_dh_compress
+make[1]: Entering directory '/var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1'
+dh_compress -X vf-net-link-name.sh
+dh_compress: warning: Compatibility levels before 10 are deprecated (level 8 in use)
+dh_compress: warning: Compatibility levels before 10 are deprecated (level 8 in use)
+make[1]: Leaving directory '/var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1'
+   dh_fixperms
+   dh_missing
+dh_missing: warning: Compatibility levels before 10 are deprecated (level 8 in use)
+   debian/rules override_dh_strip
+make[1]: Entering directory '/var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1'
+dh_strip
+dh_strip: warning: Compatibility levels before 10 are deprecated (level 8 in use)
+dh_strip: warning: Compatibility levels before 10 are deprecated (level 8 in use)
+find debian -name '*.ko' | xargs strip -g
+make[1]: Leaving directory '/var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1'
+   dh_makeshlibs
+   dh_shlibdeps
+dh_shlibdeps: warning: Compatibility levels before 10 are deprecated (level 8 in use)
+dh_shlibdeps: warning: Compatibility levels before 10 are deprecated (level 8 in use)
+   debian/rules override_dh_installdeb
+make[1]: Entering directory '/var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1'
+dh_installdeb
+dh_installdeb: warning: Compatibility levels before 10 are deprecated (level 8 in use)
+# override conf files list
+echo "/etc/infiniband/openib.conf"    >   debian/mlnx-ofed-kernel-utils/DEBIAN/conffiles
+echo "/etc/infiniband/mlx5.conf"      >>   debian/mlnx-ofed-kernel-utils/DEBIAN/conffiles
+echo "/etc/modprobe.d/mlnx.conf"      >>  debian/mlnx-ofed-kernel-utils/DEBIAN/conffiles
+echo "/etc/modprobe.d/mlnx-bf.conf"      >>  debian/mlnx-ofed-kernel-utils/DEBIAN/conffiles
+echo "/etc/modprobe.d/ib_ipoib.conf"  >>  debian/mlnx-ofed-kernel-utils/DEBIAN/conffiles
+sed -i \
+	-e 's/@KVER@/5.15.0-1087-azure/' \
+	-e 's/@ARCH@/x86_64/' \
+	debian/mlnx-ofed-kernel-modules/DEBIAN/postinst \
+	debian/mlnx-ofed-kernel-modules/DEBIAN/prerm
+make[1]: Leaving directory '/var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1'
+   debian/rules override_dh_gencontrol
+make[1]: Entering directory '/var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1'
+dh_gencontrol -- -v25.01.OFED.25.01.0.6.0.1-1.kver.5.15.0-1087-azure
+dpkg-gencontrol: warning: package mlnx-ofed-kernel-utils: substitution variable ${perl:Depends} unused, but is defined
+dpkg-gencontrol: warning: package mlnx-ofed-kernel-modules: substitution variable ${perl:Depends} unused, but is defined
+make[1]: Leaving directory '/var/tmp/mlnx-ofed-kernel/mlnx-ofed-kernel-25.01.OFED.25.01.0.6.0.1'
+   dh_md5sums
+   dh_builddeb
+dpkg-deb: building package 'mlnx-ofed-kernel-utils' in '../mlnx-ofed-kernel-utils_25.01.OFED.25.01.0.6.0.1-1.kver.5.15.0-1087-azure_amd64.deb'.
+dpkg-deb: building package 'mlnx-ofed-kernel-modules' in '../mlnx-ofed-kernel-modules_25.01.OFED.25.01.0.6.0.1-1.kver.5.15.0-1087-azure_amd64.deb'.
+ dpkg-genbuildinfo -O../mlnx-ofed-kernel_25.01.OFED.25.01.0.6.0.1-1_amd64.buildinfo
+ dpkg-genchanges -O../mlnx-ofed-kernel_25.01.OFED.25.01.0.6.0.1-1_amd64.changes
+dpkg-genchanges: info: including full source code in upload
+ dpkg-source --after-build .
+dpkg-buildpackage: info: full upload (original source is included)

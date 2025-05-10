@@ -1,0 +1,94 @@
+/usr/bin/dpkg-buildpackage -us -uc
+dpkg-buildpackage: info: source package mlnx-tools
+dpkg-buildpackage: info: source version 25.01-0.2501060
+dpkg-buildpackage: info: source distribution UNRELEASED
+dpkg-buildpackage: info: source changed by Vladimir Sokolovsky <vlad@nvidia.com>
+ dpkg-source --before-build .
+dpkg-buildpackage: info: host architecture amd64
+ debian/rules clean
+dh clean --with python3
+dh: warning: Compatibility levels before 10 are deprecated (level 9 in use)
+   dh_auto_clean
+dh_auto_clean: warning: Compatibility levels before 10 are deprecated (level 9 in use)
+   dh_clean
+dh_clean: warning: Compatibility levels before 10 are deprecated (level 9 in use)
+ dpkg-source -b .
+dpkg-source: info: using source format '3.0 (quilt)'
+dpkg-source: info: building mlnx-tools using existing ./mlnx-tools_25.01.orig.tar.gz
+dpkg-source: info: building mlnx-tools in mlnx-tools_25.01-0.2501060.debian.tar.xz
+dpkg-source: info: building mlnx-tools in mlnx-tools_25.01-0.2501060.dsc
+ debian/rules binary
+dh binary --with python3
+dh: warning: Compatibility levels before 10 are deprecated (level 9 in use)
+   dh_update_autotools_config
+   dh_auto_configure
+dh_auto_configure: warning: Compatibility levels before 10 are deprecated (level 9 in use)
+   dh_auto_build
+dh_auto_build: warning: Compatibility levels before 10 are deprecated (level 9 in use)
+	make -j1
+make[1]: Entering directory '/var/tmp/mlnx-tools/mlnx-tools-25.01'
+make[1]: Nothing to be done for 'all'.
+make[1]: Leaving directory '/var/tmp/mlnx-tools/mlnx-tools-25.01'
+   dh_auto_test
+dh_auto_test: warning: Compatibility levels before 10 are deprecated (level 9 in use)
+   dh_prep
+   debian/rules override_dh_auto_install
+make[1]: Entering directory '/var/tmp/mlnx-tools/mlnx-tools-25.01'
+dh_auto_install
+dh_auto_install: warning: Compatibility levels before 10 are deprecated (level 9 in use)
+	make -j1 install DESTDIR=/var/tmp/mlnx-tools/mlnx-tools-25.01/debian/mlnx-tools AM_UPDATE_INFO_DIR=no
+make[2]: Entering directory '/var/tmp/mlnx-tools/mlnx-tools-25.01'
+install -d /var/tmp/mlnx-tools/mlnx-tools-25.01/debian/mlnx-tools/sbin
+install -d /var/tmp/mlnx-tools/mlnx-tools-25.01/debian/mlnx-tools/usr/sbin
+install -d /var/tmp/mlnx-tools/mlnx-tools-25.01/debian/mlnx-tools/usr/bin
+install -d /var/tmp/mlnx-tools/mlnx-tools-25.01/debian/mlnx-tools/lib/udev
+install -d /var/tmp/mlnx-tools/mlnx-tools-25.01/debian/mlnx-tools/usr/share/man/man8
+install -d /var/tmp/mlnx-tools/mlnx-tools-25.01/debian/mlnx-tools/usr/share/mlnx-tools/python
+install -m 0755 udev/* -t /var/tmp/mlnx-tools/mlnx-tools-25.01/debian/mlnx-tools/lib/udev/
+install -m 0755 tsbin/* -t /var/tmp/mlnx-tools/mlnx-tools-25.01/debian/mlnx-tools/sbin/
+install -m 0755 sbin/* -t /var/tmp/mlnx-tools/mlnx-tools-25.01/debian/mlnx-tools/usr/sbin/
+install -m 0644 man/man8/*.8 -t /var/tmp/mlnx-tools/mlnx-tools-25.01/debian/mlnx-tools/usr/share/man/man8/
+install -m 0644 python/Python/*.py -t /var/tmp/mlnx-tools/mlnx-tools-25.01/debian/mlnx-tools/usr/share/mlnx-tools/python/
+install -m 0755 python/ib2ib_setup python/mlnx_tune -t /var/tmp/mlnx-tools/mlnx-tools-25.01/debian/mlnx-tools/usr/sbin/
+install -m 0755 python/mlnx_dump_parser python/mlnx_perf python/mlnx_qos python/mlx_fs_dump python/tc_wrap.py -t /var/tmp/mlnx-tools/mlnx-tools-25.01/debian/mlnx-tools/usr/bin/
+make[2]: Leaving directory '/var/tmp/mlnx-tools/mlnx-tools-25.01'
+sed -i -e '1s/python\>/python3/' \
+	debian/mlnx-tools/usr/sbin/* \
+	debian/mlnx-tools/usr/bin/* \
+	debian/mlnx-tools/usr/share/mlnx-tools/python/*.py
+make[1]: Leaving directory '/var/tmp/mlnx-tools/mlnx-tools-25.01'
+   dh_installdocs
+dh_installdocs: warning: Compatibility levels before 10 are deprecated (level 9 in use)
+   dh_installchangelogs
+   dh_installman
+dh_installman: warning: Compatibility levels before 10 are deprecated (level 9 in use)
+   dh_python3
+I: dh_python3 tools:114: replacing shebang in debian/mlnx-tools/usr/sbin/mlnx_tune
+I: dh_python3 tools:114: replacing shebang in debian/mlnx-tools/usr/sbin/ib2ib_setup
+I: dh_python3 tools:114: replacing shebang in debian/mlnx-tools/sbin/mlnx-sf
+   dh_lintian
+dh_lintian: warning: Compatibility levels before 10 are deprecated (level 9 in use)
+   dh_perl
+   dh_link
+   dh_strip_nondeterminism
+   dh_compress
+dh_compress: warning: Compatibility levels before 10 are deprecated (level 9 in use)
+   dh_fixperms
+   dh_missing
+dh_missing: warning: Compatibility levels before 10 are deprecated (level 9 in use)
+   dh_strip
+dh_strip: warning: Compatibility levels before 10 are deprecated (level 9 in use)
+   dh_makeshlibs
+   dh_shlibdeps
+dh_shlibdeps: warning: Compatibility levels before 10 are deprecated (level 9 in use)
+   dh_installdeb
+dh_installdeb: warning: Compatibility levels before 10 are deprecated (level 9 in use)
+   dh_gencontrol
+   dh_md5sums
+   dh_builddeb
+dpkg-deb: building package 'mlnx-tools' in '../mlnx-tools_25.01-0.2501060_amd64.deb'.
+ dpkg-genbuildinfo -O../mlnx-tools_25.01-0.2501060_amd64.buildinfo
+ dpkg-genchanges -O../mlnx-tools_25.01-0.2501060_amd64.changes
+dpkg-genchanges: info: including full source code in upload
+ dpkg-source --after-build .
+dpkg-buildpackage: info: full upload (original source is included)

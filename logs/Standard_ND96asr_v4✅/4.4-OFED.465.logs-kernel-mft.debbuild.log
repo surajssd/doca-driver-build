@@ -1,0 +1,139 @@
+# cat /tmp/OFED.465.logs/kernel-mft.debbuild.log
+/usr/bin/dpkg-buildpackage -us -uc -Pmodules
+dpkg-buildpackage: warning:     debian/changelog(l3): found end of file where expected more change data or trailer
+dpkg-buildpackage: info: source package kernel-mft
+dpkg-buildpackage: info: source version 4.31.0.149-1
+dpkg-buildpackage: info: source distribution unstable
+dpkg-buildpackage: info: source changed by
+dpkg-buildpackage: warning: debian/rules is not executable; fixing that
+ dpkg-source --before-build .
+dpkg-buildpackage: info: host architecture amd64
+dpkg-source: warning: kernel-mft-4.31.0.149/debian/changelog(l3): found end of file where expected more change data or trailer
+ debian/rules clean
+dpkg-parsechangelog: warning:     debian/changelog(l3): found end of file where expected more change data or trailer
+dpkg-parsechangelog: warning:     debian/changelog(l3): found end of file where expected more change data or trailer
+dh clean
+dh: warning: Compatibility levels before 10 are deprecated (level 8 in use)
+   dh_clean
+dh_clean: warning: Compatibility levels before 10 are deprecated (level 8 in use)
+ dpkg-source -b .
+dpkg-source: warning: kernel-mft-4.31.0.149/debian/changelog(l3): found end of file where expected more change data or trailer
+dpkg-source: info: using source format '3.0 (quilt)'
+dpkg-source: info: building kernel-mft using existing ./kernel-mft_4.31.0.149.orig.tar.gz
+dpkg-source: warning: kernel-mft-4.31.0.149/debian/changelog(l3): found end of file where expected more change data or trailer
+dpkg-source: info: building kernel-mft in kernel-mft_4.31.0.149-1.debian.tar.xz
+dpkg-source: info: building kernel-mft in kernel-mft_4.31.0.149-1.dsc
+ debian/rules build
+dpkg-parsechangelog: warning:     debian/changelog(l3): found end of file where expected more change data or trailer
+dpkg-parsechangelog: warning:     debian/changelog(l3): found end of file where expected more change data or trailer
+dh build
+dh: warning: Compatibility levels before 10 are deprecated (level 8 in use)
+   dh_update_autotools_config
+   debian/rules override_dh_auto_build
+make[1]: Entering directory '/var/tmp/kernel-mft/kernel-mft-4.31.0.149'
+dpkg-parsechangelog: warning:     debian/changelog(l3): found end of file where expected more change data or trailer
+dpkg-parsechangelog: warning:     debian/changelog(l3): found end of file where expected more change data or trailer
+Building for 5.15.0-1087-azure
+make -j`grep ^processor /proc/cpuinfo | wc -l` all KPVER=5.15.0-1087-azure KSRC=/lib/modules/5.15.0-1087-azure/build
+make[2]: Entering directory '/var/tmp/kernel-mft/kernel-mft-4.31.0.149'
+cd mst_backward_compatibility/mst_pci && make
+make[3]: Entering directory '/var/tmp/kernel-mft/kernel-mft-4.31.0.149/mst_backward_compatibility/mst_pci'
+make -C /lib/modules/5.15.0-1087-azure/build M=/var/tmp/kernel-mft/kernel-mft-4.31.0.149/mst_backward_compatibility/mst_pci CONFIG_CTF= CONFIG_CC_STACKPROTECTOR_STRONG=  modules
+make[4]: Entering directory '/var/tmp/kernel-mft/kernel-mft-4.31.0.149/mst_backward_compatibility/mst_pci'
+make[4]: warning: jobserver unavailable: using -j1.  Add '+' to parent make rule.
+warning: the compiler differs from the one used to build the kernel
+  The kernel was built by: gcc (Ubuntu 11.4.0-1ubuntu1~22.04) 11.4.0
+  You are using:           gcc (Ubuntu 12.3.0-1ubuntu1~22.04) 12.3.0
+  CC [M]  /var/tmp/kernel-mft/kernel-mft-4.31.0.149/mst_backward_compatibility/mst_pci/../../nnt_driver/nnt_device.o
+  CC [M]  /var/tmp/kernel-mft/kernel-mft-4.31.0.149/mst_backward_compatibility/mst_pci/../../nnt_driver/nnt_dma.o
+  CC [M]  /var/tmp/kernel-mft/kernel-mft-4.31.0.149/mst_backward_compatibility/mst_pci/../../nnt_driver/nnt_pci_conf_access.o
+  CC [M]  /var/tmp/kernel-mft/kernel-mft-4.31.0.149/mst_backward_compatibility/mst_pci/../../nnt_driver/nnt_pci_conf_access_recovery.o
+  CC [M]  /var/tmp/kernel-mft/kernel-mft-4.31.0.149/mst_backward_compatibility/mst_pci/../../nnt_driver/nnt_memory_access.o
+  CC [M]  /var/tmp/kernel-mft/kernel-mft-4.31.0.149/mst_backward_compatibility/mst_pci/../../nnt_driver/nnt_ioctl.o
+  CC [M]  /var/tmp/kernel-mft/kernel-mft-4.31.0.149/mst_backward_compatibility/mst_pci/mst_pci_bc.o
+  CC [M]  /var/tmp/kernel-mft/kernel-mft-4.31.0.149/mst_backward_compatibility/mst_pci/../../nnt_driver/nnt_gpu.o
+  LD [M]  /var/tmp/kernel-mft/kernel-mft-4.31.0.149/mst_backward_compatibility/mst_pci/mst_pci.o
+  MODPOST /var/tmp/kernel-mft/kernel-mft-4.31.0.149/mst_backward_compatibility/mst_pci/Module.symvers
+  CC [M]  /var/tmp/kernel-mft/kernel-mft-4.31.0.149/mst_backward_compatibility/mst_pci/mst_pci.mod.o
+  LD [M]  /var/tmp/kernel-mft/kernel-mft-4.31.0.149/mst_backward_compatibility/mst_pci/mst_pci.ko
+  BTF [M] /var/tmp/kernel-mft/kernel-mft-4.31.0.149/mst_backward_compatibility/mst_pci/mst_pci.ko
+Skipping BTF generation for /var/tmp/kernel-mft/kernel-mft-4.31.0.149/mst_backward_compatibility/mst_pci/mst_pci.ko due to unavailability of vmlinux
+make[4]: Leaving directory '/usr/src/linux-headers-5.15.0-1087-azure'
+make[3]: Leaving directory '/var/tmp/kernel-mft/kernel-mft-4.31.0.149/mst_backward_compatibility/mst_pci'
+cd mst_backward_compatibility/mst_pciconf && make
+make[3]: Entering directory '/var/tmp/kernel-mft/kernel-mft-4.31.0.149/mst_backward_compatibility/mst_pciconf'
+make -C /lib/modules/5.15.0-1087-azure/build M=/var/tmp/kernel-mft/kernel-mft-4.31.0.149/mst_backward_compatibility/mst_pciconf CONFIG_CTF= CONFIG_CC_STACKPROTECTOR_STRONG=  modules
+make[4]: Entering directory '/var/tmp/kernel-mft/kernel-mft-4.31.0.149/mst_backward_compatibility/mst_pciconf'
+make[4]: warning: jobserver unavailable: using -j1.  Add '+' to parent make rule.
+warning: the compiler differs from the one used to build the kernel
+  The kernel was built by: gcc (Ubuntu 11.4.0-1ubuntu1~22.04) 11.4.0
+  You are using:           gcc (Ubuntu 12.3.0-1ubuntu1~22.04) 12.3.0
+  CC [M]  /var/tmp/kernel-mft/kernel-mft-4.31.0.149/mst_backward_compatibility/mst_pciconf/../../nnt_driver/nnt_device.o
+  CC [M]  /var/tmp/kernel-mft/kernel-mft-4.31.0.149/mst_backward_compatibility/mst_pciconf/../../nnt_driver/nnt_dma.o
+  CC [M]  /var/tmp/kernel-mft/kernel-mft-4.31.0.149/mst_backward_compatibility/mst_pciconf/../../nnt_driver/nnt_pci_conf_access.o
+  CC [M]  /var/tmp/kernel-mft/kernel-mft-4.31.0.149/mst_backward_compatibility/mst_pciconf/../../nnt_driver/nnt_pci_conf_access_recovery.o
+  CC [M]  /var/tmp/kernel-mft/kernel-mft-4.31.0.149/mst_backward_compatibility/mst_pciconf/../../nnt_driver/nnt_memory_access.o
+  CC [M]  /var/tmp/kernel-mft/kernel-mft-4.31.0.149/mst_backward_compatibility/mst_pciconf/../../nnt_driver/nnt_ioctl.o
+  CC [M]  /var/tmp/kernel-mft/kernel-mft-4.31.0.149/mst_backward_compatibility/mst_pciconf/mst_pciconf_bc.o
+  CC [M]  /var/tmp/kernel-mft/kernel-mft-4.31.0.149/mst_backward_compatibility/mst_pciconf/../../nnt_driver/nnt_gpu.o
+  LD [M]  /var/tmp/kernel-mft/kernel-mft-4.31.0.149/mst_backward_compatibility/mst_pciconf/mst_pciconf.o
+  MODPOST /var/tmp/kernel-mft/kernel-mft-4.31.0.149/mst_backward_compatibility/mst_pciconf/Module.symvers
+  CC [M]  /var/tmp/kernel-mft/kernel-mft-4.31.0.149/mst_backward_compatibility/mst_pciconf/mst_pciconf.mod.o
+  LD [M]  /var/tmp/kernel-mft/kernel-mft-4.31.0.149/mst_backward_compatibility/mst_pciconf/mst_pciconf.ko
+  BTF [M] /var/tmp/kernel-mft/kernel-mft-4.31.0.149/mst_backward_compatibility/mst_pciconf/mst_pciconf.ko
+Skipping BTF generation for /var/tmp/kernel-mft/kernel-mft-4.31.0.149/mst_backward_compatibility/mst_pciconf/mst_pciconf.ko due to unavailability of vmlinux
+make[4]: Leaving directory '/usr/src/linux-headers-5.15.0-1087-azure'
+make[3]: Leaving directory '/var/tmp/kernel-mft/kernel-mft-4.31.0.149/mst_backward_compatibility/mst_pciconf'
+make[2]: Leaving directory '/var/tmp/kernel-mft/kernel-mft-4.31.0.149'
+make[1]: Leaving directory '/var/tmp/kernel-mft/kernel-mft-4.31.0.149'
+ debian/rules binary
+dpkg-parsechangelog: warning:     debian/changelog(l3): found end of file where expected more change data or trailer
+dpkg-parsechangelog: warning:     debian/changelog(l3): found end of file where expected more change data or trailer
+dh binary
+dh: warning: Compatibility levels before 10 are deprecated (level 8 in use)
+   dh_testroot
+   dh_prep
+   debian/rules override_dh_auto_install
+make[1]: Entering directory '/var/tmp/kernel-mft/kernel-mft-4.31.0.149'
+dpkg-parsechangelog: warning:     debian/changelog(l3): found end of file where expected more change data or trailer
+dpkg-parsechangelog: warning:     debian/changelog(l3): found end of file where expected more change data or trailer
+dh_installdirs -pkernel-mft-modules  lib/modules/5.15.0-1087-azure/updates
+dh_installdirs: warning: Compatibility levels before 10 are deprecated (level 8 in use)
+cp mst_backward_compatibility/mst_pci/mst_pci.ko		debian/kernel-mft-modules/lib/modules/5.15.0-1087-azure/updates
+cp mst_backward_compatibility/mst_pciconf/mst_pciconf.ko	debian/kernel-mft-modules/lib/modules/5.15.0-1087-azure/updates
+make[1]: Leaving directory '/var/tmp/kernel-mft/kernel-mft-4.31.0.149'
+   dh_installdocs
+dh_installdocs: warning: Compatibility levels before 10 are deprecated (level 8 in use)
+   dh_installchangelogs
+dh_installchangelogs: warning:     debian/changelog(l3): found end of file where expected more change data or trailer
+   dh_installmodules
+   dh_perl
+   dh_link
+   dh_strip_nondeterminism
+   dh_compress
+dh_compress: warning: Compatibility levels before 10 are deprecated (level 8 in use)
+   dh_fixperms
+   dh_missing
+dh_missing: warning: Compatibility levels before 10 are deprecated (level 8 in use)
+   dh_installdeb
+dh_installdeb: warning: Compatibility levels before 10 are deprecated (level 8 in use)
+   debian/rules override_dh_gencontrol
+make[1]: Entering directory '/var/tmp/kernel-mft/kernel-mft-4.31.0.149'
+dpkg-parsechangelog: warning:     debian/changelog(l3): found end of file where expected more change data or trailer
+dpkg-parsechangelog: warning:     debian/changelog(l3): found end of file where expected more change data or trailer
+dh_gencontrol -- -v4.31.0.149-1.kver.5.15.0-1087-azure
+dpkg-gencontrol: warning:     debian/changelog(l3): found end of file where expected more change data or trailer
+make[1]: Leaving directory '/var/tmp/kernel-mft/kernel-mft-4.31.0.149'
+   dh_md5sums
+   dh_builddeb
+dpkg-deb: building package 'kernel-mft-modules' in '../kernel-mft-modules_4.31.0.149-1.kver.5.15.0-1087-azure_all.deb'.
+ dpkg-genbuildinfo -O../kernel-mft_4.31.0.149-1_amd64.buildinfo
+dpkg-genbuildinfo: warning:     debian/changelog(l3): found end of file where expected more change data or trailer
+dpkg-genbuildinfo: warning:     debian/changelog(l3): found end of file where expected more change data or trailer
+ dpkg-genchanges -O../kernel-mft_4.31.0.149-1_amd64.changes
+dpkg-genchanges: warning:     debian/changelog(l3): found end of file where expected more change data or trailer
+dpkg-genchanges: warning:     debian/changelog(l3): found end of file where expected more change data or trailer
+dpkg-genchanges: info: including full source code in upload
+ dpkg-source --after-build .
+dpkg-source: warning: kernel-mft-4.31.0.149/debian/changelog(l3): found end of file where expected more change data or trailer
+dpkg-buildpackage: info: full upload (original source is included)

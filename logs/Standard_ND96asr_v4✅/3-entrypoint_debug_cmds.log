@@ -1,0 +1,85 @@
+# cat /tmp/entrypoint_debug_cmds.log
+[10-May-25_20:53:51] NVIDIA driver container exec start
+[10-May-25_20:53:51] OS is Ubuntu
+[10-May-25_20:53:51] [os-release]: PRETTY_NAME="Ubuntu 22.04.5 LTS" NAME="Ubuntu" VERSION_ID="22.04" VERSION="22.04.5 LTS (Jammy Jellyfish)" VERSION_CODENAME=jammy ID=ubuntu ID_LIKE=debian HOME_URL="https://www.ubuntu.com/" SUPPORT_URL="https://help.ubuntu.com/" BUG_REPORT_URL="https://bugs.launchpad.net/ubuntu/" PRIVACY_POLICY_URL="https://www.ubuntu.com/legal/terms-and-policies/privacy-policy" UBUNTU_CODENAME=jammy
+[10-May-25_20:53:51] [uname -a]: Linux aks-ibnodepool-92275652-vmss000000 5.15.0-1087-azure #96-Ubuntu SMP Fri Mar 28 20:31:27 UTC 2025 x86_64 x86_64 x86_64 GNU/Linux
+[10-May-25_20:53:51] [free -m]: total used free shared buff/cache available Mem: 907058 4981 898222 3 3854 898037 Swap: 0 0 0
+[10-May-25_20:53:51] Container full version: 25.01-0.6.0.0-0
+[10-May-25_20:53:51] Function: unload_blocking_modules
+[10-May-25_20:53:51] Verifying loaded modules will not prevent future driver restart
+[10-May-25_20:53:51] Checking if module nvidia_peermem loaded
+[10-May-25_20:53:51] Module nvidia_peermem not loaded
+[10-May-25_20:53:51] Executing driver sources container
+[10-May-25_20:53:51] Drivers sources path: /run/mellanox/src/MLNX_OFED_SRC-25.01-0.6.0.0
+[10-May-25_20:53:51] Drivers inventory path is set: /mnt/drivers-inventory
+[10-May-25_20:53:51] Function: set_driver_readiness
+[10-May-25_20:53:51] Unsetting driver ready state
+[10-May-25_20:53:51] Executing command: rm -f /run/mellanox/drivers/.driver-ready
+[10-May-25_20:53:51] Function: delete_udev_rules
+[10-May-25_20:53:51] udev rules file was not previously created, skipping
+[10-May-25_20:53:51] Function: store_devices_conf
+[10-May-25_20:53:51] Function: find_mlx_devs
+[10-May-25_20:53:51] Fetching device info for: /sys/class/net/enP27901s1
+[10-May-25_20:53:51] Storing device record [0] 6cfd:00:02.0 eth enP27901s1 up 1500 0 -
+[10-May-25_20:53:51] Sampling interface for ID_NET_NAME_PATH: /sys/class/net/enP27901s1 => enP27901p0s2
+[10-May-25_20:53:51] Function: find_mlx_vfs
+[10-May-25_20:53:51] Query VFs info from [1] devices
+[10-May-25_20:53:51] Device enP27901s1 does not have open VFs, skipping
+[10-May-25_20:53:51] Function: find_switchdev_representors
+[10-May-25_20:53:51] Query representors info from [1] devices
+[10-May-25_20:53:51] Device enP27901s1 is not in switchdev mode, skipping
+[10-May-25_20:53:51] Function: create_udev_rules
+[10-May-25_20:53:51] Short interface name exposed by old driver, injected udev rules file /host/etc/udev/rules.d/77-mlnx-net-names.rules
+[10-May-25_20:53:51] ACTION!="add", GOTO="mlnx_ofed_name_end" SUBSYSTEM!="net", GOTO="mlnx_ofed_name_end" # Rename physical interfaces (first case) of virtual functions (second case). # Example names: # enp8s0f0np0 -> enp8s0f0 # enp8s0f0np1v12 -> enp8s0f0v12 DRIVERS=="mlx5_core", ENV{ID_NET_NAME_PATH}!="", \ PROGRAM="/bin/sh -c 'echo $env{ID_NET_NAME_PATH} | sed -r -e s/np[01]$// -e s/np[01]v/v/'", \ ENV{ID_NET_NAME_PATH}="$result" DRIVERS=="mlx5_core", ENV{ID_NET_NAME_SLOT}!="", \ PROGRAM="/bin/sh -c 'echo $env{ID_NET_NAME_SLOT} | sed -r -e s/np[01]$// -e s/np[01]v/v/'", \ ENV{ID_NET_NAME_SLOT}="$result" LABEL="mlnx_ofed_name_end"
+[10-May-25_20:53:51] Function: build_driver
+[10-May-25_20:53:51] Executing command: mkdir -p /mnt/drivers-inventory/5.15.0-1087-azure/25.01-0.6.0.0
+[10-May-25_20:53:51] Driver modules dest path: /mnt/drivers-inventory/5.15.0-1087-azure/25.01-0.6.0.0
+[10-May-25_20:53:51] Function: set_append_driver_build_flags
+[10-May-25_20:53:51] Function: ubuntu_install_prerequisites
+[10-May-25_20:53:51] Executing command: apt-get update
+[10-May-25_20:53:55] Executing command: apt-get -yq install pkg-config linux-headers-5.15.0-1087-azure
+[10-May-25_20:54:02] Function: build_driver_from_src
+[10-May-25_20:54:02] Starting driver build
+[10-May-25_20:54:02] Executing command: /run/mellanox/src/MLNX_OFED_SRC-25.01-0.6.0.0/install.pl --without-depcheck --kernel 5.15.0-1087-azure --kernel-only --build-only --with-mlnx-tools --without-knem-dkms --without-iser-dkms --without-isert-dkms --without-srp-dkms --without-kernel-mft-dkms --without-mlnx-rdma-rxe-dkms --without-mlnx-nfsrdma-dkms --without-mlnx-nvme-dkms --disable-kmp --without-dkms
+[10-May-25_20:57:28] Executing command: cp /run/mellanox/src/MLNX_OFED_SRC-25.01-0.6.0.0/DEBS/ubuntu22.04/x86_64/iser-modules_25.01.OFED.25.01.0.6.0.1-1.kver.5.15.0-1087-azure_amd64.deb /run/mellanox/src/MLNX_OFED_SRC-25.01-0.6.0.0/DEBS/ubuntu22.04/x86_64/isert-modules_25.01.OFED.25.01.0.6.0.1-1.kver.5.15.0-1087-azure_amd64.deb /run/mellanox/src/MLNX_OFED_SRC-25.01-0.6.0.0/DEBS/ubuntu22.04/x86_64/kernel-mft-modules_4.31.0.149-1.kver.5.15.0-1087-azure_all.deb /run/mellanox/src/MLNX_OFED_SRC-25.01-0.6.0.0/DEBS/ubuntu22.04/x86_64/knem-modules_1.1.4.90mlnx3-OFED.23.10.0.2.1.1.kver.5.15.0-1087-azure_amd64.deb /run/mellanox/src/MLNX_OFED_SRC-25.01-0.6.0.0/DEBS/ubuntu22.04/x86_64/knem_1.1.4.90mlnx3-OFED.23.10.0.2.1.1.kver.5.15.0-1087-azure_amd64.deb /run/mellanox/src/MLNX_OFED_SRC-25.01-0.6.0.0/DEBS/ubuntu22.04/x86_64/mlnx-nfsrdma-modules_25.01.OFED.25.01.0.6.0.1-1.kver.5.15.0-1087-azure_amd64.deb /run/mellanox/src/MLNX_OFED_SRC-25.01-0.6.0.0/DEBS/ubuntu22.04/x86_64/mlnx-nvme-modules_25.01.OFED.25.01.0.6.0.1-1.kver.5.15.0-1087-azure_amd64.deb /run/mellanox/src/MLNX_OFED_SRC-25.01-0.6.0.0/DEBS/ubuntu22.04/x86_64/mlnx-ofed-kernel-modules_25.01.OFED.25.01.0.6.0.1-1.kver.5.15.0-1087-azure_amd64.deb /run/mellanox/src/MLNX_OFED_SRC-25.01-0.6.0.0/DEBS/ubuntu22.04/x86_64/mlnx-ofed-kernel-utils_25.01.OFED.25.01.0.6.0.1-1.kver.5.15.0-1087-azure_amd64.deb /run/mellanox/src/MLNX_OFED_SRC-25.01-0.6.0.0/DEBS/ubuntu22.04/x86_64/mlnx-tools_25.01-0.2501060_amd64.deb /run/mellanox/src/MLNX_OFED_SRC-25.01-0.6.0.0/DEBS/ubuntu22.04/x86_64/srp-modules_25.01.OFED.25.01.0.6.0.1-1.kver.5.15.0-1087-azure_amd64.deb /run/mellanox/src/MLNX_OFED_SRC-25.01-0.6.0.0/DEBS/ubuntu22.04/x86_64/xpmem-modules_2.7.4-1.2501060.kver.5.15.0-1087-azure_amd64.deb /run/mellanox/src/MLNX_OFED_SRC-25.01-0.6.0.0/DEBS/ubuntu22.04/x86_64/xpmem_2.7.4-1.2501060.kver.5.15.0-1087-azure_all.deb /mnt/drivers-inventory/5.15.0-1087-azure/25.01-0.6.0.0
+[10-May-25_20:57:28] Stored driver packages at /mnt/drivers-inventory/5.15.0-1087-azure/25.01-0.6.0.0
+[10-May-25_20:57:28] Function: fix_src_link
+[10-May-25_20:57:28] Storing the check sum for build artifacts at /mnt/drivers-inventory/5.15.0-1087-azure/25.01-0.6.0.0.checksum, check sum: 16a5c627ef415e1d6aef85683c750b9f
+[10-May-25_20:57:28] Function: install_driver
+[10-May-25_20:57:28] Executing command: touch /lib/modules/5.15.0-1087-azure/modules.order
+[10-May-25_20:57:28] Executing command: touch /lib/modules/5.15.0-1087-azure/modules.builtin
+[10-May-25_20:57:28] Executing command: dpkg -i /mnt/drivers-inventory/5.15.0-1087-azure/25.01-0.6.0.0/iser-modules_25.01.OFED.25.01.0.6.0.1-1.kver.5.15.0-1087-azure_amd64.deb /mnt/drivers-inventory/5.15.0-1087-azure/25.01-0.6.0.0/isert-modules_25.01.OFED.25.01.0.6.0.1-1.kver.5.15.0-1087-azure_amd64.deb /mnt/drivers-inventory/5.15.0-1087-azure/25.01-0.6.0.0/kernel-mft-modules_4.31.0.149-1.kver.5.15.0-1087-azure_all.deb /mnt/drivers-inventory/5.15.0-1087-azure/25.01-0.6.0.0/knem-modules_1.1.4.90mlnx3-OFED.23.10.0.2.1.1.kver.5.15.0-1087-azure_amd64.deb /mnt/drivers-inventory/5.15.0-1087-azure/25.01-0.6.0.0/knem_1.1.4.90mlnx3-OFED.23.10.0.2.1.1.kver.5.15.0-1087-azure_amd64.deb /mnt/drivers-inventory/5.15.0-1087-azure/25.01-0.6.0.0/mlnx-nfsrdma-modules_25.01.OFED.25.01.0.6.0.1-1.kver.5.15.0-1087-azure_amd64.deb /mnt/drivers-inventory/5.15.0-1087-azure/25.01-0.6.0.0/mlnx-nvme-modules_25.01.OFED.25.01.0.6.0.1-1.kver.5.15.0-1087-azure_amd64.deb /mnt/drivers-inventory/5.15.0-1087-azure/25.01-0.6.0.0/mlnx-ofed-kernel-modules_25.01.OFED.25.01.0.6.0.1-1.kver.5.15.0-1087-azure_amd64.deb /mnt/drivers-inventory/5.15.0-1087-azure/25.01-0.6.0.0/mlnx-ofed-kernel-utils_25.01.OFED.25.01.0.6.0.1-1.kver.5.15.0-1087-azure_amd64.deb /mnt/drivers-inventory/5.15.0-1087-azure/25.01-0.6.0.0/mlnx-tools_25.01-0.2501060_amd64.deb /mnt/drivers-inventory/5.15.0-1087-azure/25.01-0.6.0.0/srp-modules_25.01.OFED.25.01.0.6.0.1-1.kver.5.15.0-1087-azure_amd64.deb /mnt/drivers-inventory/5.15.0-1087-azure/25.01-0.6.0.0/xpmem-modules_2.7.4-1.2501060.kver.5.15.0-1087-azure_amd64.deb /mnt/drivers-inventory/5.15.0-1087-azure/25.01-0.6.0.0/xpmem_2.7.4-1.2501060.kver.5.15.0-1087-azure_all.deb
+[10-May-25_20:57:30] Executing command: depmod 5.15.0-1087-azure
+[10-May-25_20:57:30] Function: ubuntu_sync_network_configuration_tools
+[10-May-25_20:57:30] Function: load_driver
+[10-May-25_20:57:30] Function: check_loaded_kmod_srcver_vs_modinfo
+[10-May-25_20:57:30] checking module mlx5_core
+[10-May-25_20:57:30] module: mlx5_core, srcver_from_modinfo: 232FDEDD901B4D732FAB0E5, srcver_from_sysfs: 5C665939D32BB564858EA35
+[10-May-25_20:57:30] module: mlx5_core, srcver differs
+[10-May-25_20:57:30] Function: restart_driver
+[10-May-25_20:57:30] Executing command: modprobe -d /host tls
+[10-May-25_20:57:30] Executing command: modprobe -d /host psample
+[10-May-25_20:57:30] Executing command: modprobe -d /host pci-hyperv-intf
+[10-May-25_20:57:30] Apply blacklisted mofed modules file to host (/etc/modprobe.d/blacklist-ofed-modules.conf)
+[10-May-25_20:57:30] # blacklist ofed-related modules on host to prevent inbox or host OFED driver loading blacklist mlx5_core blacklist mlx5_ib blacklist ib_umad blacklist ib_uverbs blacklist ib_ipoib blacklist rdma_cm blacklist rdma_ucm blacklist ib_core blacklist ib_cm
+[10-May-25_20:57:30] Executing command: /etc/init.d/openibd restart
+[10-May-25_20:57:48] Remove blacklisted mofed modules file from host
+[10-May-25_20:57:48] Function: restore_sriov_config
+[10-May-25_20:57:48] SR-IOV config not found
+[10-May-25_20:57:48] Function: load_nfsrdma
+[10-May-25_20:57:48] Function: print_loaded_drv_ver_str
+[10-May-25_20:57:48] Fetching driver info via ethtool from netdev enP27901s1 (6cfd:00:02.0)
+[10-May-25_20:57:48] Current mlx5_core driver version: 25.01-0.6.0
+[10-May-25_20:57:48] Current mlx5_core driver srcversion: 232FDEDD901B4D732FAB0E5
+[10-May-25_20:57:48] Function: mount_rootfs
+[10-May-25_20:57:48] Mounting Mellanox OFED driver container shared kernel headers
+[10-May-25_20:57:48] Executing command: mount --make-runbindable /sys
+[10-May-25_20:57:48] Executing command: mount --make-private /sys
+[10-May-25_20:57:48] Executing command: mkdir -p /run/mellanox/drivers/usr/src/
+[10-May-25_20:57:48] Executing command: mount --rbind /usr/src/ /run/mellanox/drivers/usr/src/
+[10-May-25_20:57:48] Function: set_driver_readiness
+[10-May-25_20:57:48] Setting driver ready state
+[10-May-25_20:57:48] Executing command: touch /run/mellanox/drivers/.driver-ready
+[10-May-25_20:57:48] Function: cleanup_driver_inventory
+[10-May-25_20:57:48] Executing command: touch /tmp/entrypoint_done
+[10-May-25_20:57:48] NVIDIA driver container exec end, sleeping

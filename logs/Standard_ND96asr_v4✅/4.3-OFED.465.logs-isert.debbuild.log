@@ -1,0 +1,118 @@
+# cat /tmp/OFED.465.logs/isert.debbuild.log
+/usr/bin/dpkg-buildpackage -us -uc -Pmodules
+dpkg-buildpackage: info: source package isert
+dpkg-buildpackage: info: source version 25.01.OFED.25.01.0.6.0.1-1
+dpkg-buildpackage: info: source distribution unstable
+dpkg-buildpackage: info: source changed by Alaa Hleihel <alaa@mellanox.com>
+ dpkg-source --before-build .
+dpkg-buildpackage: info: host architecture amd64
+ debian/rules clean
+dh clean
+dh: warning: Compatibility levels before 10 are deprecated (level 8 in use)
+   dh_clean
+dh_clean: warning: Compatibility levels before 10 are deprecated (level 8 in use)
+ dpkg-source -b .
+dpkg-source: info: using source format '3.0 (quilt)'
+dpkg-source: info: building isert using existing ./isert_25.01.OFED.25.01.0.6.0.1.orig.tar.gz
+dpkg-source: info: building isert in isert_25.01.OFED.25.01.0.6.0.1-1.debian.tar.xz
+dpkg-source: info: building isert in isert_25.01.OFED.25.01.0.6.0.1-1.dsc
+ debian/rules build
+dh build
+dh: warning: Compatibility levels before 10 are deprecated (level 8 in use)
+   dh_update_autotools_config
+   debian/rules override_dh_auto_build
+make[1]: Entering directory '/var/tmp/isert/isert-25.01.OFED.25.01.0.6.0.1'
+Building for 5.15.0-1087-azure
+make clean || true
+make[2]: Entering directory '/var/tmp/isert/isert-25.01.OFED.25.01.0.6.0.1'
+/bin/sh: 1: Syntax error: Unterminated quoted string
+/bin/sh: 1: [: -lt: unexpected operator
+rm -f *.o
+rm -f *.ko *.ko.gz
+rm -f *.mod.c
+rm -f Module*.symvers modules*.order
+make[2]: Leaving directory '/var/tmp/isert/isert-25.01.OFED.25.01.0.6.0.1'
+make -j16 KVER=5.15.0-1087-azure K_BUILD=/lib/modules/5.15.0-1087-azure/build
+make[2]: Entering directory '/var/tmp/isert/isert-25.01.OFED.25.01.0.6.0.1'
+/bin/sh: 1: Syntax error: Unterminated quoted string
+/bin/sh: 1: [: -lt: unexpected operator
+make -C /lib/modules/5.15.0-1087-azure/build O=/lib/modules/5.15.0-1087-azure/build M=/var/tmp/isert/isert-25.01.OFED.25.01.0.6.0.1 KBUILD_EXTRA_SYMBOLS=/var/tmp/ofed_src/usr/src/ofa_kernel/x86_64/5.15.0-1087-azure/Module.symvers \
+	CONFIG_INFINIBAND_ISERT=m \
+	CONFIG_INFINIBAND_ISERT_DUMMY= \
+	CONFIG_DTRACE= \
+	CONFIG_CTF= \
+	LINUXINCLUDE=' -include /lib/modules/5.15.0-1087-azure/build/include/generated/autoconf.h -include /lib/modules/5.15.0-1087-azure/build/include/linux/kconfig.h -include /var/tmp/ofed_src/usr/src/ofa_kernel/x86_64/5.15.0-1087-azure/include/linux/compat-2.6.h -I/var/tmp/ofed_src/usr/src/ofa_kernel/x86_64/5.15.0-1087-azure/include -I/var/tmp/ofed_src/usr/src/ofa_kernel/x86_64/5.15.0-1087-azure/include/uapi  $(if $(CONFIG_XEN),-D__XEN_INTERFACE_VERSION__=$(CONFIG_XEN_INTERFACE_VERSION)) $(if $(CONFIG_XEN),-I$(srctree)/arch/x86/include/mach-xen) -I$(srctree)/arch/$(SRCARCH)/include -I$(objtree)/arch/$(SRCARCH)/include/generated -I$(objtree)/include -I$(srctree)/arch/$(SRCARCH)/include/uapi -I$(objtree)/arch/$(SRCARCH)/include/generated/uapi -I$(srctree)/include -I$(srctree)/include/uapi -I$(objtree)/include/generated/uapi $(if $(KBUILD_SRC),-I$(objtree)/include2 -I$(srctree)/include) -I$(srctree)/arch/$(SRCARCH)/include -I$(objtree)/arch/$(SRCARCH)/include/generated ' \
+	modules
+make[3]: Entering directory '/var/tmp/isert/isert-25.01.OFED.25.01.0.6.0.1'
+make[3]: warning: jobserver unavailable: using -j1.  Add '+' to parent make rule.
+warning: the compiler differs from the one used to build the kernel
+  The kernel was built by: gcc (Ubuntu 11.4.0-1ubuntu1~22.04) 11.4.0
+  You are using:           gcc (Ubuntu 12.3.0-1ubuntu1~22.04) 12.3.0
+  CC [M]  /var/tmp/isert/isert-25.01.OFED.25.01.0.6.0.1/ib_isert.o
+  MODPOST /var/tmp/isert/isert-25.01.OFED.25.01.0.6.0.1/Module.symvers
+  CC [M]  /var/tmp/isert/isert-25.01.OFED.25.01.0.6.0.1/ib_isert.mod.o
+  LD [M]  /var/tmp/isert/isert-25.01.OFED.25.01.0.6.0.1/ib_isert.ko
+  BTF [M] /var/tmp/isert/isert-25.01.OFED.25.01.0.6.0.1/ib_isert.ko
+Skipping BTF generation for /var/tmp/isert/isert-25.01.OFED.25.01.0.6.0.1/ib_isert.ko due to unavailability of vmlinux
+make[3]: Leaving directory '/usr/src/linux-headers-5.15.0-1087-azure'
+make[2]: Leaving directory '/var/tmp/isert/isert-25.01.OFED.25.01.0.6.0.1'
+make[1]: Leaving directory '/var/tmp/isert/isert-25.01.OFED.25.01.0.6.0.1'
+ debian/rules binary
+dh binary
+dh: warning: Compatibility levels before 10 are deprecated (level 8 in use)
+   dh_testroot
+   dh_prep
+   debian/rules override_dh_auto_install
+make[1]: Entering directory '/var/tmp/isert/isert-25.01.OFED.25.01.0.6.0.1'
+make install INSTALL_MOD_DIR=updates INSTALL_MOD_PATH=/var/tmp/isert/isert-25.01.OFED.25.01.0.6.0.1/debian/isert-modules KERNELRELEASE=5.15.0-1087-azure KVER=5.15.0-1087-azure K_BUILD=/lib/modules/5.15.0-1087-azure/build
+make[2]: Entering directory '/var/tmp/isert/isert-25.01.OFED.25.01.0.6.0.1'
+/bin/sh: 1: Syntax error: Unterminated quoted string
+/bin/sh: 1: [: -lt: unexpected operator
+make -C /lib/modules/5.15.0-1087-azure/build O=/lib/modules/5.15.0-1087-azure/build M=/var/tmp/isert/isert-25.01.OFED.25.01.0.6.0.1 INSTALL_MOD_PATH=/var/tmp/isert/isert-25.01.OFED.25.01.0.6.0.1/debian/isert-modules INSTALL_MOD_DIR=updates KBUILD_EXTRA_SYMBOLS=/var/tmp/ofed_src/usr/src/ofa_kernel/x86_64/5.15.0-1087-azure/Module.symvers modules_install
+make[3]: Entering directory '/usr/src/linux-headers-5.15.0-1087-azure'
+arch/x86/Makefile:142: CONFIG_X86_X32 enabled but no binutils support
+  INSTALL /var/tmp/isert/isert-25.01.OFED.25.01.0.6.0.1/debian/isert-modules/lib/modules/5.15.0-1087-azure/updates/ib_isert.ko
+  SIGN    /var/tmp/isert/isert-25.01.OFED.25.01.0.6.0.1/debian/isert-modules/lib/modules/5.15.0-1087-azure/updates/ib_isert.ko
+  DEPMOD  /var/tmp/isert/isert-25.01.OFED.25.01.0.6.0.1/debian/isert-modules/lib/modules/5.15.0-1087-azure
+Warning: modules_install: missing 'System.map' file. Skipping depmod.
+make[3]: Leaving directory '/usr/src/linux-headers-5.15.0-1087-azure'
+if [ ! -n "/var/tmp/isert/isert-25.01.OFED.25.01.0.6.0.1/debian/isert-modules" ]; then /sbin/depmod 5.15.0-1087-azure;fi;
+make[2]: Leaving directory '/var/tmp/isert/isert-25.01.OFED.25.01.0.6.0.1'
+find /var/tmp/isert/isert-25.01.OFED.25.01.0.6.0.1/debian/isert-modules \( -type f -a -name "modules.*" \) -delete
+# For dkms
+make[1]: Leaving directory '/var/tmp/isert/isert-25.01.OFED.25.01.0.6.0.1'
+   dh_installdocs
+dh_installdocs: warning: Compatibility levels before 10 are deprecated (level 8 in use)
+   dh_installchangelogs
+   dh_installmodules
+   dh_perl
+   dh_link
+   dh_strip_nondeterminism
+   dh_compress
+dh_compress: warning: Compatibility levels before 10 are deprecated (level 8 in use)
+   dh_fixperms
+   dh_missing
+dh_missing: warning: Compatibility levels before 10 are deprecated (level 8 in use)
+   debian/rules override_dh_strip
+make[1]: Entering directory '/var/tmp/isert/isert-25.01.OFED.25.01.0.6.0.1'
+dh_strip
+dh_strip: warning: Compatibility levels before 10 are deprecated (level 8 in use)
+find debian -name '*.ko' | xargs strip -g
+make[1]: Leaving directory '/var/tmp/isert/isert-25.01.OFED.25.01.0.6.0.1'
+   dh_makeshlibs
+   dh_shlibdeps
+dh_shlibdeps: warning: Compatibility levels before 10 are deprecated (level 8 in use)
+   dh_installdeb
+dh_installdeb: warning: Compatibility levels before 10 are deprecated (level 8 in use)
+   debian/rules override_dh_gencontrol
+make[1]: Entering directory '/var/tmp/isert/isert-25.01.OFED.25.01.0.6.0.1'
+dh_gencontrol -- -v25.01.OFED.25.01.0.6.0.1-1.kver.5.15.0-1087-azure
+make[1]: Leaving directory '/var/tmp/isert/isert-25.01.OFED.25.01.0.6.0.1'
+   dh_md5sums
+   dh_builddeb
+dpkg-deb: building package 'isert-modules' in '../isert-modules_25.01.OFED.25.01.0.6.0.1-1.kver.5.15.0-1087-azure_amd64.deb'.
+ dpkg-genbuildinfo -O../isert_25.01.OFED.25.01.0.6.0.1-1_amd64.buildinfo
+ dpkg-genchanges -O../isert_25.01.OFED.25.01.0.6.0.1-1_amd64.changes
+dpkg-genchanges: info: including full source code in upload
+ dpkg-source --after-build .
+dpkg-buildpackage: info: full upload (original source is included)
